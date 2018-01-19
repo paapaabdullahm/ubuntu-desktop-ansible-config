@@ -5,6 +5,6 @@
     - { role: git, become: true }
     - { role: locales, become: true }
     - { role: essentials, become: true }
-    #- { role: adapta-theme, become: true }
+    - { role: adapta-theme, become: true }
     #- { role: java-openjdk, become: true }
     #- { role: zsh, become: true }
