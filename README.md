@@ -16,7 +16,7 @@ Git and Ansible are the only requirements.
 ### Available roles
 >All roles are disabled by default, except **Common**. Remove comment to enable them.
 
-**Common**
+Common
 - git  
 - locales
 - essentials 
