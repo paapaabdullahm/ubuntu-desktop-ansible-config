@@ -1,7 +1,7 @@
 - name: Ubuntu Desktop Configuration
   hosts: localhost
   roles:
-    # Common desktop roles
+    # Common
     - { role: git, become: true }
     - { role: locales, become: true }
     - { role: essentials, become: true }
