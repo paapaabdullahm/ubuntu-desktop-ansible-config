@@ -1,0 +1,21 @@
+---
+
+- name: Import Adapta GPG signing key
+  apt_key:
+    keyserver: hkp://keyserver.ubuntu.com:80
+    state: present
+    id: 2D87398A
+
+- name: Add Adapta repository
+  apt_repository:
+    repo: "deb http://ppa.launchpad.net/tista/adapta/ubuntu {{ansible_distribution_release | lower}} main"
+    state: present
+
+- name: Install Adapta packages
+  apt:
+    name: "{{item}}"
+    state: present
+    update_cache: yes
+  with_items:
+    - adapta-gtk-theme
+    - adapta-backgrounds
