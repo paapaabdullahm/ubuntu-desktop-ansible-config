@@ -17,7 +17,7 @@
   become_user: "{{ ansible_env.USER }}"
 
 - name: Configure
-  command: ./autogen.sh --prefix=/usr --disable-cinnamon --enable-chrome
+  command: source ./autogen.sh --prefix=/usr --disable-cinnamon --enable-chrome
   args:
     chdir: "{{ ansible_env.HOME }}/.cache/adapta-theme"
   register: adapta_theme_configure
