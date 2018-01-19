@@ -2,6 +2,7 @@
   hosts: localhost
   roles:
     # Common desktop roles
+    - { role: git, become: true }
     - { role: locales, become: true }
     - { role: essentials, become: true }
     #- { role: adapta-theme, become: true }
