@@ -23,23 +23,23 @@
   register: adapta_theme_configure
   become: true
   become_user: "{{ ansible_env.USER }}"
-  when: adapta_theme_git.changed
+  #when: adapta_theme_git.changed
 
 - name: Make
   command: make install
   args:
     chdir: "{{ ansible_env.HOME }}/.cache/adapta-theme"
   register: adapta_theme_make
-  when: adapta_theme_git.changed
+  #when: adapta_theme_git.changed
 
 - name: Set GTK Theme to Adapta-Nokto
   command: "gsettings set org.gnome.desktop.interface gtk-theme Adapta-Nokto"
   become: true
   become_user: "{{ ansible_env.USER }}"
-  changed_when: adapta_theme_git.changed
+ # changed_when: adapta_theme_git.changed
 
 - name: Set Windows Manager Theme to Adapta-Nokto
   command: "gsettings set org.gnome.desktop.wm.preferences theme Adapta-Nokto"
   become: true
   become_user: "{{ ansible_env.USER }}"
-  changed_when: adapta_theme_git.changed
+  #changed_when: adapta_theme_git.changed
