@@ -14,9 +14,9 @@ Git and Ansible are the only requirements.
     $ ansible-playbook desktop.yml --ask-become-pass
 
 ### Availables roles
->All roles are disabled by default. Remove comment to enable
+>All roles are disabled by default except _locales_ and _essentials_. Remove comment to enable them.
 - locales
-- general
+- essentials 
 - adapta-theme
 - java-openjdk
 - zsh
