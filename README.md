@@ -9,11 +9,12 @@ Git and Ansible are the only requirements.
     $ cd ansible-ubuntu-desktop && ./ansible-installer.sh
 
 ### Run the playbook in cwd
->enter sudo password when prompted
+>Enter your sudo password when prompted
 
     $ ansible-playbook desktop.yml --ask-become-pass
 
-### Current roles
+### Availables roles
+>All roles are disabled by default. Remove comment to enable
 - locales
 - general
 - adapta-theme
