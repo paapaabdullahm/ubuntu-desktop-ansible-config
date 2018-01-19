@@ -4,7 +4,7 @@ A set of Ansible roles for configuring Ubuntu (16.04 and above) desktop environm
 Git and Ansible are the only requirements.
 
 ### Install requirements
-    $ sudo apt-get install git
+    $ sudo apt install git
     $ git clone https://github.com/pam79/ansible-ubuntu-desktop.git
     $ cd ansible-ubuntu-desktop && ./ansible-installer.sh
 
