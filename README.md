@@ -22,4 +22,5 @@ Common
 - essentials 
 - adapta-theme
 - java-openjdk
+- google-chrome
 - zsh
