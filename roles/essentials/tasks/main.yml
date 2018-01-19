@@ -30,19 +30,24 @@
     - ftp-ssl
     - gawk
     - gcc
+    - gimp
     - grep
+    - gufw
     - gzip
     - htop
     - httping
     - iftop
     - imagemagick
     - iotop
+    - kdenlive
     - less
     - lftp
     - make
+    - meld
     - nano
     - nfs-common
     - nmap
+    - openconnect
     - openssl
     - p7zip
     - pv
@@ -50,18 +55,25 @@
     - ranger
     - rar
     - rsync
+    - shutter
     - smbclient
     - software-properties-common
     - sshfs
     - sshpass
     - tar
+    - tesseract-ocr
     - tmux
     - trash-cli
     - tig
+    - ufw
     - unzip
     - vim
+    - vlc
+    - vpnc
     - wget
     - whois
+    - xournal
+    - youtube-dl
     - zip
 
 - name: Upgrade installed packages
