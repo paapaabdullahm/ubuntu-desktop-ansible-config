@@ -1,7 +1,7 @@
-# ubuntu-desktop-ansibleconfig
-A set of Ansible roles for configuring Ubuntu desktop. It installs and configures general, good to have application programs (can be customized if needed), and other tools that are meant for software development and related.                                              
+# Ubuntu Desktop Ansible Config
+A set of Ansible roles for configuring Ubuntu (16.04 and above) desktop environment. It automates the installation and configuration of essential, good to have utility programs (can be customized if needed), and other tools that are meant for software development and related.                                              
 
-Git and Ansible are the only requirements
+Git and Ansible are the only requirements.
 
 ### Install
     $ sudo apt-get install git
