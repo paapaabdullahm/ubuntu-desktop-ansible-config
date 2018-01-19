@@ -1,0 +1,38 @@
+---
+
+- name: Update apt cache
+  apt: update_cache=yes
+  tags: [git]
+
+- name: Ensure git is installed
+  apt:
+    name: "{{ item }}"
+    state: installed
+  with_items: "{{ git_packages }}"
+  tags: [git]
+
+- name: Ensure gitconfig file for users exists
+  copy:
+    content: ""
+    dest: "/home/{{ ansible_env.USER }}/.gitconfig"
+    force: no
+    owner: "{{ ansible_env.USER }}"
+    group: "{{ ansible_env.USER }}"
+    mode: 0755
+  tags: [git]
+
+- name: Ensure git is configured for {{ ansible_env.USER }}
+  template:
+    src: git-config.j2
+    dest: "/home/{{ ansible_env.USER }}/.gitconfig"
+    owner: "{{ ansible_env.USER }}"
+    group: "{{ ansible_env.USER }}"
+    mode: 0644
+  tags: [git]
+
+- name: Get configuration from all scopes
+  command: cat /home/{{ ansible_env.USER }}/.gitconfig
+  register: cat
+  tags: [git]
+
+- debug: var=cat.stdout_lines
