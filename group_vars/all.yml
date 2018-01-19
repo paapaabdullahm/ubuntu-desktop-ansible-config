@@ -1,6 +1,14 @@
 ---
 
 # http://docs.ansible.com/ansible/playbooks_variables.html#variable-precedence-where-should-i-put-a-variable
+git_enablerepo: ""
+git_packages:
+  - git
+git_global_config_user_name: "pam79"
+git_global_config_user_email: "paapaabdullahm@gmail.com"
+git_global_config_core_editor: "vim"
+git_global_config_branch_autosetuprebase: "always"
+git_global_config_push_default: "current"
 aptcachetime: 3600
 locale: "en_GB.UTF-8"
 timezone: "Africa/Accra"
