@@ -5,7 +5,7 @@ Git and Ansible are the only requirements.
 
 ### Install requirements
     $ sudo apt install git
-    $ git clone https://github.com/pam79/ansible-ubuntu-desktop.git
+    $ git clone https://github.com/pam79/ubuntu-desktop-ansible-config.git
     $ cd ansible-ubuntu-desktop && ./ansible-installer.sh
 
 ### Run the playbook in cwd
