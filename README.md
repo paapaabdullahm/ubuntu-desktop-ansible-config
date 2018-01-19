@@ -1,5 +1,6 @@
-# Ansible Ubuntu Desktop
-Ansible configurations for Ubuntu desktop
+# ubuntu-desktop-ansibleconfig
+A set of Ansible roles for configuring Ubuntu desktop. It installs and configures general, good to have application programs (can be customized if needed), and other tools that are meant for software development and related.                                              
+
 Git and Ansible are the only requirements
 
 ### Install
