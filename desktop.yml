@@ -1,5 +1,5 @@
 - name: Ubuntu desktop
-  hosts: localhost
+  hosts: local
   roles:
     # Common desktop roles
     - { role: git, become: true }
