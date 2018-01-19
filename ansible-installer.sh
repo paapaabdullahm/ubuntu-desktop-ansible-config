@@ -15,6 +15,7 @@ else
 fi
 
 # Show run process
-echo "\nCustomize the playbook desktop.yml"
-echo "to suit your needs, then run ansible in cwd with:"
-echo "  ansible-playbook desktop.yml --ask-become-pass \n"
+echo " "
+echo "Customize the playbook desktop.yml to suit your needs, then run ansible in cwd with:"
+echo "  ansible-playbook desktop.yml --ask-become-pass"
+echo " "
