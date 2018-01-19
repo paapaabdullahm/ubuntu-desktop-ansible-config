@@ -1,4 +1,4 @@
-- name: Ubuntu desktop
+- name: Ubuntu Desktop Configuration
   hosts: local
   roles:
     # Common desktop roles
