@@ -6,4 +6,5 @@
     - { role: locales, become: true }
     - { role: essentials, become: true }
     - { role: java-openjdk, become: true }
+    - { role: google-chrome, become: true }
     - { role: zsh, become: true }
