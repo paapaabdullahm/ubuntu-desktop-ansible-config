@@ -24,6 +24,7 @@
     - bzip2
     - colortest
     - curl
+    - dbus
     - diffutils
     - dos2unix
     - fdupes
