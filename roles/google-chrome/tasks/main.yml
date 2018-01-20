@@ -15,9 +15,9 @@
 
 - name: Install Google Chrome
   apt: pkg=google-chrome-stable state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
-
-- name: Set default browser
-  command: xdg-settings set default-web-browser google-chrome.desktop
+  notify:
+    - Set default browser
+    - Set launcher icon
 
 - name: Create extensions directory
   file:
