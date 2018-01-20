@@ -53,6 +53,7 @@
     - p7zip
     - pv
     - pwgen
+    - python-dbus
     - ranger
     - rar
     - rsync
