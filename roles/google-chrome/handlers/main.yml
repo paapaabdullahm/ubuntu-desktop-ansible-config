@@ -1,0 +1,7 @@
+---
+
+- name: Set default browser
+  raw: xdg-settings set default-web-browser google-chrome.desktop
+
+- name: Set launcher icon
+  raw: python launcher_add google-chrome.desktop 3
