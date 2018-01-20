@@ -6,7 +6,7 @@
     state: present
     id: 7FAC5991
 
-- name: Add Google Chrome x86_64 repository for Debian OS family
+- name: Add Google Chrome x86_64 repository
   apt_repository:
     repo: 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'
     state: present
@@ -15,3 +15,64 @@
 
 - name: Install Google Chrome
   apt: pkg=google-chrome-stable state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+
+- name: Set default browser
+  command: xdg-settings set default-web-browser google-chrome.desktop
+
+- name: Create extensions directory
+  file:
+    path: /opt/google/chrome/extensions/ 
+    state: directory
+
+- name: Create json file to install extensions
+  template:
+    src: chrome-extensions.json.j2
+    dest: /opt/google/chrome/extensions/{{ item.id }}.json
+    mode: 0644
+  with_items:
+    - name: Adblock Plus
+      id: cfhdojbkjhnklbpkdaibdccddilifddb
+    - name: Augury
+      id: elgalmkoelokbchhkhacckoklkejnhcd
+    - name: Checker Plus for Gmail™
+      id: oeopbcgkkoapgobdbedcemjljbihmemj
+    - name: Color Picker
+      id: iegjhenkjneoaocdnoakkcgfdfcpbede
+    - name: Color Picker and Converter
+      id: ofkcpbjmhcdipbhcdfechmckpaofdjlf
+    - name: ColorPick Eyedropper
+      id: ohcpnigalekghcmgcdcenkpelffpdolg
+    - name: Grepsr - Web Scraping Tool
+      id: hjdijkhlfpeafghibmiabeofkiicdnjm
+    - name: Mobile/Responsive Web Design Tester
+      id: elmekokodcohlommfikpmojheggnbelo
+    - name: Ripple Emulator (Beta)
+      id: geelfhphabnejjhdalkjhgipohgpdnoc
+    - name: TCP Socket debugger
+      id: fenhpkaocajfmpchcojgniehkamhkafp
+    - name: Video DownloadHelper
+      id: lmjnegcaeklhafolokijcfjliaokphfk
+    - name: XDM Helper
+      id: fhlkncjkeinpblgldbehianfehcablpf
+    - name: wave-evaluation-tool
+      id: jbbplnpkjmmeebjpijfedlgcdilocofh
+    - name: jsonview
+      id: chklaanhfefbnpoihckbnefhakgolnmc
+    - name: ModHeader
+      id: idgpnmonknjnojddfkpgkljpfnnfcklj
+    - name: Cookie Inspector
+      id: jgbbilmfbammlbbhmmgaagdkbkepnijn
+    - name: stylish
+      id: fjnbnpbmkenffdnngjfgmeleoegfcffe
+    - name: builtwith-technology-prof
+      id: dapjbgnjinbpoindlpdmhochffioedbn
+    - name: kimono
+      id: deoaddaobnieaecelinfdllcgdehimih
+    - name: isometric-contributions
+      id: mjoedlfflcchnleknnceiplgaeoegien
+    - name: github-submodule-links
+      id: ncoknneddcolmgfnmcbemhhaghjdlkkb
+    - name: google-hangouts
+      id: nckgahadagoaajjgafhacjanaoiihapd
+    - name: postman
+      id: fhbjgbiflinjbdggehcddcbncdddomop
