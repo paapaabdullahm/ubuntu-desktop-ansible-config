@@ -14,13 +14,12 @@ Git and Ansible are the only requirements.
     $ ansible-playbook desktop.yml --ask-become-pass
 
 ### Available roles
->All roles are disabled by default, except **Common**. Remove comment to enable them.
+>All roles are disabled by default, except **Common**. Remove comments to enable them.
 
 Common
 - git  
 - locales
 - essentials 
-- adapta-theme
 - java-openjdk
 - google-chrome
 - zsh
