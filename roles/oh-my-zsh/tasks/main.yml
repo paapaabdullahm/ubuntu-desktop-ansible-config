@@ -54,9 +54,11 @@
 
 - name: Ensure Gnome Terminal Profile ID
   become: false
-  raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \')
+  raw: echo $(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \')
   register: set_uuid 
   when: cleanup_font|succeeded 
+
+- set_fact: UUID={{ set_uuid.stdout }}
 
 - debug: var=set_uuid.stdout_lines
 
