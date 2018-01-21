@@ -61,7 +61,7 @@
 - debug: var=UUID
 
 - name: Disable system fonts and enable custom font
-  become: false
+  #become: false
   raw: gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:{{ UUID.stdout | replace('\n', '') }}/ use-system-font false
   register: enable_custom_font
   when: UUID|succeeded 
