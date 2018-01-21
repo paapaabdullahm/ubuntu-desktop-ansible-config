@@ -58,7 +58,7 @@
   register: UUID 
   when: cleanup_font|succeeded 
 
-- debug: var=UUID.stdout_lines
+- debug: var=UUID
 
 - name: Disable system fonts and enable custom font
   become: false
