@@ -30,7 +30,7 @@
   register: clone_fonts
 
 - name: Install theme-specific fonts
-  shell: install.sh
+  raw: ./install.sh
   args:
     chdir: "{{ ansible_env.HOME }}/fonts/"
   register: install_fonts
