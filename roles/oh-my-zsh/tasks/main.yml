@@ -32,8 +32,9 @@
 - name: Install theme-specific fonts
   raw: sh {{ ansible_env.HOME }}/fonts/install.sh
   register: install_fonts
-  debug: var=install_fonts.stdout_lines
   when: clone_fonts|succeeded
+
+- debug: var=install_fonts.stdout_lines
 
 - name: Make fonts system-wide
   raw: cp {{ ansible_env.HOME }}/.local/share/fonts/* /usr/local/share/fonts/
