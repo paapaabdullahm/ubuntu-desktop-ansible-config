@@ -1,6 +1,5 @@
 ---
 
-# http://docs.ansible.com/ansible/playbooks_variables.html#variable-precedence-where-should-i-put-a-variable
 git_enablerepo: ""
 git_packages:
   - git
@@ -9,9 +8,12 @@ git_global_config_user_email: "paapaabdullahm@gmail.com"
 git_global_config_core_editor: "vim"
 git_global_config_branch_autosetuprebase: "always"
 git_global_config_push_default: "current"
+
 aptcachetime: 3600
+
 locale: "en_GB.UTF-8"
 timezone: "Africa/Accra"
+
 desktop_autostart:
   add:
     - { name: Tilda , exec: /usr/bin/tilda }
@@ -20,6 +22,7 @@ desktop_autostart:
     - onboard-autostart.desktop
     - orca-autostart.desktop
     - vino-server.desktop
+
 php_phar_tools:
   php_cs_fixer: true
   phpcpd: true
@@ -30,11 +33,13 @@ php_phar_tools:
   codeception: true
   cssprites: true
   wpcli: true
+
 ssh:
   start: true
   service_enabled: true
   password_auth: false
   root_login: false
+
 vhosts:
   - template: standard
     vhost: "default70.dev"
@@ -43,3 +48,5 @@ vhosts:
     vhost: "default56.dev"
     path: "{{ ansible_env.HOME }}/projects/default-5.6"
     php: "5.6"
+
+ohmyzsh_plugins: colored-man-page colorize docker docker-compose extract git go helm history httpie iwhois jira laravel5 nmap node npm python scala sublime sudo supervisor symfony2 vagrant yarn zsh-syntax-highlighting
