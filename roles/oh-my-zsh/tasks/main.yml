@@ -53,7 +53,7 @@
   notify:
     - Ensure Gnome Terminal Profile ID
     - Disable system fonts and enable custom font
-    - Set custom font
+    - Set custom font to 'Meslo LG S for Powerline Regular 14'
 
 - name: Copy default zsh config for root
   template: src=zshrc.j2 dest=/root/.zshrc owner=root group=root force=yes
