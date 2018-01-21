@@ -64,13 +64,13 @@
 
 - name: Disable system fonts and enable custom font
   become: false
-  raw: gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ use-system-font false
+  raw: gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:{{ UUID }}/ use-system-font false
   register: enable_custom_font
   when: set_uuid|succeeded 
 
 - name: Set custom font to 'Meslo LG S for Powerline Regular 14'
   become: false
-  raw: gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ font 'Meslo LG S for Powerline Regular 14'
+  raw: gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:{{ UUID }}/ font 'Meslo LG S for Powerline Regular 14'
   when: enable_custom_font|succeeded 
 
 - name: Copy default zsh config for root
