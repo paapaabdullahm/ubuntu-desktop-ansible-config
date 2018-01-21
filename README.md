@@ -22,4 +22,4 @@ Common
 - essentials 
 - java-openjdk
 - google-chrome
-- zsh
+- oh-my-zsh
