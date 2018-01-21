@@ -70,7 +70,7 @@
 
 - name: Set custom font to 'Meslo LG S for Powerline Regular 14'
   become: false
-  raw: gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:{{ UUID.stdout | replace('\n', '') }}/ font 'Meslo LG S for Powerline Regular 14'
+  raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ font 'Meslo LG S for Powerline Regular 14'
   when: enable_custom_font|succeeded 
 
 - name: Copy default zsh config for root
