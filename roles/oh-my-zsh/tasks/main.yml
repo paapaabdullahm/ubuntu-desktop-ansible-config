@@ -58,13 +58,15 @@
   register: UUID 
   when: cleanup_font|succeeded 
 
-- debug: var=UUID.stdout
+- debug: var=UUID.stdout_lines
 
 - name: Disable system fonts and enable custom font
   become: false
   raw: gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:{{ UUID.stdout | replace('\n', '') }}/ use-system-font false
   register: enable_custom_font
   when: UUID|succeeded 
+
+- debug: var=enable_custom_font.stdout_lines
 
 - name: Set custom font to 'Meslo LG S for Powerline Regular 14'
   become: false
