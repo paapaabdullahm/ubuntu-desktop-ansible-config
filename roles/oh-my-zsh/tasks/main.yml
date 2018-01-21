@@ -52,6 +52,8 @@
   when: fc_cache_update|succeeded
   notify:
     - Ensure Gnome Terminal Profile ID
+    - Disable system fonts and enable custom font
+    - Set custom font
 
 - name: Copy default zsh config for root
   template: src=zshrc.j2 dest=/root/.zshrc owner=root group=root force=yes
