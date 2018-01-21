@@ -1,0 +1,53 @@
+---
+
+- name: Install zsh with Aptitude
+  apt: pkg=zsh state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
+
+- name: Clone oh-my-zsh for root
+  git: repo=https://github.com/robbyrussell/oh-my-zsh dest=/root/.oh-my-zsh
+
+- name: Clone oh-my-zsh for user {{ ansible_env.USER }}
+  git: repo=https://github.com/robbyrussell/oh-my-zsh dest={{ ansible_env.HOME }}/.oh-my-zsh
+
+- name: set permissions for root
+  file: path=/root/.oh-my-zsh state=directory recurse=yes owner=root group=root
+
+- name: set permissions for user {{ ansible_env.USER }}
+  file: path={{ ansible_env.HOME }}/.oh-my-zsh state=directory recurse=yes owner={{ ansible_env.USER }} group={{ ansible_env.USER }}
+
+- name: add syntax highlighting plugin for root
+  git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: "/root/.oh-my-zsh/plugins/zsh-syntax-highlighting"
+
+- name: add syntax highlighting plugin for user {{ ansible_env.USER }}
+  git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: "{{ ansible_env.HOME }}/.oh-my-zsh/plugins/zsh-syntax-highlighting"
+
+- name: Clone theme-specific fonts
+  git: repo=https://github.com/powerline/fonts.git dest={{ ansible_env.HOME }}/fonts
+  register: clone_fonts
+
+- name: Install theme-specific fonts
+  raw: source {{ ansible_env.HOME }}/fonts/install.sh
+  register: install_fonts
+  when: clone_fonts|succeeded
+
+- name: Clean up fonts folder
+  raw: rm -r {{ ansible_env.HOME }}/fonts
+  when: install_fonts|succeeded
+  notify:
+    - Ensure Gnome Terminal Profile ID
+
+- name: Copy default zsh config for root
+  template: src=zshrc.j2 dest=/root/.zshrc owner=root group=root force=yes
+
+- name: Copy default zsh config for user {{ ansible_env.USER }}
+  template: src=zshrc.j2 dest={{ ansible_env.HOME }}/.zshrc owner={{ ansible_env.USER }} group={{ ansible_env.USER }} force=no
+
+- name: Make zsh default shell for root
+  user: name=root shell=/bin/zsh
+
+- name: Make zsh default shell for user {{ ansible_env.USER }}
+  user: name={{ ansible_env.USER }} shell=/bin/zsh
