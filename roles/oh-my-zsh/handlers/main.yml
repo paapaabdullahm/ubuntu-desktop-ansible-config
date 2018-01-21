@@ -1,13 +1,8 @@
 ---
 
-- name: Ensure Gnome Terminal Profile ID
+- name: Update .zshrc changes for user
   become: false
-  raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \')
+  raw: source {{ ansible_env.HOME }}/.zshrc
 
-- name: Disable system fonts and enable custom font
-  become: false
-  raw: gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ use-system-font false
-
-- name: Set custom font to 'Meslo LG S for Powerline Regular 14'
-  become: false
-  raw: gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ font 'Meslo LG S for Powerline Regular 14'
+- name: Update .zshrc changes for root
+  raw: source /root/.zshrc

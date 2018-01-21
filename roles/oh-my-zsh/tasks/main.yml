@@ -3,6 +3,12 @@
 - name: Install zsh with Aptitude
   apt: pkg=zsh state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
 
+- name: Make zsh default shell for root
+  user: name=root shell=/bin/zsh
+
+- name: Make zsh default shell for user {{ ansible_env.USER }}
+  user: name={{ ansible_env.USER }} shell=/bin/zsh
+
 - name: Clone oh-my-zsh for root
   git: repo=https://github.com/robbyrussell/oh-my-zsh dest=/root/.oh-my-zsh
 
@@ -14,6 +20,12 @@
 
 - name: set permissions for user {{ ansible_env.USER }}
   file: path={{ ansible_env.HOME }}/.oh-my-zsh state=directory recurse=yes owner={{ ansible_env.USER }} group={{ ansible_env.USER }}
+
+- name: Copy default zsh config for root
+  template: src=zshrc.j2 dest=/root/.zshrc owner=root group=root force=yes
+
+- name: Copy default zsh config for user {{ ansible_env.USER }}
+  template: src=zshrc.j2 dest={{ ansible_env.HOME }}/.zshrc owner={{ ansible_env.USER }} group={{ ansible_env.USER }} force=no
 
 - name: add syntax highlighting plugin for root
   git:
@@ -34,8 +46,6 @@
   raw: sh {{ ansible_env.HOME }}/fonts/install.sh
   register: install_fonts
   when: clone_fonts|succeeded
-
-- debug: var=install_fonts.stdout_lines
 
 - name: Make fonts system-wide
   raw: cp {{ ansible_env.HOME }}/.local/share/fonts/* /usr/local/share/fonts/
@@ -62,15 +72,6 @@
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ font 'Meslo LG S for Powerline Regular 14'
   when: enable_custom_font|succeeded 
-
-- name: Copy default zsh config for root
-  template: src=zshrc.j2 dest=/root/.zshrc owner=root group=root force=yes
-
-- name: Copy default zsh config for user {{ ansible_env.USER }}
-  template: src=zshrc.j2 dest={{ ansible_env.HOME }}/.zshrc owner={{ ansible_env.USER }} group={{ ansible_env.USER }} force=no
-
-- name: Make zsh default shell for root
-  user: name=root shell=/bin/zsh
-
-- name: Make zsh default shell for user {{ ansible_env.USER }}
-  user: name={{ ansible_env.USER }} shell=/bin/zsh
+  notify:
+    - Update .zshrc changes for user
+    - Update .zshrc changes for root
