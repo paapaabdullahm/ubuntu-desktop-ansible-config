@@ -49,7 +49,4 @@ vhosts:
     path: "{{ ansible_env.HOME }}/projects/default-5.6"
     php: "5.6"
 
-UUID: 
-  raw: echo $(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \')
-
 ohmyzsh_plugins: colored-man-page colorize docker docker-compose extract git go helm history httpie iwhois jira laravel5 nmap node npm python scala sublime sudo supervisor symfony2 vagrant yarn zsh-syntax-highlighting
