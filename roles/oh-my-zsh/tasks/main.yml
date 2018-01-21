@@ -35,7 +35,7 @@
   register: install_fonts
   when: clone_fonts|succeeded
 
-- debug: msg=install_fonts.stdout_lines
+- debug: var=install_fonts.stdout_lines
 
 - name: Make fonts system-wide
   raw: cp {{ ansible_env.HOME }}/.local/share/fonts/* /usr/local/share/fonts/
@@ -58,7 +58,7 @@
   register: UUID 
   when: cleanup_font|succeeded 
 
-- debug: msg=UUID.stdout_lines
+- debug: var=UUID.stdout_lines
 
 - name: Disable system fonts and enable custom font
   become: false
