@@ -58,7 +58,7 @@
   register: UUID 
   when: cleanup_font|succeeded 
 
-- debug: var=UUID.stdout
+- debug: var={{ UUID.stdout | replace('\n', '') }}
 
 - name: Disable system fonts and enable custom font
   become: false
