@@ -6,13 +6,13 @@
 - name: Clone oh-my-zsh for root
   git: repo=https://github.com/robbyrussell/oh-my-zsh dest=/root/.oh-my-zsh
 
-- name: Clone oh-my-zsh for user {{ ansible_env.USER }} in {{ ansible_env.HOME }}
+- name: Clone oh-my-zsh for user {{ ansible_env.USER }}
   git: repo=https://github.com/robbyrussell/oh-my-zsh dest={{ ansible_env.HOME }}/.oh-my-zsh
 
 - name: set permissions for root
   file: path=/root/.oh-my-zsh state=directory recurse=yes owner=root group=root
 
-- name: set permissions for user {{ ansible_env.USER }} in {{ ansible_env.HOME }}
+- name: set permissions for user {{ ansible_env.USER }}
   file: path={{ ansible_env.HOME }}/.oh-my-zsh state=directory recurse=yes owner={{ ansible_env.USER }} group={{ ansible_env.USER }}
 
 - name: add syntax highlighting plugin for root
@@ -20,23 +20,24 @@
     repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
     dest: "/root/.oh-my-zsh/plugins/zsh-syntax-highlighting"
 
-- name: add syntax highlighting plugin for user {{ ansible_env.USER }} in {{ ansible_env.HOME }}
+- name: add syntax highlighting plugin for user {{ ansible_env.USER }}
   git:
     repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
     dest: "{{ ansible_env.HOME }}/.oh-my-zsh/plugins/zsh-syntax-highlighting"
 
-- name: Clone theme-specific fonts in {{ ansible_env.HOME }}
+- name: Clone theme-specific fonts
   git: repo=https://github.com/powerline/fonts.git dest={{ ansible_env.HOME }}/fonts
   register: clone_fonts
 
-- name: Install theme-specific fonts in {{ ansible_env.HOME }}
+- name: Install theme-specific fonts
+  become: false
   raw: sh {{ ansible_env.HOME }}/fonts/install.sh
   register: install_fonts
   when: clone_fonts|succeeded
 
 - debug: var=install_fonts.stdout_lines
 
-- name: Make fonts system-wide in {{ ansible_env.HOME }}
+- name: Make fonts system-wide
   raw: cp {{ ansible_env.HOME }}/.local/share/fonts/* /usr/local/share/fonts/
   register: make_fonts_systemwide
   when: install_fonts|succeeded
