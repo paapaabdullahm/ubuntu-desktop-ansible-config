@@ -54,23 +54,23 @@
 
 - name: Ensure Gnome Terminal Profile ID
   become: false
-  raw: echo $(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \')
+  raw: export UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \')
   register: set_uuid 
   when: cleanup_font|succeeded 
 
-- set_fact: UUID={{ set_uuid.stdout }}
+#- set_fact: UUID={{ set_uuid.stdout }}
 
 - debug: var=set_uuid.stdout_lines
 
 - name: Disable system fonts and enable custom font
-  #become: false
-  raw: gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:{{ UUID }}/ use-system-font false
+  become: false
+  raw: gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:{{ ansible_env.UUID }}/ use-system-font false
   register: enable_custom_font
   when: set_uuid|succeeded 
 
 - name: Set custom font to 'Meslo LG S for Powerline Regular 14'
-  #become: false
-  raw: gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:{{ UUID }}/ font 'Meslo LG S for Powerline Regular 14'
+  become: false
+  raw: gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:{{ ansible_env.UUID }}/ font 'Meslo LG S for Powerline Regular 14'
   when: enable_custom_font|succeeded 
 
 - name: Copy default zsh config for root
