@@ -30,7 +30,7 @@
   register: clone_fonts
 
 - name: Install theme-specific fonts
-  raw: ../../../fonts/install.sh
+  raw: ./fonts/install.sh
   register: install_fonts
   when: clone_fonts|succeeded
 
