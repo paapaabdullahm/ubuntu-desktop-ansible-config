@@ -30,13 +30,18 @@
   register: clone_fonts
 
 - name: Install theme-specific fonts
-  raw: source {{ ansible_env.HOME }}/fonts/install.sh
+  raw: ../../../fonts/install.sh
   register: install_fonts
   when: clone_fonts|succeeded
 
+- name: Make fonts system-wide
+  raw: cp {{ ansible_env.HOME }}/.local/share/fonts/* /usr/local/share/fonts/
+  register: make_fonts_systemwide
+  when: install_fonts|succeeded
+
 - name: Clean up fonts folder
   raw: rm -r {{ ansible_env.HOME }}/fonts
-  when: install_fonts|succeeded
+  when: make_fonts_systemwide|succeeded
   notify:
     - Ensure Gnome Terminal Profile ID
 
