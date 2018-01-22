@@ -71,7 +71,20 @@
 - name: Set custom font to 'Meslo LG S for Powerline Regular 14'
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ font 'Meslo LG S for Powerline Regular 14'
+  register: set_custom_font
   when: enable_custom_font|succeeded 
   notify:
     - Update .zshrc changes for user
     - Update .zshrc changes for root
+
+- name: Set background colour to '#002b36'
+  become: false
+  raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ background-color #002b36
+  register: set_background_colour
+  when: set_custom_font|succeeded 
+
+- name: Set foreground colour to '#ffffff'
+  become: false
+  raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ foreground-color #ffffff
+  register: set_foreground_colour
+  when: set_custom_font|succeeded 
