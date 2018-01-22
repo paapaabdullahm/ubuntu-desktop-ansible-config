@@ -1,8 +1,0 @@
----
-
-- name: Update .zshrc changes for user
-  become: false
-  raw: source {{ ansible_env.HOME }}/.zshrc
-
-- name: Update .zshrc changes for root
-  raw: source /root/.zshrc
