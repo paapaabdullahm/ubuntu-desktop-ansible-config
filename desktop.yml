@@ -10,8 +10,7 @@
 
     # Utils
     # - { role: golden-dict, become: true }
-    # - { role: xdm, become: true }
-    # - { role: task-coach, become: true }
+    # - { role: xpad, become: true }
     # - { role: sound-converter, become: true }
     # - { role: kdenlive, become: true }
     # - { role: shotwell, become: true }
@@ -19,9 +18,6 @@
     # - { role: ebook-reader, become: true }
     # - { role: scribus, become: true }
     # - { role: inkscape, become: true }
-    # - { role: blender, become: true }
-    # - { role: my-paint, become: true }
-    # - { role: simple-scan, become: true }
     # - { role: spotify, become: true }
     # - { role: brave, become: true }
     # - { role: image-magic, become: true }
@@ -33,7 +29,6 @@
     # - { role: rosegarden, become: true }
     # - { role: sound-juicer, become: true }
     # - { role: chess, become: true }
-    # - { role: notes, become: true }
     # - { role: gnucash, become: true }
     # - { role: sudoku, become: true }
     # - { role: stellarium, become: true }
@@ -44,6 +39,7 @@
     # - { role: anjuta, become: true }
     # - { role: sublime, become: true }
     # - { role: atom, become: true }
+    # - { role: vim, become: true }
     # - { role: smart-git, become: true }
     # - { role: dia, become: true }
     # - { role: umbrello, become: true }
