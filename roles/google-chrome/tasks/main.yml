@@ -22,8 +22,8 @@
 
 - name: Set Google Chrome preferences
   copy:
-    src: "{{ google_chrome_preferences | to_json }}"
-    dest: "{{ google_chrome_preferences_file }}"
+    src: master_preferences.json.j2
+    dest: /opt/google/chrome/master_preferences
   register: google_chrome_pref_set
   when: google_chrome_install|succeeded
 
