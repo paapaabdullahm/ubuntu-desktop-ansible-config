@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Install ansible
+# Description: Install ansible
+
 if ! grep -q "ansible/ansible" /etc/apt/sources.list /etc/apt/sources.list.d/*; then
     echo "Adding Ansible PPA..."
     sudo apt-add-repository -y ppa:ansible/ansible
@@ -13,9 +14,3 @@ if ! hash ansible >/dev/null 2>&1; then
 else
     echo "Ansible already installed"
 fi
-
-# Show run process
-echo " "
-echo "Customize the playbook desktop.yml to suit your needs, then run ansible in cwd with:"
-echo "  ansible-playbook desktop.yml --ask-become-pass"
-echo " "
