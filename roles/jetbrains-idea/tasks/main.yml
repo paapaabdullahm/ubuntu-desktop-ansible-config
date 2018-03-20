@@ -1,0 +1,5 @@
+---
+- include: install.yml
+
+- include: configure.yml
+  when: "users is defined and users not in ([], None, '', omit)"
