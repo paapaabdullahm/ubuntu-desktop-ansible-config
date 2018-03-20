@@ -28,6 +28,7 @@
     - diffutils
     - dos2unix
     - fdupes
+    - findutils
     - ftp-ssl
     - gawk
     - gcc
@@ -57,6 +58,7 @@
     - ranger
     - rar
     - rsync
+    - sed
     - shutter
     - smbclient
     - software-properties-common
@@ -74,6 +76,7 @@
     - vpnc
     - wget
     - whois
+    - xmlstarlet
     - xournal
     - youtube-dl
     - zip
