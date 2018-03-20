@@ -1,0 +1,127 @@
+---
+- name: assert role vars
+  assert:
+    that:
+      - "intellij_default_jdk_home not in (None, '')"
+      - "intellij_default_maven_home not in (None, '')"
+
+- name: assert edition vars
+  assert:
+    that:
+      - "intellij_edition in ('community', 'ultimate')"
+
+- name: load edition vars
+  include_vars: '../vars/editions/{{ intellij_edition }}.yml'
+
+- name: load version vars
+  with_first_found:
+    - '../vars/versions/{{ intellij_version }}-{{ intellij_edition }}.yml'
+    - ../vars/versions/default.yml
+  include_vars: '{{ item }}'
+
+- name: assert version vars
+  assert:
+    that:
+      - "intellij_redis_sha256sum not in (None, '')"
+
+- name: create download directory
+  file:
+    state: directory
+    mode: 'u=rwx,go=rx'
+    dest: '{{ intellij_download_dir }}'
+
+- name: stat install dir
+  stat:
+    path: '{{ intellij_install_dir }}/bin'
+  register: stat_install_dir
+
+- name: download IntelliJ IDEA
+  get_url:
+    url: '{{ intellij_mirror }}/{{ intellij_redis_filename }}'
+    dest: '{{ intellij_download_dir }}/{{ intellij_redis_filename }}'
+    sha256sum: '{{ intellij_redis_sha256sum }}'
+    force: no
+    use_proxy: yes
+    validate_certs: yes
+    timeout: '{{ intellij_idea_download_timeout_seconds }}'
+    mode: 'u=rw,go=r'
+  when: not stat_install_dir.stat.exists
+
+- name: create IntelliJ IDEA installation directory
+  file:
+    state: directory
+    owner: root
+    group: root
+    mode: 'u=rwx,go=rx'
+    dest: '{{ intellij_install_dir }}'
+
+- name: install IntelliJ IDEA
+  tags:
+    - skip_ansible_lint
+  command: >
+    /bin/tar --extract --gunzip --strip-components=1
+    --file '{{ intellij_download_dir }}/{{ intellij_redis_filename }}'
+    --directory '{{ intellij_install_dir }}'
+  args:
+    creates: '{{ intellij_install_dir }}/bin'
+    warn: no
+
+- name: create bin link
+  file:
+    src: '{{ intellij_install_dir }}/bin/idea.sh'
+    dest: /usr/local/bin/idea
+    state: link
+    owner: root
+    group: root
+    mode: 'u=rwx,go=rx'
+
+- name: add IntelliJ IDEA Java agent
+  copy:
+    src: '../files/JavaAgent.jar'
+    dest: '{{ intellij_java_agent_path }}'
+    owner: '{{ ansible_env.USER }}'
+    group: '{{ ansible_env.USER }}'
+    mode: 'u=rw,go=r'
+
+- name: add IntelliJ IDEA VM options
+  template:
+    src: idea64.vmoptions.j2
+    dest: '{{ intellij_install_dir }}/bin/idea64.vmoptions'
+    owner: '{{ ansible_env.USER }}'
+    group: '{{ ansible_env.USER }}'
+    mode: 'ug=rw,o=r'
+
+- name: add IntelliJ IDEA key file
+  copy:
+    src: '../files/idea.key'
+    dest: '{{ ansible_env.HOME }}/.idea.key'
+    owner: '{{ ansible_env.USER }}'
+    group: '{{ ansible_env.USER }}'
+    mode: 'u=rw,go=r'
+
+- name: install IntelliJ IDEA desktop file
+  template:
+    src: jetbrains-idea.desktop.j2
+    dest: '/usr/share/applications/{{ intellij_desktop_filename }}'
+    owner: root
+    group: root
+    mode: 'u=rw,go=r'
+
+- name: install Ansible facts.d directory
+  file:
+    state: directory
+    dest: /etc/ansible/facts.d
+    owner: root
+    group: root
+    mode: 'u=rwx,go=rx'
+
+- name: install IntelliJ facts
+  template:
+    src: facts.j2
+    dest: /etc/ansible/facts.d/intellij.fact
+    owner: root
+    group: root
+    mode: 'u=rw,go=r'
+
+- name: re-read facts
+  setup: filter=ansible_local
