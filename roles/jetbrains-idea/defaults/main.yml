@@ -1,0 +1,29 @@
+---
+intellij_version: '2017.3.5'
+intellij_mirror: 'http://download.jetbrains.com/idea'
+intellij_edition: ultimate
+
+intellij_download_dir: "{{ x_ansible_download_dir | default(ansible_env.HOME + '/.ansible/tmp/downloads') }}"
+intellij_idea_download_timeout_seconds: 600
+
+intellij_install_dir: '/opt/jetbrains/idea'
+# intellij_default_jdk_home: '{{ ansible_local.java.general.home }}'
+intellij_default_maven_home: '{{ ansible_local.maven.general.home }}'
+
+intellij_plugin_manager_url: 'https://plugins.jetbrains.com/pluginManager/'
+
+users:
+  - username: '{{ ansible_env.USER }}'
+    intellij_jdks:
+      - name: 'java-1.8.0'
+        home: '/usr/lib/jvm/java-8-openjdk-amd64'
+    intellij_default_jdk: 'java-1.8.0'
+    intellij_disabled_plugins:
+      - Subversion
+    intellij_codestyles:
+      - name: GoogleStyle
+        url: 'https://raw.githubusercontent.com/google/styleguide/gh-pages/intellij-java-google-style.xml'
+    intellij_active_codestyle: GoogleStyle
+    intellij_plugins:
+      - CheckStyle-IDEA
+    intellij_license_key_path: '{{ ansible_env.HOME }}/.idea.key'
