@@ -1,0 +1,31 @@
+---
+
+- name: write plugin install script
+  template:
+    src: install-intellij-plugins.sh.j2
+    dest: '{{ intellij_plugin_install_script }}'
+    owner: root
+    group: root
+    mode: 'u=rwx,go='
+  changed_when: no
+
+- name: enable sudo tty workaround
+  copy:
+    content: "Defaults !requiretty\n"
+    dest: '{{ intellij_sudo_tty_workaround }}'
+    owner: root
+    group: root
+    mode: 'u=rw,go=r'
+  changed_when: no
+
+- name: install plugins
+  command: '{{ intellij_plugin_install_script }}'
+  register: plugins_result
+  changed_when: 'plugins_result.rc == 0'
+  failed_when: 'plugins_result.rc >= 2'
+
+- name: remove sudo tty workaround
+  file:
+    path: '{{ intellij_sudo_tty_workaround }}'
+    state: absent
+  changed_when: no
