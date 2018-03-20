@@ -7,7 +7,8 @@ intellij_download_dir: "{{ x_ansible_download_dir | default(ansible_env.HOME + '
 intellij_idea_download_timeout_seconds: 600
 
 intellij_install_dir: '/opt/jetbrains/idea'
-# intellij_default_jdk_home: '{{ ansible_local.java.general.home }}'
+intellij_java_agent_path: '{{ intellij_install_dir }}/bin/JavaAgent.jar'
+intellij_default_jdk_home: '{{ ansible_local.java.general.home }}'
 intellij_default_maven_home: '{{ ansible_local.maven.general.home }}'
 
 intellij_plugin_manager_url: 'https://plugins.jetbrains.com/pluginManager/'
@@ -26,4 +27,9 @@ users:
     intellij_active_codestyle: GoogleStyle
     intellij_plugins:
       - CheckStyle-IDEA
+      - Main Menu toggler
+      - Material Theme UI
+      - Path hide
+      - CodeGlance
+      - IDEA Restart
     intellij_license_key_path: '{{ ansible_env.HOME }}/.idea.key'
