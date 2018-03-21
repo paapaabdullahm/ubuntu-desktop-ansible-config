@@ -7,6 +7,7 @@
     - { role: essentials, become: true }
     - { role: oh-my-zsh, become: true }
     - { role: java-openjdk, become: true }
+    - { role: apache-maven, become: true }
     - { role: google-chrome, become: true }
     # - { role: wavebox, become: true }
 
