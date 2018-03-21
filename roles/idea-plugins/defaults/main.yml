@@ -12,8 +12,8 @@ users:
   - username: '{{ ansible_env.USER }}'
     intellij_plugins:
       - CheckStyle-IDEA
-      - Main Menu toggler
-      - Material Theme UI
-      - Path hide
-      - CodeGlance
-      - IDEA Restart
+      - com.bashorov.mainMenuToggler
+      - com.chrisrm.idea.MaterialThemeUI
+      - com.pyango.gmbh
+      - net.vektah.codeglance
+      - com.developerphil.adbidea
