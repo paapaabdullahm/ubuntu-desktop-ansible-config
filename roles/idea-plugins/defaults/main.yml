@@ -9,6 +9,6 @@ intellij_plugins_download_dir: "{{ x_ansible_download_dir | default(ansible_env.
 intellij_plugins_manager_url: 'https://plugins.jetbrains.com/pluginManager/'
 
 users:
-  - username: vagrant
+  - username: '{{ ansible_env.USER }}'
     intellij_plugins:
       - CheckStyle-IDEA
