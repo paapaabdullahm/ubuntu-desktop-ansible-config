@@ -25,11 +25,4 @@ users:
       - name: GoogleStyle
         url: 'https://raw.githubusercontent.com/google/styleguide/gh-pages/intellij-java-google-style.xml'
     intellij_active_codestyle: GoogleStyle
-    intellij_plugins:
-      - CheckStyle-IDEA
-      #- Main Menu toggler
-      #- Material Theme UI
-      #- Path hide
-      #- CodeGlance
-      #- IDEA Restart
     intellij_license_key_path: '{{ ansible_env.HOME }}/.idea.key'

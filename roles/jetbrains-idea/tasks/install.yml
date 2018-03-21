@@ -1,4 +1,5 @@
 ---
+
 - name: assert role vars
   assert:
     that:

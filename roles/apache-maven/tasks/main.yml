@@ -1,4 +1,5 @@
 ---
+
 - name: load version vars
   with_first_found:
     - '../vars/versions/{{ maven_version }}.yml'
@@ -27,7 +28,6 @@
     mode: 'u=rw,go=r'
 
 - name: create Maven installation directory
-  become: yes
   file:
     state: directory
     owner: root
@@ -36,7 +36,6 @@
     dest: '{{ maven_install_dir }}'
 
 - name: install unarchive module dependencies (dnf, zypper)
-  become: yes
   package:
     name: '{{ item }}'
     state: present
@@ -46,7 +45,6 @@
   when: ansible_pkg_mgr in ('dnf', 'zypper')
 
 - name: install Maven
-  become: yes
   unarchive:
     src: '{{ maven_download_dir }}/{{ maven_redis_filename }}'
     dest: '{{ maven_install_dir }}'
@@ -60,7 +58,6 @@
   when: maven_is_default_installation
 
 - name: create Ansible facts.d directory
-  become: yes
   file:
     state: directory
     dest: /etc/ansible/facts.d
@@ -69,7 +66,6 @@
     mode: 'u=rwx,go=rx'
 
 - name: install Maven facts
-  become: yes
   template:
     src: facts.j2
     dest: '/etc/ansible/facts.d/{{ maven_fact_group_name }}.fact'

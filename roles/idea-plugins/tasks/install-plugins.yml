@@ -1,11 +1,5 @@
 ---
 
-- name: install epel-release (yum)
-  yum:
-    name: epel-release
-    state: present
-  when: ansible_pkg_mgr == 'yum'
-
 - name: write plugin install script
   template:
     src: install-intellij-plugins.sh.j2
