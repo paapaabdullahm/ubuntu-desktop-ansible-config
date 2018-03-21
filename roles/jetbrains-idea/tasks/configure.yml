@@ -12,4 +12,4 @@
 
 - include: configure-code-style.yml
 
-- include: install-plugins.yml
+#- include: install-plugins.yml
