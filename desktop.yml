@@ -12,7 +12,7 @@
 
     # Utils
     - { role: jetbrains-idea, become: true }
-    ##### BELOW ROLES ARE YET TO BE INSTALLED ##################################
+    ##### BELOW ROLES ARE YET TO BE CREATED ##################################
     # - { role: sublime, become: true }
     # - { role: atom, become: true }
     # - { role: smart-git, become: true }
