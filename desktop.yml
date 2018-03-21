@@ -13,6 +13,7 @@
 
     # Utils
     - { role: jetbrains-idea, become: true }
+    - { role: idea-plugins, become: true }
     ##### BELOW ROLES ARE YET TO BE CREATED ##################################
     # - { role: sublime, become: true }
     # - { role: atom, become: true }
