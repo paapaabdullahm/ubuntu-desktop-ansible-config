@@ -21,19 +21,21 @@
     - Set launcher icon
 
 - name: Set Google Chrome preferences
-  copy:
+  template:
     src: master_preferences.json.j2
     dest: /opt/google/chrome/master_preferences
   register: google_chrome_pref_set
   when: google_chrome_install|succeeded
 
 - name: Copy Google Chrome bookmarks file
-  copy: src=./vault/bookmarks.html dest=/opt/google/chrome/bookmarks.html mode=0644
+  copy:
+    src: bookmarks.html
+    dest: /opt/google/chrome/bookmarks.html mode=0644
   when: google_chrome_pref_set|succeeded
- 
+
 - name: Create Google Chrome extensions directory
   file:
-    path: /opt/google/chrome/extensions/ 
+    path: /opt/google/chrome/extensions/
     state: directory
 
 - name: Create Google Chrome json file to install extensions
