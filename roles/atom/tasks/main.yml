@@ -7,5 +7,5 @@
   apt: name=atom state=present update_cache=yes
 
 - name: Setup Atom Packages
-  apm: name=sync-settings # All others packages are managed by sync-settings
+  apm: name=sync-settings # All other packages are managed by sync-settings
   become_user: "{{ ansible_env.USER }}"
