@@ -1,0 +1,5 @@
+---
+
+- name: Set launcher icon
+  become: false
+  raw: python launcher_add.py {{ intellij_desktop_filename }} 4
