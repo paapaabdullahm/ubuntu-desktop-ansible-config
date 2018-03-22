@@ -14,8 +14,8 @@
     # Utils
     - { role: jetbrains-idea, become: true }
     - { role: idea-plugins, become: true }
+    - { role: atom, become: true }
     ##### BELOW ROLES ARE YET TO BE CREATED ##################################
-    # - { role: atom, become: true }
     # - { role: sublime, become: true }
     # - { role: smart-git, become: true }
     # - { role: docker, become: true }
