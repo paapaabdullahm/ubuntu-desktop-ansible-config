@@ -18,8 +18,8 @@
     - { role: atom, become: true }
     - { role: sublime, become: true }
     - { role: smartgit, become: true }
+    - { role: docker, become: true }
     ##### BELOW ROLES ARE YET TO BE CREATED ##################################
-    # - { role: docker, become: true }
     # - { role: dia, become: true }
     # - { role: umbrello, become: true }
     # - { role: mini-kube, become: true }
