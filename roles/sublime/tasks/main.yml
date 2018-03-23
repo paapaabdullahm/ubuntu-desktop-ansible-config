@@ -15,7 +15,7 @@
     pkg: sublime-text
     state: latest
     update_cache: yes
-    cache_valid_time: {{ aptcachetime }}
+    cache_valid_time: "{{ aptcachetime }}"
   register: sublime_install
   notify:
     - Set Sublime Text 3 launcher icon
