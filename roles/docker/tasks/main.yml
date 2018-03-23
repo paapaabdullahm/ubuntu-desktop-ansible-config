@@ -44,6 +44,9 @@
     dest: /etc/default/docker
     regexp: '^DOCKER_OPTS="--dns'
     line: 'DOCKER_OPTS="--dns 8.8.8.8 --dns 8.8.4.4"'
+  register: docker_install
+  notify:
+    - Restart Docker service
 
 - name: Ensure Docker Compose is present
   get_url:
@@ -54,8 +57,3 @@
   file:
     path: /usr/local/bin/docker-compose
     mode: 0755
-
-- name: Restart Docker service
-  service:
-    name: docker
-    state: restarted
