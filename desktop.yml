@@ -10,7 +10,7 @@
     - { role: apache-maven, become: true }
     - { role: google-chrome, become: true }
     - { role: wavebox, become: true }
-    - { role: wavebox, become: true }
+    - { role: rambox, become: true }
 
     # Utils
     - { role: jetbrains-idea, become: true }
