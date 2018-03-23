@@ -1,6 +1,5 @@
 ---
 - name: create IntelliJ IDEA user config directory
-  #become: yes
   file:
     dest: '~{{ item.username }}/{{ intellij_user_dir }}/config'
     state: directory
@@ -10,7 +9,6 @@
   with_items: '{{ users }}'
 
 - name: configure disabled plugins
-  #become: yes
   template:
     src: disabled_plugins.txt.j2
     dest: '~{{ item.username }}/{{ intellij_user_dir }}/config/disabled_plugins.txt'
