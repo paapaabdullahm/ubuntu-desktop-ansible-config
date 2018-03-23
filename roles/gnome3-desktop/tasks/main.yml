@@ -8,7 +8,7 @@
     update_cache: yes
     cache_valid_time: "{{ aptcachetime }}"
   with_items:
-    - gnomeshell
+    - gnome-shell
     - ubuntu-gnome-desktop
   register: gnome3_install
   notify:
