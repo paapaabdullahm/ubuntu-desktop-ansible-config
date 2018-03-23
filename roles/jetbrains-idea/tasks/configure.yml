@@ -1,6 +1,6 @@
 ---
 
-- import_tasks: configure-license.yml
+# - import_tasks: configure-license.yml
 
 - import_tasks: configure-disabled-plugins.yml
 
