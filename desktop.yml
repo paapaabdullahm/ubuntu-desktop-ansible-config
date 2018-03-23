@@ -5,6 +5,7 @@
     - { role: git, become: true }
     - { role: locales, become: true }
     - { role: essentials, become: true }
+    - { role: gnome3-desktop, become: true }
     - { role: oh-my-zsh, become: true }
     - { role: java-openjdk, become: true }
     - { role: apache-maven, become: true }
