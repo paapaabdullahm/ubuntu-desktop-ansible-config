@@ -6,7 +6,7 @@
 - name: Ensure git is installed
   apt:
     name: "{{ item }}"
-    state: installed
+    state: present
   with_items: "{{ git_packages }}"
 
 - name: Ensure gitconfig file for users exists
