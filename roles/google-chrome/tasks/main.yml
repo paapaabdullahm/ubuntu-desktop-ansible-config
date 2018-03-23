@@ -25,13 +25,13 @@
     src: master_preferences.json.j2
     dest: /opt/google/chrome/master_preferences
   register: google_chrome_pref_set
-  when: google_chrome_install|succeeded
+  when: google_chrome_install is succeeded
 
 - name: Copy Google Chrome bookmarks file
   copy:
     src: bookmarks.html
     dest: /opt/google/chrome/bookmarks.html mode=0644
-  when: google_chrome_pref_set|succeeded
+  when: google_chrome_pref_set is succeeded
 
 - name: Create Google Chrome extensions directory
   file:
