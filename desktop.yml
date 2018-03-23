@@ -17,8 +17,8 @@
     - { role: idea-plugins, become: true }
     - { role: atom, become: true }
     - { role: sublime, become: true }
+    - { role: smartgit, become: true }
     ##### BELOW ROLES ARE YET TO BE CREATED ##################################
-    # - { role: smart-git, become: true }
     # - { role: docker, become: true }
     # - { role: dia, become: true }
     # - { role: umbrello, become: true }
