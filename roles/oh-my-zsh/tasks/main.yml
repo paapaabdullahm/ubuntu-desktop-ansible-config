@@ -45,33 +45,33 @@
   become: false
   raw: sh {{ ansible_env.HOME }}/fonts/install.sh
   register: install_fonts
-  when: clone_fonts|succeeded
+  when: clone_fonts is succeeded
 
 - name: Make fonts system-wide
   raw: cp {{ ansible_env.HOME }}/.local/share/fonts/* /usr/local/share/fonts/
   register: make_fonts_systemwide
-  when: install_fonts|succeeded
+  when: install_fonts is succeeded
 
 - name: Update system-wide font cache
   raw: fc-cache -fv
   register: fc_cache_update
-  when: make_fonts_systemwide|succeeded
+  when: make_fonts_systemwide is succeeded
 
 - name: Clean up fonts folder
   raw: rm -r {{ ansible_env.HOME }}/fonts
   register: cleanup_font
-  when: fc_cache_update|succeeded
+  when: fc_cache_update is succeeded
 
 - name: Disable system fonts and enable custom font
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ use-system-font false
   register: enable_custom_font
-  when: cleanup_font|succeeded 
+  when: cleanup_font is succeeded
 
 - name: Set custom font to 'Meslo LG S for Powerline Regular 14'
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ font 'Meslo LG S for Powerline Regular 14'
-  when: enable_custom_font|succeeded 
+  when: enable_custom_font is succeeded
 
 - name: Disable the use of system theme
   become: false
@@ -81,9 +81,9 @@
 - name: Set background colour to '#002b36'
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ background-color '#002b36'
-  when: disable_theme_colours|succeeded 
+  when: disable_theme_colours is succeeded
 
 - name: Set foreground colour to '#ffffff'
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ foreground-color '#ffffff'
-  when: disable_theme_colours|succeeded 
+  when: disable_theme_colours is succeeded
