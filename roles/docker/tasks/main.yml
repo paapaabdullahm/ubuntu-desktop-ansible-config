@@ -1,0 +1,61 @@
+---
+
+- name: Ensure Curl is present
+  apt:
+    name: curl
+    state: present
+
+- name: Ensure linux-image-extra-* packages are present
+  apt:
+    name: linux-image-extra-virtual
+    state: present
+
+- name: Add Docker’s official GPG key
+  apt_key:
+    keyserver: hkp://p80.pool.sks-keyservers.net:80
+    id: 58118E89F3A912897C070ADBF76221572C52609D
+
+- name: Add Docker stable repository and update apt cache
+  apt_repository:
+    repo: deb https://apt.dockerproject.org/repo ubuntu-xenial main
+    state: present
+    update_cache: yes
+    cache_valid_time: "{{ aptcachetime }}"
+
+- name: Remove old repo lxc-docker
+  apt:
+    name: lxc-docker
+    state: absent
+
+- name: Install latest version of Docker Engine
+  apt:
+    name: docker-engine
+    state: latest
+    force: yes
+
+- name: Allow {{ ansible_env.USER }} to use Docker as a non-root user
+  user:
+    name: "{{ ansible_env.USER }}"
+    groups: docker
+    append: yes
+
+- name: Specify a DNS server for use by Docker
+  lineinfile:
+    dest: /etc/default/docker
+    regexp: '^DOCKER_OPTS="--dns'
+    line: 'DOCKER_OPTS="--dns 8.8.8.8 --dns 8.8.4.4"'
+
+- name: Ensure Docker Compose is present
+  get_url:
+    url: https://github.com/docker/compose/releases/download/1.20.1/docker-compose-Linux-x86_64
+    dest: /usr/local/bin/docker-compose
+
+- name: Ensure Docker Compose permissions are set
+  file:
+    path: /usr/local/bin/docker-compose
+    mode: 0755
+
+- name: Restart Docker service
+  service:
+    name: docker
+    state: restarted
