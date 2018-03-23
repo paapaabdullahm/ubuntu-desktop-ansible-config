@@ -9,8 +9,7 @@ bus = dbus.SystemBus()
 
 def get_user_account_path(user):
     account_path = ""
-    accounts = bus.get_object('org.freedesktop.Accounts',
-                              '/org/freedesktop/Accounts')
+    accounts = bus.get_object('org.freedesktop.Accounts', '/org/freedesktop/Accounts')
     accounts_iface = dbus.Interface(accounts, dbus_interface='org.freedesktop.Accounts')
 
     if type(user) == str:
@@ -22,37 +21,33 @@ def get_user_account_path(user):
 
 
 def get_user_xsession(account_path):
-    user = bus.get_object('org.freedesktop.Accounts',
-                          account_path)
-    return user.Get('org.freedesktop.Accounts.User', 'XSession',
-                    dbus_interface='org.freedesktop.DBus.Properties')
+    user = bus.get_object('org.freedesktop.Accounts', account_path)
+    return user.Get('org.freedesktop.Accounts.User', 'XSession', dbus_interface='org.freedesktop.DBus.Properties')
 
 
 def set_user_xsession(account_path, session):
-    user = bus.get_object('org.freedesktop.Accounts',
-                          account_path)
-    user.SetXSession(session,
-                     dbus_interface='org.freedesktop.Accounts.User')
+    user = bus.get_object('org.freedesktop.Accounts', account_path)
+    user.SetXSession(session, dbus_interface='org.freedesktop.Accounts.User')
 
 
-def handle_get(args):
-    if args.user_name:
-        user = args.user_name
+def handle_get(args_a):
+    if args_a.user_name:
+        user = args_a.user_name
     else:
-        user = args.user_id
+        user = args_a.user_id
 
     account_path = get_user_account_path(user)
-    get_user_xsession(account_path)
+    print(get_user_xsession(account_path))
 
 
-def handle_set(args):
-    if args.user_name:
-        user = args.user_name
+def handle_set(args_b):
+    if args_b.user_name:
+        user = args_b.user_name
     else:
-        user = args.user_id
+        user = args_b.user_id
 
     account_path = get_user_account_path(user)
-    set_user_xsession(account_path, args.session)
+    set_user_xsession(account_path, args_b.session)
 
 
 if __name__ == "__main__":
