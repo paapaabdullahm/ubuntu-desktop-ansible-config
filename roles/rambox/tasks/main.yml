@@ -8,4 +8,4 @@
 - name: Set Rambox launcher icon
   become: false
   raw: python launcher_add.py rambox.desktop 3
-  when: rambox_install is succeeded
+  # when: rambox_install is succeeded
