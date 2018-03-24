@@ -11,6 +11,9 @@
 - name: Enable all repositories in sources.list
   replace: dest=/etc/apt/sources.list regexp='^#\s?deb(.+)http://(.+)/ubuntu(.+)$' replace='deb\1http://\2/ubuntu\3' backup=yes
 
+- name: Configure GNOME 3 PPA
+  apt_repository: repo="ppa:gnome3-team/gnome3" state=present
+
 - name: Ensure that Aptitude repositories are up to date
   apt: update_cache=yes cache_valid_time={{ aptcachetime }}
 
