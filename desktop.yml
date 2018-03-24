@@ -15,8 +15,8 @@
     - { role: sublime, become: true }
     - { role: smartgit, become: true }
     - { role: docker, become: true }
-    - { role: wavebox, become: true }
     - { role: rambox, become: true }
+    - { role: wavebox, become: true }
 
     ##### BELOW ROLES ARE YET TO BE CREATED ##################################
     # - { role: dia, become: true }
