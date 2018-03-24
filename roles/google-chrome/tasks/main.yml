@@ -33,11 +33,17 @@
   register: google_chrome_pref_set
   when: google_chrome_install is succeeded
 
-- name: Copy Google Chrome bookmarks file
+- name: Ensure bookmarks.html exists
+  stat:
+    path: "../files/bookmarks.html"
+  register: bookmarks
+
+- name: Copy Google Chrome bookmarks file if exists
   copy:
     src: bookmarks.html
-    dest: /opt/google/chrome/bookmarks.html mode=0644
-  when: google_chrome_pref_set is succeeded
+    dest: /opt/google/chrome/bookmarks.html
+    mode: 0644
+  when: bookmarks.stat.exists
 
 - name: Create Google Chrome extensions directory
   file:
