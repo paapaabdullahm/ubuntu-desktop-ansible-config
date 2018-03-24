@@ -4,5 +4,8 @@
   apt:
     deb: https://github.com/saenzramiro/rambox/releases/download/0.5.16/Rambox_0.5.16-x64.deb
   register: rambox_install
-  notify:
-    - Set Rambox launcher icon
+
+- name: Set Rambox launcher icon
+  become: false
+  raw: python launcher_add.py rambox.desktop
+  when: rambox_install is succeeded
