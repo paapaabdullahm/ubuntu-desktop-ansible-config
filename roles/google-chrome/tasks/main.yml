@@ -68,6 +68,8 @@
       id: cfhdojbkjhnklbpkdaibdccddilifddb
     - name: Augury
       id: elgalmkoelokbchhkhacckoklkejnhcd
+    - name: builtwith-technology-prof
+      id: dapjbgnjinbpoindlpdmhochffioedbn
     - name: Checker Plus for Gmail™
       id: oeopbcgkkoapgobdbedcemjljbihmemj
     - name: Color Picker
@@ -76,35 +78,43 @@
       id: ofkcpbjmhcdipbhcdfechmckpaofdjlf
     - name: ColorPick Eyedropper
       id: ohcpnigalekghcmgcdcenkpelffpdolg
+    - name: cookies.txt
+      id: njabckikapfpffapmjgojcnbfjonfjfg
+    - name: Cookie Inspector
+      id: jgbbilmfbammlbbhmmgaagdkbkepnijn
+    - name: EverSync
+      id: iohcojnlgnfbmjfjfkbhahhmppcggdog
+    - name: github-submodule-links
+      id: ncoknneddcolmgfnmcbemhhaghjdlkkb
     - name: Grepsr - Web Scraping Tool
       id: hjdijkhlfpeafghibmiabeofkiicdnjm
+    - name: isometric-contributions
+      id: mjoedlfflcchnleknnceiplgaeoegien
+    - name: jsonview
+      id: chklaanhfefbnpoihckbnefhakgolnmc
+    - name: kimono
+      id: deoaddaobnieaecelinfdllcgdehimih
+    - name: LinkedIn Extension
+      id: meajfmicibjppdgbjfkpdikfjcflabpk
     - name: Mobile/Responsive Web Design Tester
       id: elmekokodcohlommfikpmojheggnbelo
+    - name: ModHeader
+      id: idgpnmonknjnojddfkpgkljpfnnfcklj
+    - name: postman
+      id: fhbjgbiflinjbdggehcddcbncdddomop
     - name: Ripple Emulator (Beta)
       id: geelfhphabnejjhdalkjhgipohgpdnoc
+    - name: stylish
+      id: fjnbnpbmkenffdnngjfgmeleoegfcffe
     - name: TCP Socket debugger
       id: fenhpkaocajfmpchcojgniehkamhkafp
     - name: Video DownloadHelper
       id: lmjnegcaeklhafolokijcfjliaokphfk
-    - name: XDM Helper
-      id: fhlkncjkeinpblgldbehianfehcablpf
-    - name: wave-evaluation-tool
+    - name: WAVE Evaluation Tool
       id: jbbplnpkjmmeebjpijfedlgcdilocofh
-    - name: jsonview
-      id: chklaanhfefbnpoihckbnefhakgolnmc
-    - name: ModHeader
-      id: idgpnmonknjnojddfkpgkljpfnnfcklj
-    - name: Cookie Inspector
-      id: jgbbilmfbammlbbhmmgaagdkbkepnijn
-    - name: stylish
-      id: fjnbnpbmkenffdnngjfgmeleoegfcffe
-    - name: builtwith-technology-prof
-      id: dapjbgnjinbpoindlpdmhochffioedbn
-    - name: kimono
-      id: deoaddaobnieaecelinfdllcgdehimih
-    - name: isometric-contributions
-      id: mjoedlfflcchnleknnceiplgaeoegien
-    - name: github-submodule-links
-      id: ncoknneddcolmgfnmcbemhhaghjdlkkb
-    - name: postman
-      id: fhbjgbiflinjbdggehcddcbncdddomop
+    - name: XDM Browser Monitor
+      id: bgpkelneombgembocnickiddlbebmica
+    - name: YouTube Downloader
+      id: pncidppbibhnmkmhmeoiheclffhpaeac
+    - name: Zoom Scheduler
+      id: kgjfgplpablkjnlkjmjdecgdpfankdle
