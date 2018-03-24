@@ -95,5 +95,5 @@
 
 - sysctl:
     name: vm.swappiness
-    value: 10
+    value: 5
     state: present
