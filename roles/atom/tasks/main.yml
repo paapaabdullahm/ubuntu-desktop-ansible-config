@@ -1,11 +1,18 @@
 ---
 
 - name: Add Atom repository (Webupd8team)
-  apt_repository: repo="ppa:webupd8team/atom" state=present
+  apt_repository:
+    repo: "ppa:webupd8team/atom"
+    state: present
 
 - name: Install Atom text editor
-  apt: name=atom state=present update_cache=yes
+  apt:
+    name: atom
+    state: present
+    update_cache: yes
+    cache_valid_time: "{{ aptcachetime }}"
 
 - name: Setup Atom Packages
-  apm: name=sync-settings # All other packages are managed by sync-settings
+  apm:
+    name: sync-settings # All other packages are managed by sync-settings
   become_user: "{{ ansible_env.USER }}"
