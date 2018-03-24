@@ -107,8 +107,12 @@
     owner: root
     group: root
     mode: 'u=rw,go=r'
-  notify:
-    - Set IntelliJ IDEA launcher icon
+  register: intellij_idea_install
+
+- name: Set IntelliJ IDEA launcher icon
+  become: false
+  raw: python launcher_add.py {{ intellij_desktop_filename }}
+  when: intellij_idea_install is succeeded
 
 - name: install Ansible facts.d directory
   file:
