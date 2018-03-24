@@ -10,15 +10,21 @@
   apt_repository:
     repo: 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'
     state: present
-  when:
-    - ansible_architecture == 'x86_64'
+  when: ansible_architecture == 'x86_64'
 
 - name: Install Google Chrome
   apt: pkg=google-chrome-stable state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
   register: google_chrome_install
-  notify:
-    - Set default browser
-    - Set launcher icon
+
+- name: Set Google Chrome launcher icon
+  become: false
+  raw: python launcher_add.py google-chrome.desktop
+  when: google_chrome_install is succeeded
+
+- name: Set Google Chrome as default browser
+  become: false
+  raw: xdg-settings set default-web-browser google-chrome.desktop
+  when: google_chrome_install is succeeded
 
 - name: Set Google Chrome preferences
   template:
