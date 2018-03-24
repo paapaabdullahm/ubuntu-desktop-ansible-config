@@ -35,7 +35,7 @@
 
 - name: Ensure bookmarks.html exists
   stat:
-    path: "../files/bookmarks.html"
+    path: "{{ playbook_dir }}/roles/google-chrome/files/bookmarks.html"
   register: bookmarks
 
 - name: Copy Google Chrome bookmarks file if exists
