@@ -92,3 +92,6 @@
 
 - name: Upgrade installed packages
   apt: upgrade=yes
+
+- name: Change Swappiness level to 10
+  raw: sysctl vm.swappiness=10
