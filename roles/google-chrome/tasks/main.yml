@@ -18,7 +18,7 @@
 
 - name: Set Google Chrome launcher icon
   become: false
-  raw: python launcher_add.py google-chrome.desktop
+  raw: python launcher_add.py google-chrome.desktop 3
   when: google_chrome_install is succeeded
 
 - name: Set Google Chrome as default browser
