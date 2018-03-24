@@ -38,6 +38,14 @@
     path: "{{ playbook_dir }}/roles/google-chrome/files/bookmarks.html"
   register: bookmarks
 
+- debug:
+    msg: "bookmarks.html is not defined (file doesn't exist)"
+  when: bookmarks.stat.exists is not defined
+
+- debug:
+    msg: "bookmarks.html is defined (file exist)"
+  when: bookmarks.stat.exists is defined and bookmarks.stat.exists
+
 - name: Copy Google Chrome bookmarks file if exists
   copy:
     src: bookmarks.html
