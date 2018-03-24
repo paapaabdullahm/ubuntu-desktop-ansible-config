@@ -18,5 +18,5 @@
 
 - name: Set Wavebox launcher icon
   become: false
-  raw: python launcher_add.py wavebox.desktop
+  raw: python launcher_add.py wavebox.desktop 3
   when: wavebox_install is succeeded
