@@ -16,7 +16,7 @@
 - name: Set Atom launcher icon
   become: false
   raw: python launcher_add.py atom.desktop 3
-  when: atom_install is succeeded
+  # when: atom_install is succeeded
 
 - name: Setup Atom Packages
   apm:
