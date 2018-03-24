@@ -15,5 +15,8 @@
 - name: Install Wavebox
   apt: pkg=wavebox state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
   register: wavebox_install
-  notify:
-    - Set Wavebox launcher icon
+
+- name: Set Wavebox launcher icon
+  become: false
+  raw: python launcher_add.py wavebox.desktop
+  when: wavebox_install is succeeded
