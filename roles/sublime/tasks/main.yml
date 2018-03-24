@@ -21,7 +21,7 @@
 - name: Set Sublime Text 3 launcher icon
   become: false
   raw: python launcher_add.py sublime_text.desktop 3
-  when: sublime_install is succeeded
+  # when: sublime_install is succeeded
 
 - name: Prepare sublime directories (1/2)
   file:
