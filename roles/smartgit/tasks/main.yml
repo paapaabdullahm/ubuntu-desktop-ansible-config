@@ -4,5 +4,8 @@
   apt:
     deb: https://www.syntevo.com/downloads/smartgit/smartgit-17_1_5.deb
   register: smartgit_install
-  notify:
-    - Set SmartGit launcher icon
+
+- name: Set SmartGit launcher icon
+  become: false
+  raw: python launcher_add.py syntevo-smartgit.desktop
+  when: smartgit_install is succeeded
