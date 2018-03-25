@@ -1,4 +1,28 @@
 ---
 
-virtualbox:
-  version: "5.2"
+vbox_version: "5.2.8"
+vbox_build: "121009"
+
+vbox_pkg_version:
+vbox_pkg_gpg_key: "98AB5139"
+vbox_pkg_gpg_url: "https://www.virtualbox.org/download/oracle_vbox.asc"
+vbox_pkg_repo_url: "https://download.virtualbox.org/virtualbox/debian"
+
+vbox_extpack_base: "http://download.virtualbox.org/virtualbox/{{ vbox_version }}"
+vbox_extpack_name: "Oracle_VM_VirtualBox_Extension_Pack"
+vbox_extpack_param: "{{ vbox_extpack_name }}-{{ vbox_version }}-{{ vbox_build }}"
+vbox_extpack_url: "{{ vbox_extpack_base }}/{{ vbox_extpack_param }}.vbox-extpack"
+vbox_extpack_sha256: "355ea5fe047f751534720c65398b44290d53f389e0f5f66818f3f36746631d26"
+vbox_extpack_dest_path: "/tmp/{{ vbox_extpack_param }}.vbox-extpack"
+
+# Download the extension pack and extract the file ExtPack-license.txt
+# tar xf Oracle_VM_VirtualBox_Extension_Pack-5.2.8-121009.vbox-extpack
+# openssl sha256 ExtPack-license.txt
+vbox_extpack_license_sum: "56be48f923303c8cababb0bb4c478284b688ed23f16d775d729b89a2e8e5f9eb"
+
+vbox_post_install:
+  - /sbin/rcvboxdrv setup
+  - VBoxManage extpack install \
+    --replace {{ vbox_extpack_dest_path }} \
+    --accept-license={{ vbox_extpack_license_sum }}
+
