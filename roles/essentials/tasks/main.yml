@@ -30,6 +30,7 @@
     - curl
     - dbus
     - diffutils
+    - dkms
     - dos2unix
     - fdupes
     - findutils
@@ -48,6 +49,8 @@
     - kdenlive
     - less
     - lftp
+    - libsdl-ttf2.0-0
+    - libsdl1.2debian
     - make
     - meld
     - nano
