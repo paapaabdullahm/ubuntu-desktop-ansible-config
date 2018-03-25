@@ -1,0 +1,6 @@
+---
+
+- name: Restart Virtualbox
+  service:
+    name: virtualbox
+    state: restarted
