@@ -23,7 +23,7 @@ vbox_extpack_license_sum: "56be48f923303c8cababb0bb4c478284b688ed23f16d775d729b8
 
 vbox_post_install:
   - /sbin/rcvboxdrv setup
-  - VBoxManage extpack install \
-    --replace {{ vbox_extpack_dest_path }} \
+  - VBoxManage extpack install
+    --replace {{ vbox_extpack_dest_path }}
     --accept-license={{ vbox_extpack_license_sum }}
 
