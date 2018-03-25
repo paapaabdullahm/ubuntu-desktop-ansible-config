@@ -7,7 +7,8 @@
 
 - name: Add Virtualbox apt repository
   apt_repository:
-    repo: 'deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib'
+    id: '7B0FAB3A13B907435925D9C954422A4B98AB5139'
+    repo: 'deb https://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib'
     state: present
 
 - name: Install VirtualBox {{ virtualbox.version }}
