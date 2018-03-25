@@ -7,13 +7,15 @@
 
 - name: Add Virtualbox apt repository
   apt_repository:
-    repo: 'deb https://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib'
+    repo: 'deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib'
     state: present
 
 - name: Install VirtualBox {{ virtualbox.version }}
   apt:
     pkg: virtualbox-{{ virtualbox.version }}
     state: present
+    update_cache: yes
+    cache_valid_time: "{{ aptcachetime }}"
   register: vbox_install
 
 - name: Set Virtualbox launcher icon
