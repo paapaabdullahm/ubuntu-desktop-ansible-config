@@ -3,7 +3,7 @@
 vbox_version: "5.2.8"
 vbox_build: "121009"
 
-vbox_pkg_gpg_key: "98AB5139"
+vbox_pkg_gpg_key: "2980AECF"
 vbox_pkg_gpg_url: "https://www.virtualbox.org/download/oracle_vbox_2016.asc"
 vbox_pkg_repo_url: "https://download.virtualbox.org/virtualbox/debian"
 vbox_pkg_apt_version: "{{ vbox_version.split('.')[0] }}.{{ vbox_version.split('.')[1] }}"
