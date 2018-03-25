@@ -35,7 +35,7 @@
   notify:
     - Restart Virtualbox
 
-- name: Do some cleanup
+- name: Cleanup /tmp/* directory
   file:
-    name: "{{ tempdir.stdout }}"
+    name: "/tmp/*"
     state: absent
