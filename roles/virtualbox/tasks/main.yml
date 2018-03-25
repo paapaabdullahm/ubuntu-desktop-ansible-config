@@ -2,12 +2,12 @@
 
 - name: Import Virtualbox GPG apt signing key
   apt_key:
+    id: '7B0FAB3A13B907435925D9C954422A4B98AB5139'
     url: https://www.virtualbox.org/download/oracle_vbox.asc
     state: present
 
 - name: Add Virtualbox apt repository
   apt_repository:
-    id: '7B0FAB3A13B907435925D9C954422A4B98AB5139'
     repo: 'deb https://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib'
     state: present
 
