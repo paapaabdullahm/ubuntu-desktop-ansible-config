@@ -2,8 +2,6 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gio
 import sys
-# from gi.repository import Gtk
-# import dbus
 
 
 def gsettings_get(schema, path, key):
