@@ -17,6 +17,7 @@
     - { role: docker, become: true }
     - { role: rambox, become: true }
     - { role: wavebox, become: true }
+    - { role: virtualbox, become: true }
 
     ##### BELOW ROLES ARE YET TO BE CREATED ##################################
     # - { role: dia, become: true }
@@ -24,7 +25,6 @@
     # - { role: mini-kube, become: true }
     # - { role: helm, become: true }
     # - { role: vagrant, become: true }
-    # - { role: virtualbox, become: true }
     # - { role: wireshark, become: true }
 
     # - { role: spotify, become: true }
