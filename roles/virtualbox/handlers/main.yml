@@ -1,7 +1,5 @@
 ---
 
-- name: Restart Virtualbox
+- name: Let systemd reread configs
   systemd:
-    name: virtualbox
     daemon_reload: yes
-    state: restarted
