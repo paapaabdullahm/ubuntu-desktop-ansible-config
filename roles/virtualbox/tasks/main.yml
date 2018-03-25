@@ -14,8 +14,6 @@
   apt:
     pkg: virtualbox-{{ virtualbox.version }}
     state: present
-    update_cache: yes
-    cache_valid_time: "{{ aptcachetime }}"
   register: vbox_install
 
 - name: Set Virtualbox launcher icon
