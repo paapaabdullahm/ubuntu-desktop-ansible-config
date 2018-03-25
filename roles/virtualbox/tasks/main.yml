@@ -13,8 +13,7 @@
 
 - name: Install VirtualBox {{ vbox_version }}
   apt:
-    # pkg: virtualbox-{{ vbox_pkg_apt_version }}
-    pkg: virtualbox-{{ vbox_version }}
+    pkg: virtualbox-{{ vbox_pkg_apt_version }}
     state: present
   register: vbox_install
 
