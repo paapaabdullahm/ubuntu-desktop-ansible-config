@@ -31,7 +31,7 @@
 
 - name: Configure Virtualbox post-install drivers
   command: "{{ item }}"
-  with_items: "{{ virtualbox_post_install }}"
+  with_items: "{{ vbox_post_install }}"
   notify:
     - Restart Virtualbox
 
