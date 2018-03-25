@@ -34,8 +34,3 @@
   with_items: "{{ vbox_post_install }}"
   notify:
     - Restart Virtualbox
-
-- name: Cleanup /tmp/* directory
-  file:
-    name: "/tmp/*"
-    state: absent
