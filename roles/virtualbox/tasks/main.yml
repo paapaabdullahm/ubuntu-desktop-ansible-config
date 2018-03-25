@@ -33,4 +33,4 @@
   command: "{{ item }}"
   with_items: "{{ vbox_post_install }}"
   notify:
-    - Restart Virtualbox
+    - Let systemd reread configs
