@@ -2,24 +2,33 @@
 
 - name: Import Virtualbox GPG apt signing key
   apt_key:
-    id: '7B0FAB3A13B907435925D9C954422A4B98AB5139'
-    url: https://www.virtualbox.org/download/oracle_vbox.asc
+    id: "{{ vbox_pkg_gpg_key }}"
+    url: "{{ vbox_pkg_gpg_url }}"
     state: present
 
 - name: Add Virtualbox apt repository
   apt_repository:
-    repo: 'deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib'
+    repo: 'deb {{ vbox_pkg_repo_url }} {{ ansible_distribution_release }} contrib'
     state: present
 
-- name: Install VirtualBox {{ virtualbox.version }}
+- name: Install VirtualBox {{ vbox_version }}
   apt:
-    pkg: virtualbox-{{ virtualbox.version }}
+    pkg: virtualbox-{{ vbox_version }}
     state: present
-    update_cache: yes
-    cache_valid_time: "{{ aptcachetime }}"
   register: vbox_install
 
 - name: Set Virtualbox launcher icon
   become: false
   raw: python launcher_add.py virtualbox.desktop 3
   # when: vbox_install is succeeded
+
+- name: Download Virtualbox Extension pack
+  get_url:
+    url: "{{ vbox_extpack_url }}"
+    dest: "{{ vbox_extpack_dest_path }}"
+    checksum: "sha256:{{ vbox_extpack_sha256 }}"
+    mode: 0664
+
+- name: Configure Virtualbox post-install drivers
+  command: "{{ item }}"
+  with_items: "{{ virtualbox_post_install }}"
