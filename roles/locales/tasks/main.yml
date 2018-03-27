@@ -49,10 +49,10 @@
     owner: root
     group: root
     mode: 'u=rw,go=r'
-    register: locale_file_copy
-    when:
-      - locale_src_file.stat.exists is defined and locale_src_file.stat.exists
-      - not locale_dest_file.stat.exists
+  register: locale_file_copy
+  when:
+    - locale_src_file.stat.exists is defined and locale_src_file.stat.exists
+    - not locale_dest_file.stat.exists
 
 - name: Compile {{ locale }} into {{ format }} format
   command: localedef -f {{ format }} -i {{ locale }} {{ locale_compiled }}
