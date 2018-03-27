@@ -56,6 +56,7 @@
     - nano
     - nfs-common
     - nmap
+    - ntp
     - openconnect
     - openssl
     - p7zip
@@ -68,6 +69,7 @@
     - ranger
     - rar
     - rsync
+    - samba
     - sed
     - shutter
     - smbclient
