@@ -11,9 +11,6 @@ git_global_config_push_default: "current"
 
 aptcachetime: 3600
 
-locale: "en_GB.UTF-8"
-timezone: "Africa/Accra"
-
 desktop_autostart:
   add:
     - { name: Tilda , exec: /usr/bin/tilda }
