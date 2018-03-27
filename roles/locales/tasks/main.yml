@@ -29,7 +29,7 @@
     msg: "{{ locale }} is defined (file exist)"
   when: locale_src_file.stat.exists is defined and locale_src_file.stat.exists
 
-- name: Ensure {{ locale }} file does not exist in destination
+- name: Ensure {{ locale }} file does not exist on destination
   stat:
     path: "{{ locales_dir }}/{{ locale }}"
   register: locale_dest_file
