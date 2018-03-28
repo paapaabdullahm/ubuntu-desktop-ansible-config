@@ -14,6 +14,7 @@ vbox_extpack_param: "{{ vbox_extpack_name }}-{{ vbox_version }}-{{ vbox_build }}
 vbox_extpack_url: "{{ vbox_extpack_base }}/{{ vbox_extpack_param }}.vbox-extpack"
 vbox_extpack_sha256: "355ea5fe047f751534720c65398b44290d53f389e0f5f66818f3f36746631d26"
 vbox_extpack_dest_path: "/tmp/{{ vbox_extpack_param }}.vbox-extpack"
+vbox_extpack_download_timeout_seconds: 600
 
 # Download the extension pack and extract the file ExtPack-license.txt:
 # tar xf Oracle_VM_VirtualBox_Extension_Pack-5.2.8-121009.vbox-extpack
