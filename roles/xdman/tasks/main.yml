@@ -4,6 +4,8 @@
   file:
     dest: "{{ ansible_env.HOME }}/.xdm/archives"
     state: directory
+    owner: "{{ ansible_env.USER }}"
+    group: "{{ ansible_env.USER }}"
 
 - name: Download XDM Tarball
   get_url:
@@ -14,7 +16,7 @@
 - name: Unarchive XDM Source
   unarchive:
     src: "{{ ansible_env.HOME }}/.xdm/archives/{{ xdm_version }}.tar.xz"
-    dest: "{{ ansible_env.HOME }}/.xdm/"
+    dest: "{{ ansible_env.HOME }}/.xdm/{{ xdm_version }}/"
     remote_src: yes
   register: xdm_unarchive
   when: xdm_archive is changed
