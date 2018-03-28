@@ -1,25 +1,27 @@
 - name: Ubuntu Desktop Configuration
   hosts: localhost
   roles:
+    ### Common
     - { role: locales, become: true }
     - { role: essentials, become: true }
-    - { role: git, become: true }
-    - { role: oh-my-zsh, become: true }
-    - { role: java-openjdk, become: true }
+
+    ### Utils
     - { role: apache-maven, become: true }
+    - { role: atom, become: true }
+    - { role: docker, become: true }
+    - { role: git, become: true }
     - { role: google-chrome, become: true }
     # - { role: gnome3-desktop, become: true }
-    - { role: jetbrains-idea, become: true }
     - { role: idea-plugins, become: true }
-    - { role: atom, become: true }
+    - { role: jetbrains-idea, become: true }
+    - { role: java-openjdk, become: true }
+    - { role: oh-my-zsh, become: true }
     - { role: sublime, become: true }
     - { role: smartgit, become: true }
-    - { role: docker, become: true }
     - { role: rambox, become: true }
     - { role: wavebox, become: true }
     - { role: virtualbox, become: true }
 
-    ##### BELOW ROLES ARE YET TO BE CREATED ##################################
     # - { role: dia, become: true }
     # - { role: umbrello, become: true }
     # - { role: mini-kube, become: true }
