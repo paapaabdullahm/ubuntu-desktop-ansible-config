@@ -2,14 +2,14 @@
 
 - name: Create XDM download directory
   file:
-    dest: "{{ ansible_env.HOME }}/.xdm/archives"
+    dest: "{{ ansible_env.HOME }}/.xdman/archives"
     state: directory
     owner: "{{ ansible_env.USER }}"
     group: "{{ ansible_env.USER }}"
 
 - name: Create XDM staging directory
   file:
-    dest: "{{ ansible_env.HOME }}/.xdm/{{ xdm_version }}"
+    dest: "{{ ansible_env.HOME }}/.xdman/{{ xdm_version }}"
     state: directory
     owner: "{{ ansible_env.USER }}"
     group: "{{ ansible_env.USER }}"
@@ -17,13 +17,13 @@
 - name: Download XDM Tarball
   get_url:
     url: "{{ xdm_base_url }}/{{ xdm_version }}.tar.xz/download"
-    dest: "{{ ansible_env.HOME }}/.xdm/archives/{{ xdm_version }}.tar.xz"
+    dest: "{{ ansible_env.HOME }}/.xdman/archives/{{ xdm_version }}.tar.xz"
   register: xdm_archive
 
 - name: Unarchive XDM Source
   unarchive:
-    src: "{{ ansible_env.HOME }}/.xdm/archives/{{ xdm_version }}.tar.xz"
-    dest: "{{ ansible_env.HOME }}/.xdm/{{ xdm_version }}/"
+    src: "{{ ansible_env.HOME }}/.xdman/archives/{{ xdm_version }}.tar.xz"
+    dest: "{{ ansible_env.HOME }}/.xdman/{{ xdm_version }}/"
     remote_src: yes
   register: xdm_unarchive
   when: xdm_archive is changed
@@ -31,6 +31,6 @@
 - name: Install XDM
   # shell: install.sh
   # args:
-  #   chdir: "{{ ansible_env.HOME }}/.xdm/{{ xdm_version }}/"
-  raw: cd "{{ ansible_env.HOME }}/.xdm/{{ xdm_version }}" && ./install.sh
+  #   chdir: "{{ ansible_env.HOME }}/.xdman/{{ xdm_version }}/"
+  raw: cd "{{ ansible_env.HOME }}/.xdman/{{ xdm_version }}" && ./install.sh
   when: xdm_unarchive is succeeded
