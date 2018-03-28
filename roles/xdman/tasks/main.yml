@@ -1,5 +1,10 @@
 ---
 
+- name: Create XDM download directory
+  file:
+    dest: "{{ ansible_env.HOME }}/.xdm/archives"
+    state: directory
+
 - name: Download XDM Tarball
   get_url:
     url: "{{ xdm_base_url }}/{{ xdm_version }}.tar.xz/download"
