@@ -27,6 +27,7 @@
     url: "{{ vbox_extpack_url }}"
     dest: "{{ vbox_extpack_dest_path }}"
     checksum: "sha256:{{ vbox_extpack_sha256 }}"
+    timeout: "{{ vbox_extpack_download_timeout_seconds }}"
     mode: 0664
 
 - name: Configure Virtualbox post-install drivers
