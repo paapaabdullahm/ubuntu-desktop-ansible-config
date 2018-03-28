@@ -9,7 +9,7 @@
 
 - name: Create XDM staging directory
   file:
-    dest: "{{ ansible_env.HOME }}/.xdm/{{ xdm_version }}/"
+    dest: "{{ ansible_env.HOME }}/.xdm/{{ xdm_version }}"
     state: directory
     owner: "{{ ansible_env.USER }}"
     group: "{{ ansible_env.USER }}"
