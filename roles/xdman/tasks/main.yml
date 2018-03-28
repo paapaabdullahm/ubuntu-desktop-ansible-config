@@ -29,7 +29,8 @@
   when: xdm_archive is changed
 
 - name: Install XDM
-  shell: install.sh
-  args:
-    chdir: "{{ ansible_env.HOME }}/.xdm/{{ xdm_version }}/"
+  # shell: install.sh
+  # args:
+  #   chdir: "{{ ansible_env.HOME }}/.xdm/{{ xdm_version }}/"
+  command: cd "{{ ansible_env.HOME }}/.xdm/{{ xdm_version }}" && ./install.sh
   when: xdm_unarchive is succeeded
