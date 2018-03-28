@@ -4,7 +4,7 @@ intellij_mirror: 'http://download.jetbrains.com/idea'
 intellij_edition: ultimate
 
 intellij_download_dir: "{{ x_ansible_download_dir | default(ansible_env.HOME + '/.ansible/tmp/downloads') }}"
-intellij_idea_download_timeout_seconds: 600
+intellij_idea_download_timeout_seconds: 1200
 
 intellij_install_dir: '/opt/jetbrains/idea'
 intellij_java_agent_path: '{{ intellij_install_dir }}/bin/JavaAgent.jar'
