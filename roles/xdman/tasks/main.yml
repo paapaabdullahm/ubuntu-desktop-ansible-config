@@ -1,0 +1,21 @@
+---
+
+- name: Download XDM Tarball
+  get_url:
+    url: "{{ xdm_base_url }}/{{ xdm_version }}.tar.xz/download"
+    dest: "{{ ansible_env.HOME }}/.xdm/archives/{{ xdm_version }}.tar.xz"
+  register: xdm_archive
+
+- name: Unarchive XDM Source
+  unarchive:
+    src: "{{ ansible_env.HOME }}/.xdm/archives/{{ xdm_version }}.tar.xz"
+    dest: "{{ ansible_env.HOME }}/.xdm/"
+    remote_src: yes
+  register: xdm_unarchive
+  when: xdm_archive is changed
+
+- name: Install XDM
+  shell: install.sh
+  args:
+    chdir: "{{ ansible_env.HOME }}/.xdm/{{ xdm_version }}/"
+  when: xdm_unarchive is succeeded
