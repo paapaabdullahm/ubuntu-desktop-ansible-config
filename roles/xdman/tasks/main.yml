@@ -7,6 +7,13 @@
     owner: "{{ ansible_env.USER }}"
     group: "{{ ansible_env.USER }}"
 
+- name: Create XDM staging directory
+  file:
+    dest: "{{ ansible_env.HOME }}/.xdm/{{ xdm_version }}/"
+    state: directory
+    owner: "{{ ansible_env.USER }}"
+    group: "{{ ansible_env.USER }}"
+
 - name: Download XDM Tarball
   get_url:
     url: "{{ xdm_base_url }}/{{ xdm_version }}.tar.xz/download"
