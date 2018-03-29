@@ -1,0 +1,3 @@
+---
+
+ohmyzsh_plugins: colored-man-page colorize docker docker-compose extract git go helm history httpie iwhois jira laravel5 nmap node npm python scala sublime sudo supervisor symfony2 vagrant yarn zsh-syntax-highlighting

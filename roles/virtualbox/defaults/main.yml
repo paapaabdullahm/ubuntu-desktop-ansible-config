@@ -28,4 +28,3 @@ vbox_post_install:
     --replace {{ vbox_extpack_dest_path }}
     --accept-license={{ vbox_extpack_license_sum }}
   - adduser {{ ansible_env.USER }} vboxusers
-

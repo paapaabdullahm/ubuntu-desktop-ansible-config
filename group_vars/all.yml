@@ -1,14 +1,5 @@
 ---
 
-git_enablerepo: ""
-git_packages:
-  - git
-git_global_config_user_name: "pam79"
-git_global_config_user_email: "paapaabdullahm@gmail.com"
-git_global_config_core_editor: "vim"
-git_global_config_branch_autosetuprebase: "always"
-git_global_config_push_default: "current"
-
 aptcachetime: 3600
 
 desktop_autostart:
@@ -45,5 +36,3 @@ vhosts:
     vhost: "default56.dev"
     path: "{{ ansible_env.HOME }}/projects/default-5.6"
     php: "5.6"
-
-ohmyzsh_plugins: colored-man-page colorize docker docker-compose extract git go helm history httpie iwhois jira laravel5 nmap node npm python scala sublime sudo supervisor symfony2 vagrant yarn zsh-syntax-highlighting

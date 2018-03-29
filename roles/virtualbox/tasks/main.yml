@@ -33,5 +33,8 @@
 - name: Configure Virtualbox post-install drivers
   command: "{{ item }}"
   with_items: "{{ vbox_post_install }}"
+  register: vbox_configure
+  changed_when: vbox_configure.rc == 0
+  failed_when: vbox_configure.rc >= 2
   notify:
     - Let systemd reread configs
