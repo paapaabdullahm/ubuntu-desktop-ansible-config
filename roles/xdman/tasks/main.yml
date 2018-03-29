@@ -46,7 +46,7 @@
 
 - name: Download XDM Tarball
   get_url:
-    url: "{{ xdm_base_url }}/{{ xdm_version }}.tar.xz/download"
+    url: "{{ xdm_base_url }}/{{ xdm_version }}.tar.xz"
     dest: "{{ xdm_download_dir }}/{{ xdm_version }}.tar.xz"
   register: xdm_archive
 
