@@ -1,36 +1,63 @@
 ---
 
+- name: Retrieve XDM download directory status
+  stat:
+    path: "{{ xdm_download_dir }}"
+  register: xdm_arc_path
+
+- debug:
+    msg: "XDM download directory is not defined (file doesn't exist)"
+  when: not xdm_arc_path.stat.exists
+
+- debug:
+    msg: "XDM download directory is defined (file exist)"
+  when: xdm_arc_path.stat.exists is defined and xdm_arc_path.stat.exists
+
 - name: Create XDM download directory
   file:
-    dest: "{{ ansible_env.HOME }}/.xdman/archives"
+    dest: "{{ xdm_download_dir }}"
     state: directory
+    recurse: yes
     owner: "{{ ansible_env.USER }}"
     group: "{{ ansible_env.USER }}"
+  when: not xdm_arc_path.stat.exists
+
+- name: Retrive XDM staging directory status
+  stat:
+    path: "{{ xdm_staging_dir }}"
+  register: xdm_stage_path
+
+- debug:
+    msg: "XDM staging directory is not defined (file doesn't exist)"
+  when: not xdm_stage_path.stat.exists
+
+- debug:
+    msg: "XDM staging directory is defined (file exist)"
+  when: xdm_stage_path.stat.exists is defined and xdm_stage_path.stat.exists
 
 - name: Create XDM staging directory
   file:
-    dest: "{{ ansible_env.HOME }}/.xdman/{{ xdm_version }}"
+    dest: "{{ xdm_staging_dir }}"
     state: directory
+    recurse: yes
     owner: "{{ ansible_env.USER }}"
     group: "{{ ansible_env.USER }}"
+  when: not xdm_stage_path.stat.exists
 
 - name: Download XDM Tarball
   get_url:
     url: "{{ xdm_base_url }}/{{ xdm_version }}.tar.xz/download"
-    dest: "{{ ansible_env.HOME }}/.xdman/archives/{{ xdm_version }}.tar.xz"
+    dest: "{{ xdm_download_dir }}/{{ xdm_version }}.tar.xz"
   register: xdm_archive
 
 - name: Unarchive XDM Source
   unarchive:
-    src: "{{ ansible_env.HOME }}/.xdman/archives/{{ xdm_version }}.tar.xz"
-    dest: "{{ ansible_env.HOME }}/.xdman/{{ xdm_version }}/"
+    src: "{{ xdm_download_dir }}/{{ xdm_version }}.tar.xz"
+    dest: "{{ xdm_staging_dir }}"
     remote_src: yes
   register: xdm_unarchive
   when: xdm_archive is changed
 
 - name: Install XDM
-  # shell: install.sh
-  # args:
-  #   chdir: "{{ ansible_env.HOME }}/.xdman/{{ xdm_version }}/"
-  raw: cd "{{ ansible_env.HOME }}/.xdman/{{ xdm_version }}" && ./install.sh
+  raw: cd "{{ xdm_staging_dir }}" && ./install.sh
   when: xdm_unarchive is succeeded
