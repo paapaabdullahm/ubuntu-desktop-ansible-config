@@ -78,23 +78,16 @@
 - name: Install theme-specific fonts
   become: false
   raw: sh {{ ansible_env.HOME }}/.fonts/install.sh
-  register: install_fonts
   when: clone_fonts is changed
 
 - name: Make fonts system-wide
   raw: cp {{ ansible_env.HOME }}/.local/share/fonts/* /usr/local/share/fonts/
-  register: make_fonts_systemwide
-  when: install_fonts is succeeded
+  when: clone_fonts is changed
 
 - name: Update system-wide font cache
   raw: fc-cache -fv
   register: fc_cache_update
-  when: make_fonts_systemwide is succeeded
-
-# - name: Clean up fonts folder
-#  raw: rm -r {{ ansible_env.HOME }}/.fonts
-#  register: cleanup_font
-#  when: fc_cache_update is succeeded
+  when: clone_fonts is changed
 
 - name: Enable custom fonts
   become: false
@@ -105,12 +98,14 @@
 - name: Set 'Meslo LG S for Powerline Regular 14'
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ font 'Meslo LG S for Powerline Regular 14'
+  register: set_custom_font
   when: enable_custom_font is succeeded
 
 - name: Disable the use of system theme
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ use-theme-colors false
   register: disable_theme_colours
+  when: set_custom_font is succeeded
 
 - name: Set background colour to '#002b36'
   become: false
