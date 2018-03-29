@@ -86,33 +86,29 @@
 
 - name: Update system-wide font cache
   raw: fc-cache -fv
-  register: fc_cache_update
   when: clone_fonts is changed
 
 - name: Enable custom fonts
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ use-system-font false
-  register: enable_custom_font
-  when: fc_cache_update is succeeded
+  when: clone_fonts is changed
 
 - name: Set 'Meslo LG S for Powerline Regular 14'
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ font 'Meslo LG S for Powerline Regular 14'
-  register: set_custom_font
-  when: enable_custom_font is succeeded
+  when: clone_fonts is changed
 
 - name: Disable the use of system theme
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ use-theme-colors false
-  register: disable_theme_colours
-  when: set_custom_font is succeeded
+  when: clone_fonts is changed
 
 - name: Set background colour to '#002b36'
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ background-color '#002b36'
-  when: disable_theme_colours is succeeded
+  when: clone_fonts is changed
 
 - name: Set foreground colour to '#ffffff'
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ foreground-color '#ffffff'
-  when: disable_theme_colours is succeeded
+  when: clone_fonts is changed
