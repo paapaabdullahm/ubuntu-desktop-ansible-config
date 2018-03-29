@@ -1,6 +1,6 @@
 ---
 
 xdm_version: "xdm-2018-x64"
-xdm_base_url: "https://sourceforge.net/projects/xdman/files"
+xdm_base_url: "https://subhra74.github.io/xdm/binaries"
 xdm_download_dir: "{{ ansible_env.HOME }}/.xdman/archives"
 xdm_staging_dir: "{{ ansible_env.HOME }}/.xdman/{{ xdm_version }}"
