@@ -24,14 +24,14 @@
 - name: Set Google Chrome as default browser
   become: false
   raw: xdg-settings set default-web-browser google-chrome.desktop
-  when: google_chrome_install is succeeded
+  when: google_chrome_install is changed
 
 - name: Set Google Chrome preferences
   template:
     src: master_preferences.json.j2
     dest: /opt/google/chrome/master_preferences
   register: google_chrome_pref_set
-  when: google_chrome_install is succeeded
+  when: google_chrome_install is changed
 
 - name: Ensure bookmarks.html exists
   stat:
