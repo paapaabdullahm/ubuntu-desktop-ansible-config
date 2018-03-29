@@ -55,9 +55,8 @@
     src: "{{ xdm_download_dir }}/{{ xdm_version }}.tar.xz"
     dest: "{{ xdm_staging_dir }}"
     remote_src: yes
-  register: xdm_unarchive
   when: xdm_archive is changed
 
 - name: Install XDM
   raw: cd "{{ xdm_staging_dir }}" && ./install.sh
-  when: xdm_unarchive is succeeded
+  when: xdm_archive is changed
