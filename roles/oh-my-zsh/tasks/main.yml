@@ -71,15 +71,15 @@
 - name: Clone theme-specific fonts
   git:
     repo: "https://github.com/powerline/fonts.git"
-    dest: "{{ ansible_env.HOME }}/fonts"
+    dest: "{{ ansible_env.HOME }}/.fonts"
   register: clone_fonts
-  changed_when: "clone_fonts.after|default('after') != clone_fonts.before|default('before')"
+  changed_when: clone_fonts.after|default('after') != clone_fonts.before|default('before')
 
 - name: Install theme-specific fonts
   become: false
-  raw: sh {{ ansible_env.HOME }}/fonts/install.sh
+  raw: sh {{ ansible_env.HOME }}/.fonts/install.sh
   register: install_fonts
-  when: clone_fonts is succeeded
+  when: clone_fonts is changed
 
 - name: Make fonts system-wide
   raw: cp {{ ansible_env.HOME }}/.local/share/fonts/* /usr/local/share/fonts/
@@ -91,18 +91,18 @@
   register: fc_cache_update
   when: make_fonts_systemwide is succeeded
 
-- name: Clean up fonts folder
-  raw: rm -r {{ ansible_env.HOME }}/fonts
-  register: cleanup_font
-  when: fc_cache_update is succeeded
+# - name: Clean up fonts folder
+#  raw: rm -r {{ ansible_env.HOME }}/.fonts
+#  register: cleanup_font
+#  when: fc_cache_update is succeeded
 
-- name: Disable system fonts and enable custom font
+- name: Enable custom fonts
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ use-system-font false
   register: enable_custom_font
-  when: cleanup_font is succeeded
+  when: fc_cache_update is succeeded
 
-- name: Set custom font to 'Meslo LG S for Powerline Regular 14'
+- name: Set to 'Meslo LG S for Powerline Regular 14'
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ font 'Meslo LG S for Powerline Regular 14'
   when: enable_custom_font is succeeded
