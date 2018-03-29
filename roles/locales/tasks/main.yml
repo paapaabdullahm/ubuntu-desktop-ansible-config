@@ -6,25 +6,25 @@
 
 - debug:
     msg: "{{ timezone }} is defined"
-  when: timezone_read.stdout.find('{{ timezone }}') != -1
+  when: timezone_read.stdout.find(timezone) != -1
 
 - debug:
     msg: "{{ timezone }} is not defined"
-  when: timezone_read.stdout.find('{{ timezone }}') == -1
+  when: timezone_read.stdout.find(timezone) == -1
 
 - name: Set localtime
   copy:
     remote_src: yes
     src: "/usr/share/zoneinfo/{{ timezone }}"
     dest: "/etc/localtime"
-  when: timezone_read.stdout.find('{{ timezone }}') == -1
+  when: timezone_read.stdout.find(timezone) == -1
 
 - name: Set timezone
   copy:
     content: "{{ timezone }}\n"
     dest: "/etc/timezone"
   register: timezone_set
-  when: timezone_read.stdout.find('{{ timezone }}') == -1
+  when: timezone_read.stdout.find(timezone) == -1
 
 - name: Update TimeZone data
   command: dpkg-reconfigure --frontend noninteractive tzdata
