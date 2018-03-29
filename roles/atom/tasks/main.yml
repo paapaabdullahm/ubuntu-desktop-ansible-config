@@ -16,9 +16,6 @@
 - name: Set Atom launcher icon
   become: false
   raw: python launcher_add.py atom.desktop 3
-  # register: atom_launcher_icon_set
-  # changed_when: atom_launcher_icon_set.rc == 0
-  # failed_when: atom_launcher_icon_set.rc >= 2
   when: atom_install is changed
 
 - name: Setup Atom Packages

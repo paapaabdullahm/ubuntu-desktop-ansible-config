@@ -20,7 +20,7 @@
 - name: Set Virtualbox launcher icon
   become: false
   raw: python launcher_add.py virtualbox.desktop 3
-  # when: vbox_install is succeeded
+  when: vbox_install is changed
 
 - name: Download Virtualbox Extension pack
   get_url:

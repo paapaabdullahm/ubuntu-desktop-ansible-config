@@ -8,4 +8,4 @@
 - name: Set SmartGit launcher icon
   become: false
   raw: python launcher_add.py syntevo-smartgit.desktop 3
-  # when: smartgit_install is succeeded
+  when: smartgit_install is changed
