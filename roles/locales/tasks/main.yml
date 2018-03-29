@@ -28,7 +28,7 @@
 
 - name: Update TimeZone data
   command: dpkg-reconfigure --frontend noninteractive tzdata
-  when: timezone_set is succeeded
+  when: timezone_set is changed
 
 - name: Ensure {{ locale }} file exists at source
   stat:
