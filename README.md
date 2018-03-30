@@ -32,5 +32,5 @@ _brave_ | Brave is a free and open-source web browser based on the Chromium web 
 
 -----------------------
 
-|   |   | Column 1 | |
+|   |  Column 1 | |
 |--|--|--|--|
