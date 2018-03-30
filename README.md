@@ -14,7 +14,7 @@ Git and Ansible are the only requirements.
     $ ansible-playbook desktop.yml --ask-become-pass
 
 ### Available roles
->All roles currently not available are commented out in desktop.yml playbook.
+> Some roles currently not available have been commented out with a single hash (#) in desktop.yml playbook. Others that are available but are disabled have double hashes (##) in front of them. Feel free to enable them if you like by removing the double hash signs from them.
 
 Role                    | Description                 | Custom Options      
 :---------------------- | :-------------------------- | :-------------------
