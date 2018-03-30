@@ -16,9 +16,15 @@ Git and Ansible are the only requirements.
 ### Available roles
 >All roles currently not available are commented out in desktop.yml playbook.
 
-- git  
-- locales
-- essentials 
-- java-openjdk
-- google-chrome
-- oh-my-zsh
+----------------------------------------------------------------------------
+| Role                   | Description               | Options             |    
+|:---------------------- |:-------------------------:| -------------------:|    
+| simple-screen-recorder | gasdgasggsgghdggggsdgsg   | ghfhdfhhhhhhhhhhhh  |    
+| simple-screen-recorder | gasdgasggsgghdggggsdgsg   | ghfhdfhhhhhhhhhhhh  |    
+| simple-screen-recorder | gasdgasggsgghdggggsdgsg   | ghfhdfhhhhhhhhhhhh  |    
+|                        |                           |                     |   
+----------------------------------------------------------------------------
+
+
+
+
