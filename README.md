@@ -16,7 +16,7 @@ Before you run the playbook, it is highly recommended that you go through the "A
     $ ansible-playbook desktop.yml --ask-become-pass
 
 ### Available roles
-Some roles that are currently not available have been commented out with a single hash (#) in desktop.yml playbook. Others that are available but disabled have double hashes (##) in front of them. Feel free to enable them if you want by removing the double hashes from them.           
+Some roles that are currently not available have been commented out with a single hash (#) in desktop.yml playbook. Others that are available but disabled have double hashes (##) in front of them. Feel free to enable them if you want by removing the double hashes.           
 
 >Unless otherwise stated, all paths are relative to the roles directory.
 
