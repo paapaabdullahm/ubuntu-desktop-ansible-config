@@ -20,8 +20,8 @@ Some roles that are currently not available have been commented out with a singl
 
 >Unless otherwise stated, all paths are relative to the roles directory.
 
-Role                    | Description                 | Customization Options      
-:---------------------- | :-------------------------- | :----------------------
+Role                    | Description                 | Customization Options   
+-
 |<tr><td colspan=3>**Common**</td></tr>
 _locales_ | A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at `locale/files` - customized or not (e.g. `ak_GH`, `en_GH`, `en_US`, `de_NL`) and sets it as the default locale for your system. | `en_GH` and `Africa/Accra` are the defaults provided. Replace them with your own if your language and timezone are different.
 _essentials_ | Provides the most basic libraries that are globally required by most packages. | Can add or subtract from the list.
@@ -29,25 +29,4 @@ _essentials_ | Provides the most basic libraries that are globally required by m
 _apache&#x2011;maven_ | A software project management and comprehension tool. | 
 _atom_ | A free and open-source text and source code editor | 
 _brave_ | Brave is a free and open-source web browser based on the Chromium web browser and its Blink engine, announced by the co-founder of the Mozilla project and creator of JavaScript, Brendan Eich. | 
-
-
-<table>
-
-<tr>
-<td>Role</td>
-<td>Description</td>
-<td>Customization Options</td>
-</tr>
-
-<tr>
-<td><i>locales</i></td>
-<td>
-  A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at `locale/files` - customized or not (e.g. `ak_GH`, `en_GH`, `en_US`, `de_NL`) and sets it as the default locale for your system.</td>
-<td>
-  `en_GH` and `Africa/Accra` are the defaults provided. Replace them with your own if your language and timezone are different.</td>
-</tr>
-
-</table>
-
-
 
