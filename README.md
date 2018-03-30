@@ -18,7 +18,7 @@ Git and Ansible are the only requirements.
 
 
 | Role                   | Description               | Options             |
-| ---------------------- |:-------------------------:| -------------------:|
+| :--------------------- | :------------------------ | :------------------ |
 | simple-screen-recorder | gasdgasggsgghdggggsdgsg   | ghfhdfhhhhhhhhhhhh  |
 | simple-screen-recorder | gasdgasggsgghdggggsdgsg   | ghfhdfhhhhhhhhhhhh  |
 | simple-screen-recorder | gasdgasggsgghdggggsdgsg   | ghfhdfhhhhhhhhhhhh  |
