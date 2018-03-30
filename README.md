@@ -26,7 +26,7 @@ _locales_ | A set of parameters that defines the user's language, region and any
 _essentials_ | Provides the most basic libraries that are globally required by most packages. | Can add or subtract from the list.
  |  | 
 |||<tr><td colspan=3>**title**
-:--- | :--- | :---
+ |  | 
 _apache&#x2011;maven_ | A software project management and comprehension tool. | 
 _atom_ | A free and open-source text and source code editor | 
 _brave_ | Brave is a free and open-source web browser based on the Chromium web browser and its Blink engine, announced by the co-founder of the Mozilla project and creator of JavaScript, Brendan Eich. | 
