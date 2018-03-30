@@ -18,6 +18,9 @@ Before you run the playbook, it is highly recommended that you go through the "A
 ### Available roles
 Some roles that are currently not available have been commented out with a single hash (#) in desktop.yml playbook. Others that are available but disabled have double hashes (##) in front of them. Feel free to enable them if you like by removing the double hashes from them.
 
+[$] hgghghgjgh hhhhhhhjgh hhgghj
+[$] gfghfdgh kjkjij gjhgjhgh
+
 Role                    | Description                 | Customization Options      
 :---------------------- | :-------------------------- | :----------------------
 _locales_ | Takes an existing locale file - customized or not (e.g. `ak_GH`, `en_GH`, `en_US`, `de_NL`) and sets it as the default locale for your system. | Replace the provided locale with your own if your local is different.
