@@ -16,26 +16,19 @@ Git and Ansible are the only requirements.
 ### Available roles
 >All roles currently not available are commented out in desktop.yml playbook.
 
-| Role                    | Description                 | Custom Options       |
-| :---------------------- | :-------------------------- | :------------------- |
+Role                    | Description                 | Custom Options      
+:---------------------- | :-------------------------- | :-------------------
 
-| **locales**
+**locales**
 | Customizes an existing locale (e.g. `ak_GH` to `en_GH`) and sets it as the
   default locale for your system.
 | Replace the provided locale with your own if your local is different.
 
-| **essentials**
+**essentials**
 | gasdgasggsgghdggggsdgsg
 | ghfhdfhhhhhhhhhhhh
 
-| **apache-maven**
+**apache-maven**
 | gasdgasggsgghdggggsdgsg
 | ghfhdfhhhhhhhhhhhh
-
-|
-|
-|
-
-
-
 
