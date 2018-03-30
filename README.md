@@ -18,7 +18,7 @@ Git and Ansible are the only requirements.
 
 Role                    | Description                 | Custom Options      
 :---------------------- | :-------------------------- | :-------------------
-<nobr>**locales**</nobr> | Customizes an existing locale (e.g. `ak_GH` to `en_GH`) and sets it as the default locale for your system. | Replace the provided locale with your own if your local is different.
-<nobr>**essentials**<nobr> | gasdgasggsgghdggggsdgsg | ghfhdfhhhhhhhhhhhh
-<nobr>**apache-maven**</nobr> | gasdgasggsgghdggggsdgsg | ghfhdfhhhhhhhhhhhh
+**locales** | Customizes an existing locale (e.g. `ak_GH` to `en_GH`) and sets it as the default locale for your system. | Replace the provided locale with your own if your local is different.
+**essentials** | gasdgasggsgghdggggsdgsg | ghfhdfhhhhhhhhhhhh
+**apache&#x2011;maven** | gasdgasggsgghdggggsdgsg | ghfhdfhhhhhhhhhhhh
 
