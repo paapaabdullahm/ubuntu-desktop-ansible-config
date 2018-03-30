@@ -18,7 +18,7 @@ Before you run the playbook, it is highly recommended that you go through the "A
 ### Available roles
 Some roles that are currently not available have been commented out with a single hash (#) in desktop.yml playbook. Others that are available but disabled have double hashes (##) in front of them. Feel free to enable them if you like by removing the double hashes from them.           
 
->Unless stated otherwise, all paths are relative to the roles directory.
+>Unless otherwise stated, all paths are relative to the roles directory.
 
 Role                    | Description                 | Customization Options      
 :---------------------- | :-------------------------- | :----------------------
