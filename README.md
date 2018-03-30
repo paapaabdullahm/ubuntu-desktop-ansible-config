@@ -22,7 +22,8 @@ Some roles that are currently not available have been commented out with a singl
 
 Role                    | Description                 | Customization Options      
 :---------------------- | :-------------------------- | :----------------------
-_locales_ | A set of parameters that defines the user's language, region and any special variant preferences.  The role takes an existing locale file located at `locale/files` - customized or not (e.g. `ak_GH`, `en_GH`, `en_US`, `de_NL`) and sets it as the default locale for your system. | The provided locale & timezone are `en_GH` and Africa/Accra. Replace them with your own if your local is different.
+_locales_ | A set of parameters that defines the user's language, region and any special variant preferences.  
+The role takes an existing locale file located at `locale/files` - customized or not (e.g. `ak_GH`, `en_GH`, `en_US`, `de_NL`) and sets it as the default locale for your system. | The provided locale & timezone are `en_GH` and Africa/Accra. Replace them with your own if your local is different.
 _essentials_ | Provides the most basic libraries that are globally required by most packages. | Can add or subtract from the list.
 _apache&#x2011;maven_ | A software project management and comprehension tool. | 
 
