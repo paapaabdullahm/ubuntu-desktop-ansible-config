@@ -17,12 +17,12 @@ Git and Ansible are the only requirements.
 >All roles currently not available are commented out in desktop.yml playbook.
 
 
-| Role                   | Description               | Options             |
-| :--------------------- | :------------------------ | :------------------ |
-| simple-screen-recorder | gasdgasggsgghdggggsdgsg   | ghfhdfhhhhhhhhhhhh  |
-| simple-screen-recorder | gasdgasggsgghdggggsdgsg   | ghfhdfhhhhhhhhhhhh  |
-| simple-screen-recorder | gasdgasggsgghdggggsdgsg   | ghfhdfhhhhhhhhhhhh  |
-|                        |                           |                     |
+| Role                    | Description                 | Custom Options       |
+| :---------------------- | :-------------------------- | :------------------- |
+| simple-screen-recorder  | gasdgasggsgghdggggsdgsg     | ghfhdfhhhhhhhhhhhh   |
+| simple-screen-recorder  | gasdgasggsgghdggggsdgsg     | ghfhdfhhhhhhhhhhhh   |
+| simple-screen-recorder  | gasdgasggsgghdggggsdgsg     | ghfhdfhhhhhhhhhhhh   |
+|                         |                             |                      |
 
 
 
