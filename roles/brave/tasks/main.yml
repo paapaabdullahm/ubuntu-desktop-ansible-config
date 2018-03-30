@@ -1,0 +1,21 @@
+---
+
+- name: Import Brave GPG signing key
+  apt_key:
+    url: https://s3-us-west-2.amazonaws.com/brave-apt/keys.asc
+    state: present
+    id: 448EEE6C
+
+- name: Add Brave x86_64 repository
+  apt_repository:
+    repo: "deb [arch=amd64] https://s3-us-west-2.amazonaws.com/brave-apt xenial main"
+    state: present
+  when: ansible_architecture == 'x86_64'
+
+- name: Install Brave
+  apt:
+    pkg: brave
+    state: latest
+    update_cache: yes
+    cache_valid_time: "{{ aptcachetime }}"
+  register: brave_install

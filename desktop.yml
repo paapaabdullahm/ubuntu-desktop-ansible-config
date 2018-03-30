@@ -8,7 +8,7 @@
     ### Utils
     - { role: apache-maven, become: true }
     - { role: atom, become: true }
-    # - { role: brave, become: true }
+    - { role: brave, become: true }
     # - { role: chess, become: true }
     # - { role: dia, become: true }
     - { role: docker, become: true }
