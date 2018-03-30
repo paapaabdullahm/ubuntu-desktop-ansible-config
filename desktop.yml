@@ -15,7 +15,7 @@
     # - { role: ebook-reader, become: true }
     - { role: git, become: true }
     # - { role: gnome-user-share, become: true }
-    # - { role: gnome3-desktop, become: true }
+    ## - { role: gnome3-desktop, become: true }
     # - { role: gnucash, become: true }
     # - { role: golden-dict, become: true }
     - { role: google-chrome, become: true }
