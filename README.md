@@ -19,7 +19,7 @@ Git and Ansible are the only requirements.
 Role                    | Description                 | Custom Options      
 :---------------------- | :-------------------------- | :-------------------
 _locales_ | Takes an existing locale file - customized or not (e.g. `ak_GH`, `en_GH`, `en_US`, `de_NL`) and sets it as the default locale for your system. | Replace the provided locale with your own if your local is different.
-_essentials_ | These are the most basic libraries that are globally required by most roles. | Can add or subtract from the list.
+_essentials_ | Provides the most basic libraries that are globally required by most packages. | Can add or subtract from the list.
 _apache&#x2011;maven_ | A software project management and comprehension tool. | 
 
 
