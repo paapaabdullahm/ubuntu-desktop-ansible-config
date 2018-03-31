@@ -33,7 +33,7 @@ _dia_ | A free and open source general-purpose diagramming software.
 _docker_ | Docker is a computer program that performs operating-system-level virtualization also known as containerization.
 _git_ | Git is a version control system for tracking changes in computer files and coordinating work on those files among multiple people. | You should modify the default git global config values found in `git/defaults/main.yml`
 _gnome-chess_ | GNOME Chess is a 2D chess game, where games can be played between a combination of human and computer players.
-_gnome&#2011;user-share_ | A session service that enables easy sharing of files between several computers.
+_gnome&#x2011;user&#x2011;share_ | A session service that enables easy sharing of files between several computers.
 _gnucash_ | A personal and small-business financial-accounting software.
 _google-chrome_ | A freeware web browser developed by Google. | If you want to import your bookmarks include an exported `bookmarks.html` file at the following location: `google-chrome/files`. You can also customize which extensions get installed by modifying `google-chrome/tasks/main.yml` file.
 
