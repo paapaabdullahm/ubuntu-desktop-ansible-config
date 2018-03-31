@@ -1,0 +1,14 @@
+---
+
+- name: Add GnuCash repository
+  apt_repository:
+    repo: 'deb http://archive.getdeb.net/ubuntu xenial-getdeb apps'
+    state: present
+
+- name: Install GnuCash
+  apt:
+    pkg: gnucash
+    state: latest
+    update_cache: yes
+    cache_valid_time: "{{ aptcachetime }}"
+  register: cash_install
