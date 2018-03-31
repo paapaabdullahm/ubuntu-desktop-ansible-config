@@ -1,0 +1,9 @@
+---
+
+- name: Install Dia Diagraming Tool
+  apt:
+    pkg: dia
+    state: latest
+    update_cache: yes
+    cache_valid_time: "{{ aptcachetime }}"
+  register: dia_install
