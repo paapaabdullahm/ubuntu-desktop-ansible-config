@@ -9,20 +9,18 @@
     - { role: apache-maven, become: true }
     - { role: atom, become: true }
     - { role: brave, become: true }
-    - { role: gnome-chess, become: true }
-    # - { role: dia, become: true }
+    - { role: calibre, become: true }
+    - { role: dia, become: true }
     - { role: docker, become: true }
-    # - { role: ebook-reader, become: true }
     - { role: git, become: true }
-    # - { role: gnome-user-share, become: true }
+    - { role: gnome-user-share, become: true }
+    - { role: gnome-chess, become: true }
     ## - { role: gnome3-desktop, become: true }
-    # - { role: gnucash, become: true }
-    # - { role: golden-dict, become: true }
+    - { role: gnucash, become: true }
     - { role: google-chrome, become: true }
     # - { role: gstreamer, become: true }
     # - { role: helm, become: true }
     - { role: idea-plugins, become: true }
-    # - { role: image-magic, become: true }
     # - { role: inkscape, become: true }
     - { role: java-openjdk, become: true }
     - { role: jetbrains-idea, become: true }
@@ -36,20 +34,14 @@
     # - { role: rosegarden, become: true }
     # - { role: screen-reader, become: true }
     # - { role: scribus, become: true }
-    # - { role: shotwell, become: true }
     # - { role: simple-screen-recorder, become: true }
     - { role: smartgit, become: true }
     # - { role: sound-converter, become: true }
     # - { role: sound-juicer, become: true }
     # - { role: spotify, become: true }
-    # - { role: stellarium, become: true }
     - { role: sublime, become: true }
-    # - { role: sudoku, become: true }
-    # - { role: umbrello, become: true }
     # - { role: unity-tweak-tool, become: true }
     # - { role: vagrant, become: true }
     - { role: virtualbox, become: true }
     - { role: wavebox, become: true }
-    # - { role: wireshark, become: true }
     - { role: xdman, become: true }
-    # - { role: xpad, become: true }
