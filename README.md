@@ -35,5 +35,5 @@ _git_ | Git is a version control system for tracking changes in computer files a
 _gnome&#x2011;chess_ | GNOME Chess is a 2D chess game, where games can be played between a combination of human and computer players.
 _gnome&#x2011;user&#x2011;share_ | A session service that enables easy sharing of files between several computers.
 _gnucash_ | A personal and small-business financial-accounting software.
-_google-chrome_ | A freeware web browser developed by Google.
+_google-chrome_ | A freeware web browser developed by Google. | If you want to import your bookmarks include an exported `bookmarks.html` file at the following location: `google-chrome/files`. You can also customize which extensions get installed by modifying `google-chrome/tasks/main.yml` file.
 
