@@ -1,0 +1,9 @@
+---
+
+- name: Install Calibre Ebook
+  apt:
+    pkg: calibre
+    state: latest
+    update_cache: yes
+    cache_valid_time: "{{ aptcachetime }}"
+  register: calibre_install
