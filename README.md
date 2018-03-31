@@ -27,7 +27,7 @@ _essentials_ <br /><br /> | Provides the most basic libraries that are globally 
 |<br />|
 _apache-maven_ <br /><br /> | A software project management and comprehension tool.
 _atom_ <br /><br /> | A free and open-source text and source code editor.
-_brave_ <br /><br /><br /><br /><br /> | Brave is a free and open-source web browser based on the Chromium web browser and its Blink engine, announced by the co-founder of the Mozilla project and creator of JavaScript, Brendan Eich.
+_brave_ <br /><br /><br /><br /> | Brave is a free and open-source web browser based on the Chromium web browser and its Blink engine, announced by the co-founder of the Mozilla project and creator of JavaScript, Brendan Eich.
 _calibre_ | A powerful and easy to use e-book manager.
 _dia_ <br /><br /> | A free and open source general-purpose diagramming software.
 _docker_ <br /><br /><br /> | Docker is a computer program that performs operating-system-level virtualization also known as containerization.
