@@ -25,15 +25,15 @@ Role                    | Description                 | Customization Options
 _locales_ <br /><br /><br /><br /><br /><br /> | A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at `locale/files` - customized or not (e.g. `ak_GH`, `en_GH`, `en_US`, `de_NL`) and sets it as the default locale for your system. | `en_GH` and `Africa/Accra` are the default locales provided. Replace them with your own if your language and timezone are different.<br /><br /><br />
 _essentials_ <br /><br /> | Provides the most basic libraries that are globally required by most packages. | Packages can be added or removed from the list.
 |<br />|
-_apache-maven_ | A software project management and comprehension tool.
-_atom_ | A free and open-source text and source code editor.
-_brave_ | Brave is a free and open-source web browser based on the Chromium web browser and its Blink engine, announced by the co-founder of the Mozilla project and creator of JavaScript, Brendan Eich.
+_apache-maven_ <br /><br /> | A software project management and comprehension tool.
+_atom_ <br /><br /> | A free and open-source text and source code editor.
+_brave_ <br /><br /><br /><br /> | Brave is a free and open-source web browser based on the Chromium web browser and its Blink engine, announced by the co-founder of the Mozilla project and creator of JavaScript, Brendan Eich.
 _calibre_ | A powerful and easy to use e-book manager.
-_dia_ | A free and open source general-purpose diagramming software.
-_docker_ | Docker is a computer program that performs operating-system-level virtualization also known as containerization.
-_git_ | Git is a version control system for tracking changes in computer files and coordinating work on those files among multiple people. | You should modify the default git global config values found in `git/defaults/main.yml`
-_gnome-chess_ | GNOME Chess is a 2D chess game, where games can be played between a combination of human and computer players.
-_gnome&#x2011;user&#x2011;share_ | A session service that enables easy sharing of files between several computers.
-_gnucash_ | A personal and small-business financial-accounting software.
-_google-chrome_ | A freeware web browser developed by Google. | If you want to import your bookmarks include an exported `bookmarks.html` file at the following location: `google-chrome/files`. You can also customize which extensions get installed by modifying `google-chrome/tasks/main.yml` file.
+_dia_ <br /><br /> | A free and open source general-purpose diagramming software.
+_docker_ <br /><br /><br /> | Docker is a computer program that performs operating-system-level virtualization also known as containerization.
+_git_ <br /><br /><br /> | Git is a version control system for tracking changes in computer files and coordinating work on those files among multiple people. | You should modify the default git global config values found in `git/defaults/main.yml`
+_gnome-chess_ <br /><br /><br /> | GNOME Chess is a 2D chess game, where games can be played between a combination of human and computer players.
+_gnome&#x2011;user&#x2011;share_ <br /><br /> | A session service that enables easy sharing of files between several computers.
+_gnucash_ <br /><br /> | A personal and small-business financial-accounting software.
+_google-chrome_ <br /><br /><br /><br /> | A freeware web browser developed by Google. <br /><br /><br /><br /> | If you want to import your bookmarks include an exported `bookmarks.html` file at the following location: `google-chrome/files`. You can also customize which extensions get installed by modifying `google-chrome/tasks/main.yml` file.
 
