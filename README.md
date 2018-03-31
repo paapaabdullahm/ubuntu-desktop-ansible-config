@@ -35,5 +35,5 @@ _git_ <br /><br /><br /> | Git is a version control system for tracking changes 
 _gnome-chess_ <br /><br /><br /> | GNOME Chess is a 2D chess game, where games can be played between a combination of human and computer players.
 _gnome&#x2011;user&#x2011;share_ <br /><br /> | A session service that enables easy sharing of files between several computers.
 _gnucash_ <br /><br /> | A personal and small-business financial-accounting software.
-_google-chrome_ <br /><br /><br /><br /><br /><br /> | A freeware web browser developed by Google. <br /><br /><br /><br /><br /><br /> | If you want to import your bookmarks include an exported `bookmarks.html` file at the following location: `google-chrome/files`. You can also customize which extensions get installed by modifying `google-chrome/tasks/main.yml` file.
+_google-chrome_ <br /><br /><br /><br /><br /><br /> | A freeware web browser developed by Google. <br /><br /><br /><br /><br /><br /> | <ul><li>If you want to import your bookmarks include an exported `bookmarks.html` file at the following location: `google-chrome/files`.</li><li> You can also customize which extensions get installed by modifying `google-chrome/tasks/main.yml` file.</li></ul>
 
