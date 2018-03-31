@@ -22,8 +22,8 @@ Some roles that are currently not available have been commented out with a singl
 
 Role                    | Description                 | Customization Options      
 :---------------------- | :-------------------------- | :----------------------
-_locales_ | A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at `locale/files` - customized or not (e.g. `ak_GH`, `en_GH`, `en_US`, `de_NL`) and sets it as the default locale for your system. | `en_GH` and `Africa/Accra` are the defaults provided.</li><li>Replace them with your own if your language and timezone are different.
-_essentials_ | Provides the most basic libraries that are globally required by most packages. | <ul><li>Packages can be added or removed from the list.</li></ul>
+_locales_ | A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at `locale/files` - customized or not (e.g. `ak_GH`, `en_GH`, `en_US`, `de_NL`) and sets it as the default locale for your system. | <ul><li>`en_GH` and `Africa/Accra` are the defaults provided.</li><li>Replace them with your own if your language and timezone are different.</li></ul>
+_essentials_ | Provides the most basic libraries that are globally required by most packages. | Packages can be added or removed from the list.
 |<br />|
 _apache&#x2011;maven_ | A software project management and comprehension tool.
 _atom_ | A free and open-source text and source code editor.
@@ -35,5 +35,5 @@ _git_ | Git is a version control system for tracking changes in computer files a
 _gnome&#x2011;chess_ | GNOME Chess is a 2D chess game, where games can be played between a combination of human and computer players.
 _gnome&#x2011;user&#x2011;share_ | A session service that enables easy sharing of files between several computers.
 _gnucash_ | A personal and small-business financial-accounting software.
-_google-chrome_ | A freeware web browser developed by Google. | If you want to import your bookmarks include an exported `bookmarks.html` file at the following location: `google-chrome/files`. You can also customize which extensions get installed by modifying `google-chrome/tasks/main.yml` file.
+_google-chrome_ | A freeware web browser developed by Google. | <ul><li>If you want to import your bookmarks include an exported `bookmarks.html` file at the following location: `google-chrome/files`.</li><li> You can also customize which extensions get installed by modifying `google-chrome/tasks/main.yml` file.</li></ul>
 
