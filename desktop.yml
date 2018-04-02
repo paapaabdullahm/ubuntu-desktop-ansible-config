@@ -12,13 +12,13 @@
     - { role: calibre, become: true }
     - { role: dia, become: true }
     - { role: docker, become: true }
+    - { role: docker-images, become: true }
     - { role: git, become: true }
     - { role: gnome-user-share, become: true }
     - { role: gnome-chess, become: true }
     ## - { role: gnome3-desktop, become: true }
     - { role: gnucash, become: true }
     - { role: google-chrome, become: true }
-    # - { role: helm, become: true }
     - { role: idea-plugins, become: true }
     # - { role: inkscape, become: true }
     - { role: java-openjdk, become: true }
