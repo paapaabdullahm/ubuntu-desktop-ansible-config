@@ -24,9 +24,7 @@ Some roles that are currently not available have been commented out with a singl
 <th>Role</th>
 <th>Description</th>
 <th>Customizations</th>
-</tr></table>
-
-Role                    | Description                 | Customizations      
+</tr></table>    
 :---------------------- | :-------------------------- | :----------------------
 _locales_ | A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at _locale/files_ customized or not (e.g. _ak_GH_, _en_GH_, _en_US_, _de_NL_) and sets it as the default locale for your system. | en_GH and Africa/Accra are the default locales provided. Replace them with your own if your language and timezone are different. The default configuration is located at: _locales/defaults/main.yml_
 ||
