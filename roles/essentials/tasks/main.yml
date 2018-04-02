@@ -39,6 +39,7 @@
     - gcc
     - gimp
     - grep
+    - gsmartcontrol
     - gufw
     - gzip
     - htop
@@ -72,6 +73,7 @@
     - samba
     - sed
     - shutter
+    - smartmontools
     - smbclient
     - software-properties-common
     - sshfs
