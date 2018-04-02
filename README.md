@@ -22,7 +22,7 @@ Some roles that are currently not available have been commented out with a singl
 
 Role                    | Description                 | Customizations      
 :---------------------- | :-------------------------- | :----------------------
-_locales_ | A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at `locale/files` - customized or not (e.g. `ak_GH`, `en_GH`, `en_US`, `de_NL`) and sets it as the default locale for your system. | `en_GH` and `Africa/Accra` are the default locales provided. Replace them with your own if your language and timezone are different.<br /><br /> You should change the default configurations if you plan to use a different locale at: `locales/defaults/main.yml`
+_locales_ | A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at `locale/files` - customized or not (e.g. `ak_GH`, `en_GH`, `en_US`, `de_NL`) and sets it as the default locale for your system. | `en_GH` and `Africa/Accra` are the default locales provided. Replace them with your own if your language and timezone are different.<br /><br /> The default configuration is in: `locales/defaults/main.yml`
 _essentials_ | Provides the most basic libraries that are globally required by most packages. | Packages can be added or removed from the list. Also with GNOME 3 PPA added nautilus is automatically
 |<br />|
 _apache-maven_ | A software project management and comprehension tool.
