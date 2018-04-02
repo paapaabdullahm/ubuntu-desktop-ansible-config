@@ -36,5 +36,5 @@ _gnome-chess_ | GNOME Chess is a 2D chess game, where games can be played betwee
 _gnome&#x2011;user&#x2011;share_ | A session service that enables easy sharing of files between several computers.
 _gnucash_ | A personal and small-business financial-accounting software.
 _google-chrome_ | A freeware web browser developed by Google. | To import your bookmarks, include a `bookmarks.html` file at the following location: `google-chrome/files`. You can also customize which extensions get installed by modifying `google-chrome/tasks/main.yml` file.
-_idea-plugins_ | Intellij IDEA IDE Plugins. The plugin repository is provided at `http://plugins.jetbrains.com/idea` | You can add or remove plugins in the following file: idea-plugins/defaults/main.yml <br /> You need the id of a plugin if you want to add it to the list. To do this search for the plugin's github repo and look for the <id> tag inside the `META-INF/plugin.xml` file.
+_idea-plugins_ | Intellij IDEA IDE Plugins. The plugin repository is provided at [http://plugins.jetbrains.com/idea](http://plugins.jetbrains.com/idea) | You can add or remove plugins in the following file: idea-plugins/defaults/main.yml <br /> You need the id of a plugin if you want to add it to the list. To do this search for the plugin's github repo and look for the <id> tag inside the `META-INF/plugin.xml` file.
 
