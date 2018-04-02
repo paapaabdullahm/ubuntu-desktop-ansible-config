@@ -1,0 +1,27 @@
+---
+
+# Helm - Kubernetes package manager
+- name: Pull Helm Image
+  docker_image:
+    name: pam79/helm:2.8.2
+
+# Kubectl
+- name: Pull Kubectl Image
+  docker_image:
+    name: pam79/kubectl:1.10.0
+
+- name: Append Kubectl Alias to ~/.zshrc file
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/.zshrc"
+    line: "alias kubectl='docker run --rm pam79/kubectl'"
+    owner: "{{ ansible_env.USER }}"
+
+# Redis CLI
+- name: Pull Redis CLI Image
+  docker_image:
+    name: pam79/redis-cli
+
+# Redis Server
+- name: Pull Redis Server
+  docker_image:
+    name: pam79/redis-server
