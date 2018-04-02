@@ -21,9 +21,9 @@ Some roles that are currently not available have been commented out with a singl
 >Unless otherwise stated, all paths are relative to the roles directory.
 
 <table><tr>
-<td>Role</td>
-<td>Description</td>
-<td>Customizations</td>
+<th>Role</th>
+<th>Description</th>
+<th>Customizations</th>
 </tr></table>
 
 Role                    | Description                 | Customizations      
