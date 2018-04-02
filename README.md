@@ -23,15 +23,15 @@ Some roles that are currently not available have been commented out with a singl
 Role                    | Description                 | Customizations      
 :---------------------- | :-------------------------- | :----------------------
 _locales_ | A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at _locale/files_ customized or not (e.g. _ak_GH_, _en_GH_, _en_US_, _de_NL_) and sets it as the default locale for your system. | en_GH and Africa/Accra are the default locales provided. Replace them with your own if your language and timezone are different. The default configuration is located at: _locales/defaults/main.yml_
-|||
+||
 _essentials_ | Provides the most basic libraries that are globally required by most packages. | Packages can be added or removed from the list. Also with GNOME 3 PPA added nautilus is automatically
-|||
+||
 _apache-maven_ | A software project management and comprehension tool.
-|||
+||
 _atom_ | A free and open-source text and source code editor.
-|
+||
 _brave_ | Brave is a free and open-source web browser based on the Chromium web browser and its Blink engine, announced by the co-founder of the Mozilla project and creator of JavaScript, Brendan Eich.
-|
+||
 _calibre_ | A powerful and easy to use e-book manager.
 _dia_ | A free and open source general-purpose diagramming software.
 _docker_ | Docker is a computer program that performs operating-system-level virtualization also known as containerization.
