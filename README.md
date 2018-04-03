@@ -24,16 +24,23 @@ Before you run the playbook, it is highly recommended that you go through the "A
         <th width="40%">Description</th>
         <th width="35%">Customizations</th>
     </tr>
-    
     <tr><td width="100%" colspan=3>Common</td></tr>
-    
     <tr>
         <td width="25%"><i>locales</i></td>
         <td width="40%">
-          A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at <i>locale/files</i> customized or not (e.g. <i>ak_GH</i>, <i>en_GH</i>, <i>en_US</i>, <i>de_NL</i>) and sets it as the default locale for your system.
+         A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at <i>locale/files</i> customized or not (e.g. <i>ak_GH</i>, <i>en_GH</i>, <i>en_US</i>, <i>de_NL</i>) and sets it as the default locale for your system.
         </td>
         <td width="35%">
-          en_GH and Africa/Accra are the default locales provided. Replace them with your own if your language and timezone are different. The default configuration is located at: <i>locales/defaults/main.yml</i>
+         en_GH and Africa/Accra are the default locales provided. Replace them with your own if your language and timezone are different. The default configuration is located at: <i>locales/defaults/main.yml</i>
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>essentials</i></td>
+        <td width="40%">
+         Provides the most basic libraries that are globally required by most packages.
+        </td>
+        <td width="35%">
+         Packages can be added or removed from the list. Also with GNOME 3 PPA added nautilus is automatically.
         </td>
     </tr>
 </table>
