@@ -18,3 +18,8 @@
     update_cache: yes
     cache_valid_time: "{{ aptcachetime }}"
   register: cash_install
+
+- name: Remove getdeb - gnucash repository to avoid updating other packages
+  apt_repository:
+    repo: 'deb http://archive.getdeb.net/ubuntu xenial-getdeb apps'
+    state: absent
