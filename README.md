@@ -20,7 +20,7 @@ Before you run the playbook, it is highly recommended that you go through the "A
 
 <table width="100%">
     <tr>
-        <th width="25%">Role</th>
+        <th width="25%" align="left">Role</th>
         <th width="40%">Description</th>
         <th width="35%">Customizations</th>
     </tr>
