@@ -1,5 +1,11 @@
 ---
 
+- name: Import GnuCash GPG signing key
+  apt_key:
+    url: http://archive.getdeb.net/getdeb-archive.key
+    state: present
+    id: 46D7E7CF
+
 - name: Add GnuCash repository
   apt_repository:
     repo: 'deb http://archive.getdeb.net/ubuntu xenial-getdeb apps'
