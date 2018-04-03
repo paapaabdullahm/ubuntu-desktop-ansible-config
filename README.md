@@ -16,7 +16,7 @@ Before you run the playbook, it is highly recommended that you go through the "A
     $ ansible-playbook desktop.yml --ask-become-pass
 
 ### Available roles
-Some roles that are currently not available have been commented out with a single hash (#) in desktop.yml playbook. Others that are available but disabled have double hashes (##) in front of them. Feel free to enable them if you want by removing the double hashes.           
+You can disable a role by commenting it out with a single hash (#) in desktop.yml playbook. Roles that are available but disabled have double hashes (##) in front of them. Feel free to enable them if you prefer.           
 
 >Unless otherwise stated, all paths are relative to the roles directory.
 
@@ -35,6 +35,6 @@ Role                    | Description                 | Customizations
 *gnome&#x2011;user&#x2011;share* | A session service that enables easy sharing of files between several computers.
 *gnucash* | A personal and small-business financial-accounting software.
 *google-chrome* | A freeware web browser developed by Google. | To import your bookmarks, include a _bookmarks.html_ file at the following location: _google-chrome/files_. You can also customize which extensions get installed by modifying _google-chrome/tasks/main.yml_ file.
-*idea-plugins* | Intellij IDEA IDE Plugins. The plugin repository is provided at [plugins.jetbrains.com/idea](http://plugins.jetbrains.com/idea) | You can add or remove plugins from the following location: _idea&#x2011;plugins/defaults/main.yml_. You need the _id_ of a plugin if you want to add it to the list. To do this search for the plugin's github repo and look for the <id> tag inside the _META&#x2011;INF/plugin.xml_ file.
+*jetbrains-idea-plugins* | Intellij IDEA IDE Plugins. The plugin repository is provided at [plugins.jetbrains.com/idea](http://plugins.jetbrains.com/idea) | You can add or remove plugins from the following location: _idea&#x2011;plugins/defaults/main.yml_. You need the _id_ of a plugin if you want to add it to the list. To do this search for the plugin's github repo and look for the <id> tag inside the _META&#x2011;INF/plugin.xml_ file.
 
 
