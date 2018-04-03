@@ -17,8 +17,7 @@ Before you run the playbook, it is highly recommended that you go through the "A
 
 ### Available roles
 >You can disable a role by commenting it out in desktop.yml playbook. All paths are relative to the `roles` directory, unless otherwise stated.
-
-[N//] (Role                    | Description                 | Customizations)      
+     
 :---------------------- | :-------------------------- | :----------------------
 |**Role**|**Description**|**Customizations** <tr><th colspan=3>Common</th></tr>
 *locales* | A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at _locale/files_ customized or not (e.g. _ak_GH_, _en_GH_, _en_US_, _de_NL_) and sets it as the default locale for your system. | en_GH and Africa/Accra are the default locales provided. Replace them with your own if your language and timezone are different. The default configuration is located at: _locales/defaults/main.yml_
