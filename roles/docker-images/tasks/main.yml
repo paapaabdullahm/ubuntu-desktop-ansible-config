@@ -3,19 +3,23 @@
 - name: Pull Helm Image
   docker_image:
     name: "{{ helm_image }}"
-  notify: Append Helm Alias to config file
+  notify:
+    - Append Helm Alias to config file
 
 - name: Pull Kubectl Image
   docker_image:
     name: "{{ kubectl_image }}"
-  notify: Append Kubectl Alias to config file
+  notify:
+    - Append Kubectl Alias to config file
 
 - name: Pull Redis CLI Image
   docker_image:
     name: "{{ redis_cli_image }}"
-  notify: Append Redis CLI Alias to config file
+  notify:
+    - Append Redis CLI Alias to config file
 
 - name: Pull Redis Server Image
   docker_image:
     name: "{{ redis_server_image }}"
-  notify: Append Redis Server Alias to config file
+  notify:
+    - Append Redis Server Alias to config file
