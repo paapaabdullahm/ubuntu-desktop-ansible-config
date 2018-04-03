@@ -1,11 +1,16 @@
 ---
 
-# Helm - Kubernetes package manager
 - name: Pull Helm Image
   docker_image:
     name: pam79/helm:2.8.2
 
-# Kubectl
+- name: Append Helm Alias to ~/.zshrc file
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/.zshrc"
+    line: "alias helm='docker run --rm pam79/helm'"
+    owner: "{{ ansible_env.USER }}"
+
+
 - name: Pull Kubectl Image
   docker_image:
     name: pam79/kubectl:1.10.0
@@ -16,12 +21,30 @@
     line: "alias kubectl='docker run --rm pam79/kubectl'"
     owner: "{{ ansible_env.USER }}"
 
-# Redis CLI
+
 - name: Pull Redis CLI Image
   docker_image:
     name: pam79/redis-cli
 
-# Redis Server
+- name: Append Redis CLI Alias to ~/.zshrc file
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/.zshrc"
+    line: "alias redis-cli='docker run --rm pam79/redis-cli'"
+    owner: "{{ ansible_env.USER }}"
+
+
 - name: Pull Redis Server
   docker_image:
     name: pam79/redis-server
+
+- name: Append Redis Server Alias to ~/.zshrc file
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/.zshrc"
+    line: "alias redis-server='docker run --rm pam79/redis-server'"
+    owner: "{{ ansible_env.USER }}"
+
+
+# This should be run last
+- name: Source ~/.zshrc to update changes
+  become: false
+  raw: source ~/.zshrc
