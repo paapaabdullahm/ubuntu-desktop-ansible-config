@@ -24,9 +24,9 @@ Before you run the playbook, it is highly recommended that you go through the "A
         <th width="40%">Description</th>
         <th width="35%">Customizations</th>
     </tr>
-    <tr>
-        <td width="100%" colspan=3>Common</td>
-    </tr>
+    
+    <tr><td width="100%" colspan=3>Common</td></tr>
+    
     <tr>
         <td width="25%"><i>locales</i></td>
         <td width="40%">
