@@ -19,3 +19,8 @@
     update_cache: yes
     cache_valid_time: "{{ aptcachetime }}"
   register: brave_install
+
+- name: Set Brave launcher icon
+  become: false
+  raw: python launcher_add.py brave.desktop 3
+  when: brave_install is changed
