@@ -25,7 +25,7 @@ Before you run the playbook, it is highly recommended that you go through the "A
         <th width="35%">Customizations</th>
     </tr>
     <!-------------------------------------------->
-    <tr><td width="100%" colspan=3>Common</td></tr>
+    <tr><td width="100%" colspan=3>COMMON</td></tr>
     <!-------------------------------------------->
     <tr>
         <td width="25%"><i>locales</i></td>
@@ -82,7 +82,7 @@ Before you run the playbook, it is highly recommended that you go through the "A
         </td>
     </tr>
     <!----------------------------------------->
-    <tr><td width="100%" colspan=3>Dev</td></tr>
+    <tr><td width="100%" colspan=3>DEV</td></tr>
     <!----------------------------------------->
     <tr>
         <td width="25%"><i>apache-maven</i></td>
@@ -202,7 +202,7 @@ Before you run the playbook, it is highly recommended that you go through the "A
         </td>
     </tr>
     <!------------------------------------------->
-    <tr><td width="100%" colspan=3>Utils</td></tr>
+    <tr><td width="100%" colspan=3>UTILS</td></tr>
     <!------------------------------------------->
     <tr>
         <td width="25%"><i>brave</i></td>
