@@ -1,9 +1,5 @@
 ---
 
-- name: Source {{ shell_config }} to update changes
-  become: false
-  raw: source {{ ansible_env.HOME }}/{{ shell_config }}
-
 - name: Append Helm Alias to {{ shell_config }} file
   lineinfile:
     path: "{{ ansible_env.HOME }}/{{ shell_config }}"
@@ -27,3 +23,9 @@
     path: "{{ ansible_env.HOME }}/{{ shell_config }}"
     line: "alias redis-server='docker run --rm pam79/redis-server'"
     owner: "{{ ansible_env.USER }}"
+
+
+# Add aliases above. This task should be run last
+- name: Source {{ shell_config }} to update changes
+  become: false
+  raw: source {{ ansible_env.HOME }}/{{ shell_config }}
