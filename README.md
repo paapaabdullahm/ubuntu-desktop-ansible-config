@@ -40,7 +40,7 @@ Role                    | Description                 | Customizations
 *virtualbox* | |
 *vagrant* | |
 *mini-kube* | |
-|||<tr><th colspan=3>Utils</th></tr>
+|&#x2011;|&#x2011;|<tr><th colspan=3>Utils</th></tr>
 *brave* | Brave is a free and open-source web browser based on the Chromium web browser and its Blink engine, announced by the co-founder of the Mozilla project and creator of JavaScript, Brendan Eich.
 *calibre* | A powerful and easy to use e-book manager.
 *gnome3-desktop* | 
