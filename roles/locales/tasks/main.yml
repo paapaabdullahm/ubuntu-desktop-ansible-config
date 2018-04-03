@@ -22,24 +22,24 @@
   register: locale_src_file
 
 - debug:
-    msg: "{{ locale }} is not defined (file doesn't exist)"
+    msg: "{{ locale }} at source is not defined (file doesn't exist)"
   when: not locale_src_file.stat.exists
 
 - debug:
-    msg: "{{ locale }} is defined (file exist)"
+    msg: "{{ locale }} at source is defined (file exist)"
   when: locale_src_file.stat.exists is defined and locale_src_file.stat.exists
 
-- name: Ensure {{ locale }} file does not exist on destination
+- name: Ensure {{ locale }} file does not exist at destination
   stat:
     path: "{{ locales_dir }}/{{ locale }}"
   register: locale_dest_file
 
 - debug:
-    msg: "{{ locale }} is not defined (file doesn't exist)"
+    msg: "{{ locale }} at destination is not defined (file doesn't exist)"
   when: not locale_dest_file.stat.exists
 
 - debug:
-    msg: "{{ locale }} is defined (file exist)"
+    msg: "{{ locale }} at destination is defined (file exist)"
   when: locale_dest_file.stat.exists is defined and locale_dest_file.stat.exists
 
 - name: Copy the {{ locale }} file to {{ locales_dir }}
