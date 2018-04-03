@@ -1,0 +1,14 @@
+---
+
+- name: Add Inkscape repository
+  apt_repository:
+    repo: 'ppa:inkscape.dev/stable'
+    state: present
+
+- name: Install Inkscape
+  apt:
+    pkg: inkscape
+    state: latest
+    update_cache: yes
+    cache_valid_time: "{{ aptcachetime }}"
+  register: inkscape_install
