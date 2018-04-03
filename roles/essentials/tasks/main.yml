@@ -98,9 +98,11 @@
     - zip
 
 - name: Upgrade installed packages
-  apt: upgrade=yes
+  apt:
+    upgrade: yes
 
-- sysctl:
+- name: Change Swappiness level to 5%
+  sysctl:
     name: vm.swappiness
     value: 5
     state: present
