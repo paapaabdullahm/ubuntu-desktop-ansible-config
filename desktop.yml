@@ -1,46 +1,44 @@
 - name: Ubuntu Desktop Configuration
   hosts: localhost
   roles:
-    ### Common
+
+    # Common
     - { role: locales, become: true }
     - { role: essentials, become: true }
+    - { role: git, become: true }
+    - { role: oh-my-zsh, become: true }
+    - { role: java-openjdk, become: true }
+    - { role: google-chrome, become: true }
 
-    ### Utils
+    # Dev
     - { role: apache-maven, become: true }
     - { role: atom, become: true }
-    - { role: brave, become: true }
-    - { role: calibre, become: true }
     - { role: dia, become: true }
     - { role: docker, become: true }
     - { role: docker-images, become: true }
-    - { role: git, become: true }
+    - { role: jetbrains-idea, become: true }
+    - { role: jetbrains-idea-plugins, become: true }
+    - { role: smartgit, become: true }
+    - { role: sublime, become: true }
+    - { role: virtualbox, become: true }
+    - { role: vagrant, become: true }
+    - { role: mini-kube, become: true }
+
+    # Utils
+    - { role: brave, become: true }
+    - { role: calibre, become: true }
+    ## - { role: gnome3-desktop, become: true }
     - { role: gnome-user-share, become: true }
     - { role: gnome-chess, become: true }
-    ## - { role: gnome3-desktop, become: true }
     - { role: gnucash, become: true }
-    - { role: google-chrome, become: true }
-    - { role: idea-plugins, become: true }
-    # - { role: inkscape, become: true }
-    - { role: java-openjdk, become: true }
-    - { role: jetbrains-idea, become: true }
-    # - { role: kdenlive, become: true }
-    # - { role: keepass-xc, become: true }
-    # - { role: mini-kube, become: true }
-    - { role: oh-my-zsh, become: true }
-    # - { role: power-statistics, become: true }
-    # - { role: prepaid-manager, become: true }
     - { role: rambox, become: true }
-    # - { role: rosegarden, become: true }
-    # - { role: screen-reader, become: true }
-    # - { role: scribus, become: true }
-    # - { role: simple-screen-recorder, become: true }
-    - { role: smartgit, become: true }
-    # - { role: sound-converter, become: true }
-    # - { role: sound-juicer, become: true }
-    # - { role: spotify, become: true }
-    - { role: sublime, become: true }
-    # - { role: unity-tweak-tool, become: true }
-    # - { role: vagrant, become: true }
-    - { role: virtualbox, become: true }
     - { role: wavebox, become: true }
     - { role: xdman, become: true }
+    - { role: inkscape, become: true }
+    - { role: kdenlive, become: true }
+    - { role: keepass-xc, become: true }
+    - { role: rosegarden, become: true }
+    - { role: simple-screen-recorder, become: true }
+    - { role: sound-converter, become: true }
+    - { role: sound-juicer, become: true }
+    - { role: unity-tweak-tool, become: true }
