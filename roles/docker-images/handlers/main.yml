@@ -1,31 +1,25 @@
 ---
 
-- name: Append Helm Alias to {{ shell_config }} file
+- name: Append Helm Alias to config file
   lineinfile:
     path: "{{ ansible_env.HOME }}/{{ shell_config }}"
-    line: "alias helm='docker run --rm pam79/helm'"
+    line: "alias helm='docker run --rm {{ helm_image }}'"
     owner: "{{ ansible_env.USER }}"
 
-- name: Append Kubectl Alias to {{ shell_config }} file
+- name: Append Kubectl Alias to config file
   lineinfile:
     path: "{{ ansible_env.HOME }}/{{ shell_config }}"
-    line: "alias kubectl='docker run --rm pam79/kubectl'"
+    line: "alias kubectl='docker run --rm {{ kubectl_image }}'"
     owner: "{{ ansible_env.USER }}"
 
-- name: Append Redis CLI Alias to {{ shell_config }} file
+- name: Append Redis CLI Alias to config file
   lineinfile:
     path: "{{ ansible_env.HOME }}/{{ shell_config }}"
-    line: "alias redis-cli='docker run --rm pam79/redis-cli'"
+    line: "alias redis-cli='docker run --rm {{ redis_cli_image }}'"
     owner: "{{ ansible_env.USER }}"
 
-- name: Append Redis Server Alias to {{ shell_config }} file
+- name: Append Redis Server Alias to config file
   lineinfile:
     path: "{{ ansible_env.HOME }}/{{ shell_config }}"
-    line: "alias redis-server='docker run --rm pam79/redis-server'"
+    line: "alias redis-server='docker run --rm {{ redis_server_image }}'"
     owner: "{{ ansible_env.USER }}"
-
-
-# Add aliases above. This task should be run last
-- name: Source {{ shell_config }} to update changes
-  become: false
-  raw: source {{ ansible_env.HOME }}/{{ shell_config }}

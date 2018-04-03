@@ -2,28 +2,20 @@
 
 - name: Pull Helm Image
   docker_image:
-    name: pam79/helm:2.8.2
-  notify:
-    - Append Helm Alias to {{ shell_config }} file
-    - Source {{ shell_config }} to update changes
+    name: "{{ helm_image }}"
+  notify: Append Helm Alias to config file
 
 - name: Pull Kubectl Image
   docker_image:
-    name: pam79/kubectl:1.10.0
-  notify:
-    - Append Kubectl Alias to {{ shell_config }} file
-    - Source {{ shell_config }} to update changes
+    name: "{{ kubectl_image }}"
+  notify: Append Kubectl Alias to config file
 
 - name: Pull Redis CLI Image
   docker_image:
-    name: pam79/redis-cli:4.0.9
-  notify:
-    - Append Redis CLI Alias to {{ shell_config }} file
-    - Source {{ shell_config }} to update changes
+    name: "{{ redis_cli_image }}"
+  notify: Append Redis CLI Alias to config file
 
-- name: Pull Redis Server
+- name: Pull Redis Server Image
   docker_image:
-    name: pam79/redis-server:4.0.9
-  notify:
-    - Append Redis Server Alias to {{ shell_config }} file
-    - Source {{ shell_config }} to update changes
+    name: "{{ redis_server_image }}"
+  notify: Append Redis Server Alias to config file
