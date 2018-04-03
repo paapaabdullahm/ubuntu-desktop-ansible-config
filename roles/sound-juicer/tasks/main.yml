@@ -1,0 +1,9 @@
+---
+
+- name: Install Sound Juicer
+  apt:
+    pkg: sound-juicer
+    state: latest
+    update_cache: yes
+    cache_valid_time: "{{ aptcachetime }}"
+  register: soundjuicer_install
