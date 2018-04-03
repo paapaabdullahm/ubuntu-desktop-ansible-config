@@ -16,7 +16,7 @@ Before you run the playbook, it is highly recommended that you go through the "A
     $ ansible-playbook desktop.yml --ask-become-pass
 
 ### Available roles
-You can disable a role by commenting it out in desktop.yml playbook. All paths are relative to the `roles` directory, unless otherwise stated.
+>You can disable a role by commenting it out in desktop.yml playbook. All paths are relative to the `roles` directory, unless otherwise stated.
 
 Role                    | Description                 | Customizations      
 :---------------------- | :-------------------------- | :----------------------
