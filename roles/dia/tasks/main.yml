@@ -7,8 +7,3 @@
     update_cache: yes
     cache_valid_time: "{{ aptcachetime }}"
   register: dia_install
-
-- name: Set Dia launcher icon
-  become: false
-  raw: python launcher_add.py dia.desktop 3
-  when: dia_install is changed

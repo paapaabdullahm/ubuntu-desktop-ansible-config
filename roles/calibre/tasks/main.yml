@@ -7,8 +7,3 @@
     update_cache: yes
     cache_valid_time: "{{ aptcachetime }}"
   register: calibre_install
-
-- name: Set Calibre launcher icon
-  become: false
-  raw: python launcher_add.py calibre-gui.desktop 3
-  when: calibre_install is changed
