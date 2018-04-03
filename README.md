@@ -20,7 +20,7 @@ Before you run the playbook, it is highly recommended that you go through the "A
 
 Role                    | Description                 | Customizations      
 :---------------------- | :-------------------------- | :----------------------
-|<th colspan=3>Common</th></tr>|
+|<th colspan=2>Common</th></tr>|
 *locales* | A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at _locale/files_ customized or not (e.g. _ak_GH_, _en_GH_, _en_US_, _de_NL_) and sets it as the default locale for your system. | en_GH and Africa/Accra are the default locales provided. Replace them with your own if your language and timezone are different. The default configuration is located at: _locales/defaults/main.yml_
 *essentials* | Provides the most basic libraries that are globally required by most packages. | Packages can be added or removed from the list. Also with GNOME 3 PPA added nautilus is automatically
 *apache-maven* | A software project management and comprehension tool.
