@@ -20,19 +20,19 @@ Before you run the playbook, it is highly recommended that you go through the "A
 
 <table width="100%">
     <tr>
-        <th width="30%">Role</th>
+        <th width="25%">Role</th>
         <th width="40%">Description</th>
-        <th width="30%">Customizations</th>
+        <th width="35%">Customizations</th>
     </tr>
     <tr>
         <td width="100%" colspan=3>Common</td>
     </tr>
     <tr>
-        <td width="30%"><i>locales</i></td>
+        <td width="25%"><i>locales</i></td>
         <td width="40%">
           A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at <i>locale/files</i> customized or not (e.g. <i>ak_GH</i>, <i>en_GH</i>, <i>en_US</i>, <i>de_NL</i>) and sets it as the default locale for your system.
         </td>
-        <td width="30%">
+        <td width="35%">
           en_GH and Africa/Accra are the default locales provided. Replace them with your own if your language and timezone are different. The default configuration is located at: <i>locales/defaults/main.yml</i>
         </td>
     </tr>
