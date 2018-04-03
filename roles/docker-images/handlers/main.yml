@@ -1,0 +1,29 @@
+---
+
+- name: Source {{ shell_config }} to update changes
+  become: false
+  raw: source {{ ansible_env.HOME }}/{{ shell_config }}
+
+- name: Append Helm Alias to {{ shell_config }} file
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/{{ shell_config }}"
+    line: "alias helm='docker run --rm pam79/helm'"
+    owner: "{{ ansible_env.USER }}"
+
+- name: Append Kubectl Alias to {{ shell_config }} file
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/{{ shell_config }}"
+    line: "alias kubectl='docker run --rm pam79/kubectl'"
+    owner: "{{ ansible_env.USER }}"
+
+- name: Append Redis CLI Alias to {{ shell_config }} file
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/{{ shell_config }}"
+    line: "alias redis-cli='docker run --rm pam79/redis-cli'"
+    owner: "{{ ansible_env.USER }}"
+
+- name: Append Redis Server Alias to {{ shell_config }} file
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/{{ shell_config }}"
+    line: "alias redis-server='docker run --rm pam79/redis-server'"
+    owner: "{{ ansible_env.USER }}"
