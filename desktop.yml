@@ -2,7 +2,7 @@
   hosts: localhost
   roles:
 
-    # Common
+    # COMMON
     - { role: locales, become: true }
     - { role: essentials, become: true }
     - { role: git, become: true }
@@ -10,7 +10,7 @@
     - { role: java-openjdk, become: true }
     - { role: google-chrome, become: true }
 
-    # Dev
+    # DEV
     - { role: apache-maven, become: true }
     - { role: atom, become: true }
     - { role: dia, become: true }
@@ -24,10 +24,10 @@
     - { role: vagrant, become: true }
     - { role: mini-kube, become: true }
 
-    # Utils
+    # UTILS
     - { role: brave, become: true }
     - { role: calibre, become: true }
-    ## - { role: gnome3-desktop, become: true }
+    # - { role: gnome3-desktop, become: true }
     - { role: gnome-user-share, become: true }
     - { role: gnome-chess, become: true }
     - { role: gnucash, become: true }
