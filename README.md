@@ -24,7 +24,9 @@ Before you run the playbook, it is highly recommended that you go through the "A
         <th width="40%">Description</th>
         <th width="35%">Customizations</th>
     </tr>
+    <!-------------------------------------------->
     <tr><td width="100%" colspan=3>Common</td></tr>
+    <!-------------------------------------------->
     <tr>
         <td width="25%"><i>locales</i></td>
         <td width="40%">
@@ -43,37 +45,217 @@ Before you run the playbook, it is highly recommended that you go through the "A
          Packages can be added or removed from the list. Also with GNOME 3 PPA added nautilus is automatically.
         </td>
     </tr>
+    <tr>
+        <td width="25%"><i>git</i></td>
+        <td width="40%">
+         Git is a version control system for tracking changes in computer files and coordinating work on those files among multiple people.
+        </td>
+        <td width="35%">
+         You should modify the default git global config values found in <i>git/defaults/main.yml</i>
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>oh-my-zsh</i></td>
+        <td width="40%">
+          &nbsp;
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>java-openjdk</i></td>
+        <td width="40%">
+          &nbsp;
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>google-chrome</i></td>
+        <td width="40%">
+          A freeware web browser developed by Google.
+        </td>
+        <td width="35%">
+          To import your bookmarks, include a <i>bookmarks.html</i> file at the following location: <i>google-chrome/files</i>. You can also customize which extensions get installed by modifying <i>google-chrome/tasks/main.yml</i> file.
+        </td>
+    </tr>
+    <!----------------------------------------->
+    <tr><td width="100%" colspan=3>Dev</td></tr>
+    <!----------------------------------------->
+    <tr>
+        <td width="25%"><i>apache-maven</i></td>
+        <td width="40%">
+          A software project management and comprehension tool.
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>apache-maven</i></td>
+        <td width="40%">
+          A software project management and comprehension tool.
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>atom</i></td>
+        <td width="40%">
+          A free and open-source text and source code editor.
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>dia</i></td>
+        <td width="40%">
+          A free and open source general-purpose diagramming software.
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>docker</i></td>
+        <td width="40%">
+          A computer program that performs operating-system-level virtualization also known as containerization.
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>docker-images</i></td>
+        <td width="40%">
+          &nbsp;
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>jetbrains-idea</i></td>
+        <td width="40%">
+          &nbsp;
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>jetbrains-idea-plugins</i></td>
+        <td width="40%">
+          Intellij IDEA IDE Plugins. The plugin repository is provided at <a href="http://plugins.jetbrains.com/idea">plugins.jetbrains.com/idea</a>
+        </td>
+        <td width="35%">
+          You can add or remove plugins from the following location: <i>idea&#x2011;plugins/defaults/main.yml</i>. You need the <i>id</i> of a plugin if you want to add it to the list. To do this search for the plugin's github repo and look for the <id> tag inside the <i>META&#x2011;INF/plugin.xml</i> file.
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>smartgit</i></td>
+        <td width="40%">
+          &nbsp;
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>sublime</i></td>
+        <td width="40%">
+          &nbsp;
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>virtualbox</i></td>
+        <td width="40%">
+          &nbsp;
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>vagrant</i></td>
+        <td width="40%">
+          &nbsp;
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>mini-kube</i></td>
+        <td width="40%">
+          &nbsp;
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <!------------------------------------------->
+    <tr><td width="100%" colspan=3>Utils</td></tr>
+    <!------------------------------------------->
+    <tr>
+        <td width="25%"><i>brave</i></td>
+        <td width="40%">
+          Brave is a free and open-source web browser based on the Chromium web browser and its Blink engine, announced by the co-founder of the Mozilla project and creator of JavaScript, Brendan Eich.
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>calibre</i></td>
+        <td width="40%">
+          A powerful and easy to use e-book manager.
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>gnome3-desktop</i></td>
+        <td width="40%">
+          &nbsp;
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>gnome-user-share</i></td>
+        <td width="40%">
+          A session service that enables easy sharing of files between several computers.
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>gnome-chess</i></td>
+        <td width="40%">
+          A 2D chess game, where games can be played between a combination of human and computer players.
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>gnucash</i></td>
+        <td width="40%">
+          A personal and small-business financial-accounting software.
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
 </table>
-
-Role                    | Description                 | Customizations      
-:---------------------- | :-------------------------- | :----------------------
-| <tr><th colspan=3>Common</th></tr> |
-*locales* | A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at _locale/files_ customized or not (e.g. _ak_GH_, _en_GH_, _en_US_, _de_NL_) and sets it as the default locale for your system. | en_GH and Africa/Accra are the default locales provided. Replace them with your own if your language and timezone are different. The default configuration is located at: _locales/defaults/main.yml_
-*essentials* | Provides the most basic libraries that are globally required by most packages. | Packages can be added or removed from the list. Also with GNOME 3 PPA added nautilus is automatically.
-*git* | Git is a version control system for tracking changes in computer files and coordinating work on those files among multiple people. | You should modify the default git global config values found in _git/defaults/main.yml_
-*oh-my-zsh* | | 
-*java-openjdk* | | 
-*google-chrome* | A freeware web browser developed by Google. | To import your bookmarks, include a _bookmarks.html_ file at the following location: _google-chrome/files_. You can also customize which extensions get installed by modifying _google-chrome/tasks/main.yml_ file.
-|&nbsp;|&nbsp;|<tr><th colspan=3>Dev</th></tr>
-*apache-maven* | A software project management and comprehension tool.
-*atom* | A free and open-source text and source code editor.
-*dia* | A free and open source general-purpose diagramming software.
-*docker* | Docker is a computer program that performs operating-system-level virtualization also known as containerization.
-*docker-images* | |
-*jetbrains-idea* | |
-*jetbrains-idea-plugins* | Intellij IDEA IDE Plugins. The plugin repository is provided at [plugins.jetbrains.com/idea](http://plugins.jetbrains.com/idea) | You can add or remove plugins from the following location: _idea&#x2011;plugins/defaults/main.yml_. You need the _id_ of a plugin if you want to add it to the list. To do this search for the plugin's github repo and look for the <id> tag inside the _META&#x2011;INF/plugin.xml_ file.
-*smartgit* | |
-*sublime* | |
-*virtualbox* | |
-*vagrant* | |
-*mini-kube* | |
-|&nbsp;|&nbsp;|<tr><th colspan=3>Utils</th></tr>
-*brave* | Brave is a free and open-source web browser based on the Chromium web browser and its Blink engine, announced by the co-founder of the Mozilla project and creator of JavaScript, Brendan Eich.
-*calibre* | A powerful and easy to use e-book manager.
-*gnome3-desktop* | 
-*gnome&#x2011;user&#x2011;share* | A session service that enables easy sharing of files between several computers.
-*gnome-chess* | GNOME Chess is a 2D chess game, where games can be played between a combination of human and computer players.
-*gnucash* | A personal and small-business financial-accounting software.
-
-
-
