@@ -18,6 +18,22 @@ Before you run the playbook, it is highly recommended that you go through the "A
 ### Available roles
 >You can disable a role by commenting it out in desktop.yml playbook. All paths are relative to the `roles` directory, unless otherwise stated.
 
+<table width="100%">
+    <tr>
+        <th width="30%">Role</th>
+        <th width="40%">Description</th>
+        <th width="30%">Customizations</th>
+    </tr>
+    <tr>
+        <td width="100%" colspan=3>Common</td>
+    </tr>
+    <tr>
+        <td width="30%">&nbsp;</td>
+        <td width="40%">&nbsp;</td>
+        <td width="30%">&nbsp;</td>
+    </tr>
+</table>
+
 Role                    | Description                 | Customizations      
 :---------------------- | :-------------------------- | :----------------------
 | <tr><th colspan=3>Common</th></tr> |
