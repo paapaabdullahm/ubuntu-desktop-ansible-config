@@ -98,7 +98,8 @@
     - zip
 
 - name: Upgrade installed packages
-  apt: upgrade=yes
+  apt:
+    upgrade: yes
 
 - name: Change Swappiness level to 5%
   sysctl:
