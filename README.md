@@ -20,14 +20,14 @@ Before you run the playbook, it is highly recommended that you go through the "A
 
 Role                    | Description                 | Customizations      
 :---------------------- | :-------------------------- | :----------------------
-|||<tr><th colspan=3>Common</th></tr>
+|&nbsp;|&nbsp;|<tr><th colspan=3>Common</th></tr>
 *locales* | A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at _locale/files_ customized or not (e.g. _ak_GH_, _en_GH_, _en_US_, _de_NL_) and sets it as the default locale for your system. | en_GH and Africa/Accra are the default locales provided. Replace them with your own if your language and timezone are different. The default configuration is located at: _locales/defaults/main.yml_
 *essentials* | Provides the most basic libraries that are globally required by most packages. | Packages can be added or removed from the list. Also with GNOME 3 PPA added nautilus is automatically.
 *git* | Git is a version control system for tracking changes in computer files and coordinating work on those files among multiple people. | You should modify the default git global config values found in _git/defaults/main.yml_
 *oh-my-zsh* | | 
 *java-openjdk* | | 
 *google-chrome* | A freeware web browser developed by Google. | To import your bookmarks, include a _bookmarks.html_ file at the following location: _google-chrome/files_. You can also customize which extensions get installed by modifying _google-chrome/tasks/main.yml_ file.
-|||<tr><th colspan=3>Dev</th></tr>
+|&nbsp;|&nbsp;|<tr><th colspan=3>Dev</th></tr>
 *apache-maven* | A software project management and comprehension tool.
 *atom* | A free and open-source text and source code editor.
 *dia* | A free and open source general-purpose diagramming software.
@@ -40,7 +40,7 @@ Role                    | Description                 | Customizations
 *virtualbox* | |
 *vagrant* | |
 *mini-kube* | |
-|&#x2011;|&nbsp;|<tr><th colspan=3>Utils</th></tr>
+|&nbsp;|&nbsp;|<tr><th colspan=3>Utils</th></tr>
 *brave* | Brave is a free and open-source web browser based on the Chromium web browser and its Blink engine, announced by the co-founder of the Mozilla project and creator of JavaScript, Brendan Eich.
 *calibre* | A powerful and easy to use e-book manager.
 *gnome3-desktop* | 
