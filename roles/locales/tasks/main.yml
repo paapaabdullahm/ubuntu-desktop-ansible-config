@@ -1,34 +1,20 @@
 ---
 
-- name: Read the /etc/timezone file
-  shell: cat /etc/timezone
-  register: timezone_read
-
-- debug:
-    msg: "{{ timezone }} is defined"
-  # when: timezone_read.stdout.find(timezone) != -1
-
-- debug:
-    msg: "{{ timezone }} is not defined"
-  # when: timezone_read.stdout.find(timezone) == -1
-
 - name: Set localtime
   copy:
     remote_src: yes
     src: "/usr/share/zoneinfo/{{ timezone }}"
     dest: "/etc/localtime"
-  # when: timezone_read.stdout.find(timezone) == -1
 
 - name: Set timezone
   copy:
     content: "{{ timezone }}\n"
     dest: "/etc/timezone"
   register: timezone_set
-  # when: timezone_read.stdout.find(timezone) == -1
 
 - name: Update TimeZone data
   command: dpkg-reconfigure --frontend noninteractive tzdata
-  # when: timezone_set is changed
+  when: timezone_set is changed
 
 - name: Ensure {{ locale }} file exists at source
   stat:
@@ -37,11 +23,11 @@
 
 - debug:
     msg: "{{ locale }} is not defined (file doesn't exist)"
-  # when: not locale_src_file.stat.exists
+  when: not locale_src_file.stat.exists
 
 - debug:
     msg: "{{ locale }} is defined (file exist)"
-  # when: locale_src_file.stat.exists is defined and locale_src_file.stat.exists
+  when: locale_src_file.stat.exists is defined and locale_src_file.stat.exists
 
 - name: Ensure {{ locale }} file does not exist on destination
   stat:
@@ -50,11 +36,11 @@
 
 - debug:
     msg: "{{ locale }} is not defined (file doesn't exist)"
-  # when: not locale_dest_file.stat.exists
+  when: not locale_dest_file.stat.exists
 
 - debug:
     msg: "{{ locale }} is defined (file exist)"
-  # when: locale_dest_file.stat.exists is defined and locale_dest_file.stat.exists
+  when: locale_dest_file.stat.exists is defined and locale_dest_file.stat.exists
 
 - name: Copy the {{ locale }} file to {{ locales_dir }}
   copy:
@@ -64,16 +50,16 @@
     group: root
     mode: 'u=rw,go=r'
   register: locale_file_copy
-  # when:
-  #   - locale_src_file.stat.exists is defined and locale_src_file.stat.exists
-  #   - not locale_dest_file.stat.exists
+  when:
+    - locale_src_file.stat.exists is defined and locale_src_file.stat.exists
+    - not locale_dest_file.stat.exists
 
 - name: Compile {{ locale }} into {{ format }} format
   command: localedef -f {{ format }} -i {{ locale }} {{ locale_compiled }}
   register: locale_compile
   changed_when: locale_compile.rc == 0
   failed_when: locale_compile.rc >= 2
-  # when: locale_file_copy is changed
+  when: locale_file_copy is changed
 
 - name: Set locale to {{ locale }}
   become: false
@@ -81,4 +67,4 @@
   register: locale_set
   changed_when: locale_set.rc == 0
   failed_when: locale_set.rc >= 2
-  # when: locale_compile is changed
+  when: locale_compile is changed
