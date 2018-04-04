@@ -10,7 +10,6 @@
   copy:
     content: "{{ timezone }}\n"
     dest: "/etc/timezone"
-  register: timezone_set
 
 - name: Update TimeZone data
   command: dpkg-reconfigure --frontend noninteractive tzdata
@@ -41,10 +40,8 @@
 
 - name: Compile {{ locale }} into {{ format }} format
   command: localedef -f {{ format }} -i {{ locale }} {{ locale_compiled }}
-  register: locale_compile
   when: locale_file_copy is succeeded
 
 - name: Set locale to {{ locale }}
   become: false
   command: localectl set-locale LANG={{ locale_compiled }}
-  register: locale_set
