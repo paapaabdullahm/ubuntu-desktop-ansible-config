@@ -14,7 +14,6 @@
 
 - name: Update TimeZone data
   command: dpkg-reconfigure --frontend noninteractive tzdata
-  #when: timezone_set is changed
 
 - name: Ensure {{ locale }} file exists at source
   stat:
@@ -29,19 +28,6 @@
     msg: "{{ locale }} at source is defined (file exist)"
   when: locale_src_file.stat.exists is defined and locale_src_file.stat.exists
 
-#- name: Ensure {{ locale }} file does not exist at destination
-#  stat:
-#    path: "{{ locales_dir }}/{{ locale }}"
-#  register: locale_dest_file
-
-#- debug:
-#    msg: "{{ locale }} at destination is not defined (file doesn't exist)"
-#  when: not locale_dest_file.stat.exists
-
-#- debug:
-#    msg: "{{ locale }} at destination is defined (file exist)"
-#  when: locale_dest_file.stat.exists is defined and locale_dest_file.stat.exists
-
 - name: Copy the {{ locale }} file to {{ locales_dir }}
   copy:
     src: "{{ locale }}"
@@ -52,7 +38,6 @@
   register: locale_file_copy
   when:
     - locale_src_file.stat.exists is defined and locale_src_file.stat.exists
-    #- not locale_dest_file.stat.exists
 
 - name: Compile {{ locale }} into {{ format }} format
   command: localedef -f {{ format }} -i {{ locale }} {{ locale_compiled }}
@@ -63,6 +48,3 @@
   become: false
   command: localectl set-locale LANG={{ locale_compiled }}
   register: locale_set
-  #changed_when: locale_set.rc == 0
-  #failed_when: locale_set.rc >= 2
-  #when: locale_compile is changed
