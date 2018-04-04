@@ -21,11 +21,11 @@
   register: locale_src_file
 
 - debug:
-    msg: "{{ locale }} at source is not defined (file doesn't exist)"
+    msg: "{{ locale }} is not defined (file doesn't exist)"
   when: not locale_src_file.stat.exists
 
 - debug:
-    msg: "{{ locale }} at source is defined (file exist)"
+    msg: "{{ locale }} is defined (file exist)"
   when: locale_src_file.stat.exists is defined and locale_src_file.stat.exists
 
 - name: Copy the {{ locale }} file to {{ locales_dir }}
