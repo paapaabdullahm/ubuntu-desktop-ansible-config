@@ -25,7 +25,7 @@ Before you run the playbook, it is highly recommended that you go through the "A
         <th width="35%">Customizations</th>
     </tr>
     <!-------------------------------------------------->
-    <tr><td width="100%" colspan=3><br />COMMON</td></tr>
+    <tr><td width="100%" colspan=3><br /><b>COMMON</b></td></tr>
     <!-------------------------------------------------->
     <tr>
         <td width="25%"><i>locales</i></td>
