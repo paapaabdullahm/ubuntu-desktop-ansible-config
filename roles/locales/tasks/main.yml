@@ -57,7 +57,7 @@
 - name: Compile {{ locale }} into {{ format }} format
   command: localedef -f {{ format }} -i {{ locale }} {{ locale_compiled }}
   register: locale_compile
-  when: locale_file_copy is changed
+  when: locale_file_copy is succeeded
 
 - name: Set locale to {{ locale }}
   become: false
