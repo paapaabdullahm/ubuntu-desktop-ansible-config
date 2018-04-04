@@ -24,9 +24,9 @@ Before you run the playbook, it is highly recommended that you go through the "A
         <th width="40%">Description</th>
         <th width="35%">Customizations</th>
     </tr>
-    <!-------------------------------------------->
+    <!-------------------------------------------------->
     <tr><td width="100%" colspan=3><br />COMMON</td></tr>
-    <!-------------------------------------------->
+    <!-------------------------------------------------->
     <tr>
         <td width="25%"><i>locales</i></td>
         <td width="40%">
@@ -81,9 +81,9 @@ Before you run the playbook, it is highly recommended that you go through the "A
           To import your bookmarks, include a <i>bookmarks.html</i> file at the following location: <i>google-chrome/files</i>. You can also customize which extensions get installed by modifying <i>google-chrome/tasks/main.yml</i> file.
         </td>
     </tr>
-    <!----------------------------------------->
-    <tr><td width="100%" colspan=3>DEV</td></tr>
-    <!----------------------------------------->
+    <!----------------------------------------------->
+    <tr><td width="100%" colspan=3><br />DEV</td></tr>
+    <!----------------------------------------------->
     <tr>
         <td width="25%"><i>apache-maven</i></td>
         <td width="40%">
@@ -201,9 +201,9 @@ Before you run the playbook, it is highly recommended that you go through the "A
           &nbsp;
         </td>
     </tr>
-    <!------------------------------------------->
-    <tr><td width="100%" colspan=3>UTILS</td></tr>
-    <!------------------------------------------->
+    <!------------------------------------------------->
+    <tr><td width="100%" colspan=3><br />UTILS</td></tr>
+    <!------------------------------------------------->
     <tr>
         <td width="25%"><i>brave</i></td>
         <td width="40%">
