@@ -94,15 +94,6 @@ Before you run the playbook, it is highly recommended that you go through the "A
         </td>
     </tr>
     <tr>
-        <td width="25%"><i>apache-maven</i></td>
-        <td width="40%">
-          A software project management and comprehension tool.
-        </td>
-        <td width="35%">
-          &nbsp;
-        </td>
-    </tr>
-    <tr>
         <td width="25%"><i>atom</i></td>
         <td width="40%">
           A free and open-source text and source code editor.
@@ -253,6 +244,105 @@ Before you run the playbook, it is highly recommended that you go through the "A
         <td width="25%"><i>gnucash</i></td>
         <td width="40%">
           A personal and small-business financial-accounting software.
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>rambox</i></td>
+        <td width="40%">
+          &nbsp;
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>wavebox</i></td>
+        <td width="40%">
+          &nbsp;
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>xdman</i></td>
+        <td width="40%">
+          &nbsp;
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>inkscape</i></td>
+        <td width="40%">
+          &nbsp;
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>kdenlive</i></td>
+        <td width="40%">
+          &nbsp;
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>keepass-xc</i></td>
+        <td width="40%">
+          &nbsp;
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>rosegarden</i></td>
+        <td width="40%">
+          &nbsp;
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>simple-screen-recorder</i></td>
+        <td width="40%">
+          &nbsp;
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>sound-converter</i></td>
+        <td width="40%">
+          &nbsp;
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>sound-juicer</i></td>
+        <td width="40%">
+          &nbsp;
+        </td>
+        <td width="35%">
+          &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>unity-tweak-tool</i></td>
+        <td width="40%">
+          &nbsp;
         </td>
         <td width="35%">
           &nbsp;
