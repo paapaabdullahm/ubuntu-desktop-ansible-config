@@ -80,13 +80,34 @@ $ ansible-playbook desktop.yml --ask-become-pass
           You can add more SDKs if required by your project.
         </td>
     </tr>
+    <!---------------------------------------------------------->
+    <tr><td width="100%" colspan=3><b>Gnome 3 Theme</b></td></tr>
+    <!---------------------------------------------------------->
     <tr>
-        <td width="25%"><i>google-chrome</i></td>
+        <td width="25%"><i>gnome3-desktop</i></td>
         <td width="40%">
-          A freeware web browser developed by Google.
+          A desktop environment which uses GNOME Shell engine and is composed of free and open-source software that runs on Linux and most BSD derivatives.
         </td>
         <td width="35%">
-          To import your bookmarks, include a <i>bookmarks.html</i> file at the following location: <i>google-chrome/files</i>. You can also customize which extensions get installed by modifying <i>google-chrome/tasks/main.yml</i> file.
+          n/a
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>gnome-tweak-tool</i></td>
+        <td width="40%">
+          A configuration tool to enable customization of advanced options for GNOME 3.
+        </td>
+        <td width="35%">
+          This role works best with <i>gnome3&#x2011;desktop</i> role.
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>gnome-user-share</i></td>
+        <td width="40%">
+          A session service that enables easy sharing of files between several computers.
+        </td>
+        <td width="35%">
+          n/a
         </td>
     </tr>
     <!------------------------------------------------------------>
@@ -135,6 +156,15 @@ $ ansible-playbook desktop.yml --ask-become-pass
         </td>
         <td width="35%">
           The default shell config file for the aliases is <i>.zshrc</i>. Change this to .bashrc if you have disabled <i>oh-my-zsh</i> role.
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>google-chrome</i></td>
+        <td width="40%">
+          A freeware web browser developed by Google.
+        </td>
+        <td width="35%">
+          To import your bookmarks, include a <i>bookmarks.html</i> file at the following location: <i>google-chrome/files</i>. You can also customize which extensions get installed by modifying <i>google-chrome/tasks/main.yml</i> file.
         </td>
     </tr>
     <tr>
@@ -216,24 +246,6 @@ $ ansible-playbook desktop.yml --ask-become-pass
         <td width="25%"><i>calibre</i></td>
         <td width="40%">
           A powerful and easy to use e-book manager.
-        </td>
-        <td width="35%">
-          n/a
-        </td>
-    </tr>
-    <tr>
-        <td width="25%"><i>gnome3-desktop</i></td>
-        <td width="40%">
-          A desktop environment which uses GNOME Shell engine and is composed of free and open-source software that runs on Linux and most BSD derivatives.
-        </td>
-        <td width="35%">
-          n/a
-        </td>
-    </tr>
-    <tr>
-        <td width="25%"><i>gnome-user-share</i></td>
-        <td width="40%">
-          A session service that enables easy sharing of files between several computers.
         </td>
         <td width="35%">
           n/a
@@ -345,15 +357,6 @@ $ ansible-playbook desktop.yml --ask-become-pass
         </td>
         <td width="35%">
           n/a
-        </td>
-    </tr>
-    <tr>
-        <td width="25%"><i>gnome-tweak-tool</i></td>
-        <td width="40%">
-          A configuration tool to enable customization of advanced options for GNOME 3.
-        </td>
-        <td width="35%">
-          This role works best with <i>gnome3&#x2011;desktop</i> role.
         </td>
     </tr>
     <tr>
