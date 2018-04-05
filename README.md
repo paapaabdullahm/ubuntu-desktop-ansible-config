@@ -42,7 +42,7 @@ Before you run the playbook, it is highly recommended that you go through the "A
          Provides the most basic libraries that are globally required by most packages.
         </td>
         <td width="35%">
-         Packages can be added or removed from the list. Also with GNOME 3 PPA added nautilus is automatically.
+         Packages can be added or removed from the list. Also with GNOME 3 PPA added nautilus is automatically upgraded.
         </td>
     </tr>
     <tr>
