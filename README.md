@@ -353,7 +353,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A configuration tool to enable customization of advanced options for GNOME 3.
         </td>
         <td width="35%">
-          This role works best with <i>gnome3-desktop</i> role.
+          This role works best with <i>gnome3&#x2011;desktop</i> role.
         </td>
     </tr>
     <tr>
