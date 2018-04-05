@@ -1,6 +1,6 @@
 # Ubuntu Desktop Ansible Config
 
-A set of Ansible roles for configuring Ubuntu lts (16.04 and above) desktop environment. It automates the installation and configuration of essential, good to have utility programs (can be customized if needed), and other utility tools that are meant for Software Development, DevOps and related.
+A set of Ansible roles for configuring Ubuntu 16.04+ desktop environment. It automates the installation and configuration of essential, good to have utility programs (can be customized if needed), and other utility tools that are meant for Software Development, DevOps and related.
 
 ### Install requirements
 
