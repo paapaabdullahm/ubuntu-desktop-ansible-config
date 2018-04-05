@@ -29,6 +29,7 @@
     - { role: calibre, become: true }
     # - { role: gnome3-desktop, become: true }
     - { role: gnome-user-share, become: true }
+    - { role: gnome-tweak-tool, become: true }
     - { role: gnome-chess, become: true }
     - { role: gnucash, become: true }
     - { role: rambox, become: true }
