@@ -18,3 +18,6 @@ users:
       - net.vektah.codeglance
       - com.developerphil.adbidea
       - org.sylfra.idea.plugins.linessorter
+      - co.nums.intellij.aem
+      - ru.adelf.idea.dotenv
+      -
