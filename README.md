@@ -14,7 +14,7 @@ $ cd ubuntu-desktop-ansible-config && source ./ansible-setup.sh
 
 ### Run the playbook in cwd
 
-Before you run the playbook, it is highly recommended for you go through the "Available roles" section below and see which roles require some customization from your end. This information is provided because of the fact that the defaults may not be adequate enough for all circumstances.
+Before you run the playbook, it is highly recommended for you go through the "Available roles" section below, and see which roles require some customization from your end - the defaults may not be adequate enough for all circumstances.
 
 >Enter your sudo password when prompted
 
