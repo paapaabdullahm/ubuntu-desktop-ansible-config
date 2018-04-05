@@ -8,7 +8,11 @@
     - { role: git, become: true }
     - { role: oh-my-zsh, become: true }
     - { role: java-openjdk, become: true }
-    - { role: google-chrome, become: true }
+
+    # Gnome 3 Theme
+    - { role: gnome3-desktop, become: true }
+    - { role: gnome-tweak-tool, become: true }
+    - { role: gnome-user-share, become: true }
 
     # Developer Tools
     - { role: apache-maven, become: true }
@@ -16,6 +20,7 @@
     - { role: dia, become: true }
     - { role: docker, become: true }
     - { role: docker-images, become: true }
+    - { role: google-chrome, become: true }
     - { role: jetbrains-idea, become: true }
     - { role: jetbrains-idea-plugins, become: true }
     - { role: smartgit, become: true }
@@ -27,9 +32,6 @@
     # Utility Tools
     - { role: brave, become: true }
     - { role: calibre, become: true }
-    # - { role: gnome3-desktop, become: true }
-    - { role: gnome-user-share, become: true }
-    - { role: gnome-tweak-tool, become: true }
     - { role: gnome-chess, become: true }
     - { role: gnucash, become: true }
     - { role: rambox, become: true }
