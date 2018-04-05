@@ -1,0 +1,9 @@
+---
+
+- name: Install Gnome Tweak Tool
+  apt:
+    pkg: gnome-tweak-tool
+    state: latest
+    update_cache: yes
+    cache_valid_time: "{{ aptcachetime }}"
+  register: gtt_install
