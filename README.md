@@ -68,7 +68,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           An open source, community-driven framework for managing your zsh configuration.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -77,7 +77,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A free and open source implementation of the Java Platform, Standard Edition (Java SE).
         </td>
         <td width="35%">
-          &nbsp;
+          You can add more SDKs if required by your project.
         </td>
     </tr>
     <tr>
@@ -98,7 +98,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A software project management and comprehension tool.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -107,7 +107,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A free and open-source text and source code editor.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -116,7 +116,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A free and open source general-purpose diagramming software.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -125,7 +125,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A computer program that performs operating-system-level virtualization also known as containerization.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -161,7 +161,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A Git client for Windows, Mac and Linux. It is free for non-commercial use, provides a graphical access to Git repositories and can access Subversion repositories.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -170,7 +170,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A proprietary cross-platform source code editor  with a Python API.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -179,7 +179,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A free and open-source hypervisor for x86 computers currently being developed by Oracle Corporation.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -188,7 +188,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           An open-source software  product for building and maintaining portable virtual software development environments.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -197,7 +197,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A tool that makes it easy to run Kubernetes locally.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <!---------------------------------------------------------->
@@ -209,7 +209,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           Brave is a free and open-source web browser based on the Chromium web browser and its Blink engine, announced by the co-founder of the Mozilla project and creator of JavaScript, Brendan Eich.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -218,7 +218,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A powerful and easy to use e-book manager.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -227,7 +227,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A desktop environment which uses GNOME Shell engine and is composed of free and open-source software that runs on Linux and most BSD derivatives.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -236,7 +236,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A session service that enables easy sharing of files between several computers.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -245,7 +245,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A 2D chess game, where games can be played between a combination of human and computer players.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -254,7 +254,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A personal and small-business financial-accounting software.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -263,7 +263,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           Free, Open Source and Cross Platform messaging and emailing app that combines common web applications into one.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -272,7 +272,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           Similar to Rambox, Wavebox lets you bring all your web communication tools together for faster, smarter working.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -281,7 +281,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A powerful tool to increase download speed up-to 500%.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -290,7 +290,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A free and open-source vector graphics editor; it can be used to create or edit vector graphics such as illustrations, diagrams, line arts, charts, logos and complex paintings.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -299,7 +299,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A free and open-source video editing software based on the MLT Framework, KDE and Qt.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -308,7 +308,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A cross-platform password manager that allows you to store all of your passwords in one location.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -317,7 +317,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A free software digital audio workstation program developed for Linux with ALSA and Qt4.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -326,7 +326,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A Qt-based screencast software made for Linux operating systems, which was created as a simpler alternative to programs such as ffmpeg/avconv and VLC.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -335,7 +335,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A free and open-source transcoder for digital audio files. It uses GStreamer for input and output files. It has multi threaded design and can also extract the audio from videos.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -344,7 +344,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A GTK+-based graphical front-end to the cdparanoia CD ripping library.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
     <tr>
@@ -353,7 +353,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A configuration tool to enable customization of advanced options for GNOME 3.
         </td>
         <td width="35%">
-          &nbsp;
+          This role works best with <i>gnome3-desktop</i> role.
         </td>
     </tr>
     <tr>
@@ -362,7 +362,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A configuration tool for the Unity Desktop.
         </td>
         <td width="35%">
-          &nbsp;
+          n/a
         </td>
     </tr>
 </table>
