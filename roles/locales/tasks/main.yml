@@ -45,3 +45,7 @@
 - name: Set locale to {{ locale }}
   become: false
   command: localectl set-locale LANG={{ locale_compiled }}
+
+- name: Change Time from 24h to 12h format
+  become: false
+  command: gsettings set org.gnome.settings.file-chooser clock-format '12h'
