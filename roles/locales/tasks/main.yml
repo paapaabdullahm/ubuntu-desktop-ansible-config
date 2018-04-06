@@ -46,6 +46,30 @@
   become: false
   command: localectl set-locale LANG={{ locale_compiled }}
 
-#- name: Change Time from 24h to 12h format
-#  become: false
-#  command: gsettings set org.gnome.settings.file-chooser clock-format '12h'
+- name: Show the day in the Clock indicator
+  become: false
+  command: gsettings set com.canonical.indicator.datetime show-day true
+
+- name: Show the month and day of month in the Clock indicator
+  become: false
+  command: gsettings set com.canonical.indicator.datetime show-date true
+
+- name: Change Time from 24hr to 12hr Format
+  become: false
+  command: gsettings set com.canonical.indicator.datetime time-format '12-hour'
+
+- name: Show the seconds in the Clock indicator
+  become: false
+  command: gsettings set com.canonical.indicator.datetime show-seconds true
+
+- name: Show monthly calendar in the clock menu
+  become: false
+  command: gsettings set com.canonical.indicator.datetime show-calendar true
+
+- name: Show time in other locations in the clock menu
+  become: false
+  command: gsettings set com.canonical.indicator.datetime show-locations true
+
+- name: Add Singapore, Texas, and Toronto locations in the clock menu
+  become: false
+  command: gsettings set com.canonical.indicator.datetime locations ['UTC UTC', 'Asia/Singapore Singapore', 'America/Chicago Texas City', 'America/Toronto Toronto']
