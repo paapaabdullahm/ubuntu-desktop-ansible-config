@@ -53,13 +53,12 @@ EXTENSION_NAME=$(sed 's/^.*name[\": ]*\([^\"]*\).*$/\1/' "${TMP_DESC}")
 EXTENSION_DESC=$(sed 's/^.*description[\": ]*\([^\"]*\).*$/\1/' "${TMP_DESC}")
 EXTENSION_UUID=$(sed 's/^.*uuid[\": ]*\([^\"]*\).*$/\1/' "${TMP_DESC}")
 
-# if ID not known
+# if no description
 if [ ! -s "${TMP_DESC}" ]
 then
 	# error message
 	echo "[Error] Extension with ID ${EXTENSION_ID} is not available from Gnome Shell Extension site."
 
-# else, if installation mode
 elif [ "${ACTION}" = "install" ];
 then
 	# extract all available versions
