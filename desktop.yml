@@ -9,11 +9,6 @@
     - { role: oh-my-zsh, become: true }
     - { role: java-openjdk, become: true }
 
-    # Gnome 3 Theme
-    - { role: gnome3-desktop, become: true }
-    - { role: gnome-tweak-tool, become: true }
-    - { role: gnome-user-share, become: true }
-
     # Developer Tools
     - { role: apache-maven, become: true }
     - { role: atom, become: true }
@@ -33,6 +28,8 @@
     - { role: brave, become: true }
     - { role: calibre, become: true }
     - { role: gnome-chess, become: true }
+    - { role: gnome-tweak-tool, become: true }
+    - { role: gnome-user-share, become: true }
     - { role: gnucash, become: true }
     - { role: rambox, become: true }
     - { role: wavebox, become: true }
