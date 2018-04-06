@@ -14,7 +14,7 @@ $ cd ubuntu-desktop-ansible-config && source ./ansible-setup.sh
 
 ### Run the playbook in cwd
 
-Before you run the playbook, it is highly recommended for you go through the "Available roles" section below, and see which roles require some customization from your end - the defaults may not be adequate enough for all circumstances.
+Before you proceed, it is highly recommended that you go through the "Available roles" section below, and see which roles require some customization.
 
 >Enter your sudo password when prompted
 
@@ -30,7 +30,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
     <tr>
         <th width="25%">Role</th>
         <th width="40%">Description</th>
-        <th width="35%">Customizations</th>
+        <th width="35%">Customization Options</th>
     </tr>
     <!--------------------------------------------------------->
     <tr><td width="100%" colspan=3><b>Common Tools</b></td></tr>
