@@ -64,59 +64,31 @@
     dest: /opt/google/chrome/extensions/{{ item.id }}.json
     mode: 0644
   with_items:
-    - name: Adblock Plus
-      id: cfhdojbkjhnklbpkdaibdccddilifddb
-    - name: Augury
-      id: elgalmkoelokbchhkhacckoklkejnhcd
-    - name: builtwith-technology-prof
-      id: dapjbgnjinbpoindlpdmhochffioedbn
-    - name: Care your Eyes
-      id: fidmpnedniahpnkeomejhnepmbdamlhl
-    - name: Checker Plus for Gmail™
-      id: oeopbcgkkoapgobdbedcemjljbihmemj
-    - name: Color Picker
-      id: iegjhenkjneoaocdnoakkcgfdfcpbede
-    - name: Color Picker and Converter
-      id: ofkcpbjmhcdipbhcdfechmckpaofdjlf
-    - name: ColorPick Eyedropper
-      id: ohcpnigalekghcmgcdcenkpelffpdolg
-    - name: cookies.txt
-      id: njabckikapfpffapmjgojcnbfjonfjfg
-    - name: Cookie Inspector
-      id: jgbbilmfbammlbbhmmgaagdkbkepnijn
-    - name: EverSync
-      id: iohcojnlgnfbmjfjfkbhahhmppcggdog
-    - name: github-submodule-links
-      id: ncoknneddcolmgfnmcbemhhaghjdlkkb
-    - name: Grepsr - Web Scraping Tool
-      id: hjdijkhlfpeafghibmiabeofkiicdnjm
-    - name: isometric-contributions
-      id: mjoedlfflcchnleknnceiplgaeoegien
-    - name: jsonview
-      id: chklaanhfefbnpoihckbnefhakgolnmc
-    - name: kimono
-      id: deoaddaobnieaecelinfdllcgdehimih
-    - name: LinkedIn Extension
-      id: meajfmicibjppdgbjfkpdikfjcflabpk
-    - name: Mobile/Responsive Web Design Tester
-      id: elmekokodcohlommfikpmojheggnbelo
-    - name: ModHeader
-      id: idgpnmonknjnojddfkpgkljpfnnfcklj
-    - name: postman
-      id: fhbjgbiflinjbdggehcddcbncdddomop
-    - name: Ripple Emulator (Beta)
-      id: geelfhphabnejjhdalkjhgipohgpdnoc
-    - name: stylish
-      id: fjnbnpbmkenffdnngjfgmeleoegfcffe
-    - name: TCP Socket debugger
-      id: fenhpkaocajfmpchcojgniehkamhkafp
-    - name: Video DownloadHelper
-      id: lmjnegcaeklhafolokijcfjliaokphfk
-    - name: WAVE Evaluation Tool
-      id: jbbplnpkjmmeebjpijfedlgcdilocofh
-    - name: XDM Browser Monitor
-      id: bgpkelneombgembocnickiddlbebmica
-    - name: YouTube Downloader
-      id: pncidppbibhnmkmhmeoiheclffhpaeac
-    - name: Zoom Scheduler
-      id: kgjfgplpablkjnlkjmjdecgdpfankdle
+    - { name: "Adblock Plus", id: cfhdojbkjhnklbpkdaibdccddilifddb }
+    - { name: "Augury", id: elgalmkoelokbchhkhacckoklkejnhcd }
+    - { name: "builtwith-technology-prof", id: dapjbgnjinbpoindlpdmhochffioedbn }
+    - { name: "Care your Eyes", id: fidmpnedniahpnkeomejhnepmbdamlhl }
+    - { name: "Checker Plus for Gmail™", id: oeopbcgkkoapgobdbedcemjljbihmemj }
+    - { name: "Color Picker", id: iegjhenkjneoaocdnoakkcgfdfcpbede }
+    - { name: "Color Picker and Converter", id: ofkcpbjmhcdipbhcdfechmckpaofdjlf }
+    - { name: "ColorPick Eyedropper", id: ohcpnigalekghcmgcdcenkpelffpdolg }
+    - { name: "cookies.txt", id: njabckikapfpffapmjgojcnbfjonfjfg }
+    - { name: "Cookie Inspector", id: jgbbilmfbammlbbhmmgaagdkbkepnijn }
+    - { name: "EverSync", id: iohcojnlgnfbmjfjfkbhahhmppcggdog }
+    - { name: "github-submodule-links", id: ncoknneddcolmgfnmcbemhhaghjdlkkb }
+    - { name: "Grepsr - Web Scraping Tool", id: hjdijkhlfpeafghibmiabeofkiicdnjm }
+    - { name: "isometric-contributions", id: mjoedlfflcchnleknnceiplgaeoegien }
+    - { name: "jsonview", id: chklaanhfefbnpoihckbnefhakgolnmc }
+    - { name: "kimono", id: deoaddaobnieaecelinfdllcgdehimih }
+    - { name: "LinkedIn Extension", id: meajfmicibjppdgbjfkpdikfjcflabpk }
+    - { name: "Mobile/Responsive Web Design Tester", id: elmekokodcohlommfikpmojheggnbelo }
+    - { name: "ModHeader", id: idgpnmonknjnojddfkpgkljpfnnfcklj }
+    - { name: "postman", id: fhbjgbiflinjbdggehcddcbncdddomop }
+    - { name: "Ripple Emulator (Beta)", id: geelfhphabnejjhdalkjhgipohgpdnoc }
+    - { name: "stylish", id: fjnbnpbmkenffdnngjfgmeleoegfcffe }
+    - { name: "TCP Socket debugger", id: fenhpkaocajfmpchcojgniehkamhkafp }
+    - { name: "Video DownloadHelper", id: lmjnegcaeklhafolokijcfjliaokphfk }
+    - { name: "WAVE Evaluation Tool", id: jbbplnpkjmmeebjpijfedlgcdilocofh }
+    - { name: "XDM Browser Monitor", id: bgpkelneombgembocnickiddlbebmica }
+    - { name: "YouTube Downloader", id: pncidppbibhnmkmhmeoiheclffhpaeac }
+    - { name: "Zoom Scheduler", id: kgjfgplpablkjnlkjmjdecgdpfankdle }
