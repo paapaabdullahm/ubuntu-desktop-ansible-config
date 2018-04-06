@@ -1,5 +1,1 @@
 ---
-
-- name: Set User XSession to GNOME 3
-  become: false
-  raw: python xsession.py --user-name {{ ansible_env.USER }} set gdm3
