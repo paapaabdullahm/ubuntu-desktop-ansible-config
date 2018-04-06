@@ -56,7 +56,6 @@ EXTENSION_UUID=$(sed 's/^.*uuid[\": ]*\([^\"]*\).*$/\1/' "${TMP_DESC}")
 # if no description
 if [ ! -s "${TMP_DESC}" ]
 then
-	# error message
 	echo "[Error] Extension with ID ${EXTENSION_ID} is not available from Gnome Shell Extension site."
 
 elif [ "${ACTION}" = "install" ];
@@ -64,7 +63,7 @@ then
 	# extract all available versions
 	sed "s/\([0-9]*\.[0-9]*[0-9\.]*\)/\n\1/g" "${TMP_DESC}" | grep "pk" | grep "version" | sed "s/^\([0-9\.]*\).*$/\1/" | sort -V > "${TMP_VERSION}"
 
-	# lok for latest or current version
+	# look for latest or current version
 	[ "${TARGET_VERSION}" = "latest" ] && VERSION_AVAILABLE=$(cat "${TMP_VERSION}" | tail -n 1) || VERSION_AVAILABLE=$(grep "^${TARGET_VERSION}$" "${TMP_VERSION}")
 
 	# if no candidate version found, get the next one after current version
@@ -109,28 +108,22 @@ then
 	else
 		# generate list of available versions
 		LST_VERSION=$(cat ${TMP_VERSION} | sort -V | xargs)
-
-		# display error message
 		echo "[Error] Gnome Shell version is ${CURRENT_VERSION}, no candidate extension ${EXTENSION_NAME} found"
 		echo "Available versions are ${LST_VERSION}"
 	fi
 
 elif [ "${ACTION}" = "remove" ]
 then
-	# if extension is installed, removal
+	# if extension is installed, then remove it
 	if [ -d "${EXTENSION_PATH}/${EXTENSION_UUID}" ]
 	then
-		# remove extension folder
 		${INSTALL_SUDO} rm -f -r "${EXTENSION_PATH}/${EXTENSION_UUID}"
-
-		# success message
 		echo "[Success] Extension ${EXTENSION_NAME} has been removed in ${INSTALL_MODE} mode (Id ${EXTENSION_ID}, Uuid ${EXTENSION_UUID})"
 		echo "Restart Gnome Shell ${CURRENT_VERSION} to take effect."
 	else
-		# error message
 		echo "[Error] Extension ${EXTENSION_NAME} has not been found in ${INSTALL_MODE} mode (Id ${EXTENSION_ID}, Uuid ${EXTENSION_UUID})"
 	fi
 fi
 
-# remove temp files
+# finally, cleanup system by removing temp files
 rm -f ${TMP_DESC} ${TMP_ZIP} ${TMP_VERSION}
