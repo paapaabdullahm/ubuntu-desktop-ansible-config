@@ -20,4 +20,4 @@ users:
       - org.sylfra.idea.plugins.linessorter
       - co.nums.intellij.aem
       - ru.adelf.idea.dotenv
-      -
+      - com.vladsch.idea.multimarkdown
