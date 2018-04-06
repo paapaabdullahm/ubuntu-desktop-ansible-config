@@ -101,8 +101,6 @@ then
 		# if extension not already enabled, declare it
 		EXTENSION_ENABLED=$(echo ${EXTENSION_LIST} | grep ${EXTENSION_UUID})
 		[ "$EXTENSION_ENABLED" = "" ] && gsettings set org.gnome.shell enabled-extensions "[${EXTENSION_LIST}'${EXTENSION_UUID}']"
-
-		# success message
 		echo "[success] Extension ${EXTENSION_NAME} version ${VERSION_AVAILABLE} has been installed in ${INSTALL_MODE} mode (Id ${EXTENSION_ID}, Uuid ${EXTENSION_UUID})"
 		echo "Restart Gnome Shell ${CURRENT_VERSION} to take effect."
 	else
