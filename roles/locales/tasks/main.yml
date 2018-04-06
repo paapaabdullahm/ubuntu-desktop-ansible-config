@@ -72,4 +72,4 @@
 
 - name: Add Singapore, Texas, and Toronto locations in the clock menu
   become: false
-  command: gsettings set com.canonical.indicator.datetime locations ['UTC UTC', 'Asia/Singapore Singapore', 'America/Chicago Texas City', 'America/Toronto Toronto']
+  command: gsettings set com.canonical.indicator.datetime locations "['UTC UTC', 'Asia/Singapore Singapore', 'America/Chicago Texas City', 'America/Toronto Toronto']"
