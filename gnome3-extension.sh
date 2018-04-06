@@ -48,7 +48,7 @@ TMP_VERSION=$(mktemp -t ext-XXXXXXXX.ver) && rm ${TMP_VERSION}
 # get extension description
 wget --quiet --header='Accept-Encoding:none' -O "${TMP_DESC}" "${GNOME_SITE}/extension-info/?pk=${EXTENSION_ID}"
 
-# get needed extension details
+# store needed extension details
 EXTENSION_NAME=$(sed 's/^.*name[\": ]*\([^\"]*\).*$/\1/' "${TMP_DESC}")
 EXTENSION_DESC=$(sed 's/^.*description[\": ]*\([^\"]*\).*$/\1/' "${TMP_DESC}")
 EXTENSION_UUID=$(sed 's/^.*uuid[\": ]*\([^\"]*\).*$/\1/' "${TMP_DESC}")
