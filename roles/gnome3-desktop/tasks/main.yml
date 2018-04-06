@@ -3,17 +3,17 @@
 - name: Add Numix Icon Theme PPA repository
   apt_repository:
     repo: 'ppa:numix/ppa'
-    state: present
+    state: absent
 
 - name: Add Papirus Icon Theme PPA repository
   apt_repository:
     repo: 'ppa:papirus/papirus'
-    state: present
+    state: absent
 
 - name: Install GNOME 3 desktop packages
   apt:
     pkg: "{{ item }}"
-    state: latest
+    state: absent
     install_recommends: yes
     update_cache: yes
     cache_valid_time: "{{ aptcachetime }}"
@@ -24,7 +24,7 @@
 
 - name: Set User XSession to GNOME 3
   become: false
-  raw: python xsession.py --user-name {{ ansible_env.USER }} set gdm3
+  raw: python xsession.py --user-name {{ ansible_env.USER }} set ubuntu
   when: gnome3_desktop_install is changed
 
 - name: Set Window Buttons back to left
@@ -35,7 +35,7 @@
 - name: Install GNOME 3 Icon Theme packages
   apt:
     pkg: "{{ item }}"
-    state: latest
+    state: absent
     install_recommends: yes
     update_cache: yes
     cache_valid_time: "{{ aptcachetime }}"
@@ -46,7 +46,7 @@
   register: gnome3_icon_theme_install
 
 - name: Install GNOME 3 extensions
-  raw: bash gnome3-extension.sh -s -i --eid {{ item.id }} -v latest
+  raw: bash gnome3-extension.sh -s -r --eid {{ item.id }} -v latest
   with_items:
     - { name: "Activities Configurator", id: 358 }
     - { name: "Workspace to Dock", id: 427 }
