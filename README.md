@@ -22,7 +22,9 @@ Before you proceed, it is highly recommended that you go through the "Available 
 $ ansible-playbook desktop.yml --ask-become-pass
 ```
 
-Finally, restart your computer for all the changes to take effect.
+When configuration is complete, restart your computer for all the changes to take effect.
+
+If you run into timeout issues at some point in the configuration process, latent internet connection may be the problem. To solve this simply rerun the above playbook and hopefully, things should be ok.
 
 ### Available roles
 
