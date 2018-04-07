@@ -381,7 +381,7 @@ When you run into connection timeout issues, at some point in the configuration 
           * Date and Time: <br />
           You can customize the extra timezone information added for different locations from here: <a href="./roles/customize-ui/defaults/main.yml"><i>customize-ui/defaults/main.yml</i></a><br /><br />
           * Appearance: <br />
-          Add your preferred wallpapers here: <a href="./roles/customize-ui/files"><i>customize-ui/files</i></a>. Make sure to change the following variables if necessary: <i>wallpaper_mode, wallpaper_name, and wallpaper_file</i>
+          Add your preferred wallpapers here: <a href="./roles/customize-ui/files"><i>customize-ui/files</i></a>. Make sure to change the following variables if necessary: <i>wallpaper_mode, wallpaper_name, wallpaper_directory and wallpaper_file_path</i>
         </td>
     </tr>
 </table>
