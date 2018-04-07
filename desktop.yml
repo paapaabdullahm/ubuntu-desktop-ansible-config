@@ -42,3 +42,6 @@
     - { role: sound-converter, become: true }
     - { role: sound-juicer, become: true }
     - { role: unity-tweak-tool, become: true }
+
+    # Customize UI
+    - { role: customize-ui, become: true }
