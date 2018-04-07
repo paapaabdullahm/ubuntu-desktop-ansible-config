@@ -1,0 +1,7 @@
+---
+
+wallpaper_mode: "'spanned'" # available options ['zoom', 'spanned']
+wallpaper_name: "3520x1080_span_wallpaper_01.png" # change if not dual monitor
+wallpaper_file: "'file://{{ ansible_env.HOME }}/Pictures/Wallpapers/{{ wallpaper_name }}'"
+
+locations: "\"['UTC UTC', 'Asia/Singapore Singapore', 'America/Chicago Texas City', 'America/Toronto Toronto']\""

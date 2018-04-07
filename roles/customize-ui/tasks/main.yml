@@ -1,0 +1,82 @@
+---
+
+- name: Customize Date and Time
+  become: false
+  command: gsettings set {{ item.module }} {{ item.key }} {{ item.value }}
+  with_items:
+    - { module: "com.canonical.indicator.datetime", key: "show-day", value: true }
+    - { module: "com.canonical.indicator.datetime", key: "show-date", value: true }
+    - { module: "com.canonical.indicator.datetime", key: "time-format", value: "'12-hour'" }
+    - { module: "com.canonical.indicator.datetime", key: "show-seconds", value: true }
+    - { module: "com.canonical.indicator.datetime", key: "show-calendar", value: true }
+    - { module: "com.canonical.indicator.datetime", key: "show-locations", value: true }
+    - { module: "com.canonical.indicator.datetime", key: "locations", value: "{{ locations }}" }
+
+- name: Ensure {{ wallpaper_name }} file exists at source
+  stat:
+    path: "{{ playbook_dir }}/roles/customize-ui/files/{{ wallpaper_name }}"
+  register: wallpaper_src_file
+
+- debug:
+    msg: "{{ wallpaper_name }} is not defined (file doesn't exist)"
+  when: not wallpaper_src_file.stat.exists
+
+- debug:
+    msg: "{{ wallpaper_name }} is defined (file exist)"
+  when: wallpaper_src_file.stat.exists is defined and wallpaper_src_file.stat.exists
+
+- name: Copy wallpaper to destination
+  copy:
+    src: "{{ wallpaper_name }}"
+    dest: "{{ wallpaper_file }}"
+    owner: "{{ ansible_env.USER }}"
+    group: "{{ ansible_env.USER }}"
+    mode: 'ug=rw,o=r'
+  register: wallpaper_file_copy
+  when: wallpaper_src_file.stat.exists is defined and wallpaper_src_file.stat.exists
+
+- name: Customize Desktop Background - Wallpaper
+  become: false
+  command: gsettings set {{ item.module }} {{ item.key }} {{ item.value }}
+  with_items:
+    - { module: "org.gnome.desktop.background", key: "color-shading-type", value: "'solid'" }
+    - { module: "org.gnome.desktop.background", key: "picture-uri", value: "{{ wallpaper_file }}" }
+    - { module: "org.gnome.desktop.background", key: "picture-options", value: "{{ wallpaper_mode }}" }
+  when: wallpaper_file_copy is succeeded
+
+- name: Customize Appearance - Look
+  become: false
+  command: gsettings set {{ item.module }} {{ item.key }} {{ item.value }}
+  with_items:
+    - { module: "org.compiz.profiles.unity-lowgfx.plugins.unityshell", key: "icon-size", value: 34 }
+    - { module: "org.compiz.profiles.unity.plugins.unityshell", key: "icon-size", value: 34 }
+    - { module: "org.compiz.profiles.unity.plugins.expo", key: "x-offset", value: 50 }
+    - { module: "org.gnome.desktop.wm.preferences", key: "theme", value: "'Radiance'" }
+    - { module: "org.gnome.desktop.interface", key: "cursor-theme", value: "'DMZ-White'" }
+    - { module: "org.gnome.desktop.interface", key: "gtk-theme", value: "'Radiance'" }
+    - { module: "org.gnome.desktop.interface", key: "icon-theme", value: "'ubuntu-mono-light'" }
+
+- name: Customize Appearance - Behavior
+  become: false
+  command: gsettings set {{ item.module }} {{ item.key }} {{ item.value }}
+  with_items:
+    - { module: "org.compiz.profiles.unity-lowgfx.plugins.unityshell", key: "launcher-hide-mode", value: 1 }
+    - { module: "org.compiz.profiles.unity.plugins.unityshell", key: "launcher-hide-mode", value: 1 }
+
+- name: Check if battery backup exists
+  stat:
+    path: "/sys/class/power_supply/BAT0/power"
+  register: battery_backup
+
+- debug:
+    msg: "Battery backup doesn't exist"
+  when: not battery_backup.stat.exists
+
+- debug:
+    msg: "Battery backup exist"
+  when: battery_backup.stat.exists is defined and battery_backup.stat.exists
+
+- name: Specify the action to take when power is critically low
+  become: false
+  command: gsettings set org.gnome.settings-daemon.plugins.power critical-battery-action 'shutdown'
+  when: battery_backup.stat.exists is defined and battery_backup.stat.exists
