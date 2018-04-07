@@ -138,10 +138,10 @@ When you run into connection timeout issues, at some point in the configuration 
     <tr>
         <td width="25%"><i>docker-images</i></td>
         <td width="40%">
-          Pulls docker images onto your desktop for later use. The role also creates aliases for the downloaded images.
+          Pulls docker images onto your desktop for later use. The role also creates, ready to use aliases for the downloaded images.
         </td>
         <td width="35%">
-          The default shell config file for the aliases is <i>.zshrc</i>. Change this to .bashrc if you have disabled <i>oh-my-zsh</i> role.
+          The default shell config file for the aliases is <i>.zshrc</i>. Change this to .bashrc if you disabled <i>oh-my-zsh</i> role.
         </td>
     </tr>
     <tr>
