@@ -150,7 +150,7 @@ When you run into connection timeout issues, at some point in the configuration 
           A freeware web browser developed by Google.
         </td>
         <td width="35%">
-          To import your bookmarks, include a <i>bookmarks.html</i> file at the following location: <a href="./roles/"></a><i>google-chrome/files</i>. You can also customize which extensions get installed by modifying <a href="./roles/google-chrome/tasks/main.yml"><i>google-chrome/tasks/main.yml</i></a> file.
+          To import your bookmarks, include a <i>bookmarks.html</i> file at the following location: <a href="./roles/google-chrome/files"></a><i>google-chrome/files</i>. You can also customize which extensions get installed by modifying <a href="./roles/google-chrome/tasks/main.yml"><i>google-chrome/tasks/main.yml</i></a> file.
         </td>
     </tr>
     <tr>
