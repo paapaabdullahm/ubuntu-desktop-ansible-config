@@ -112,3 +112,13 @@
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ foreground-color '#ffffff'
   when: clone_fonts is changed
+
+- name: Enable transparent terminal background
+  become: false
+  raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ use-transparent-background true
+  when: clone_fonts is changed
+
+- name: Set terminal background transparency to 7%
+  become: false
+  raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ background-transparency-percent 7
+  when: clone_fonts is changed
