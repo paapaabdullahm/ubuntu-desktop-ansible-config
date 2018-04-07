@@ -38,10 +38,10 @@ $ ansible-playbook desktop.yml --ask-become-pass
     <tr>
         <td width="25%"><i>locales</i></td>
         <td width="40%">
-         A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at <i>locale/files</i> customized or not (e.g. <i>ak_GH</i>, <i>en_GH</i>, <i>en_US</i>, <i>de_NL</i>) and sets it as the default locale for your system.
+         A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at <a href="./roles/locales/files"><i>locales/files</i></a> customized or not (e.g. <i>ak_GH</i>, <i>en_GH</i>, <i>en_US</i>, <i>de_NL</i>) and sets it as the default locale for your system.
         </td>
         <td width="35%">
-         en_GH and Africa/Accra are the default locales provided. Replace them with your own if your language and timezone are different. The default configuration is located at: <i>locales/defaults/main.yml</i>
+         en_GH and Africa/Accra are the default locales provided. Replace them with your own if your language and timezone are different. The default configuration is located at: <a href="./roles/locales/defaults/main.yml"><i>locales/defaults/main.yml</i></a>
         </td>
     </tr>
     <tr>
@@ -59,7 +59,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
          Git is a version control system for tracking changes in computer files and coordinating work on those files among multiple people.
         </td>
         <td width="35%">
-         You should modify the default git global config values found in <i>git/defaults/main.yml</i>
+         You should modify the default git global config values found in <a href="./roles/git/defaults/main.yml"><i>git/defaults/main.yml</i></a>
         </td>
     </tr>
     <tr>
@@ -146,7 +146,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           A freeware web browser developed by Google.
         </td>
         <td width="35%">
-          To import your bookmarks, include a <i>bookmarks.html</i> file at the following location: <i>google-chrome/files</i>. You can also customize which extensions get installed by modifying <i>google-chrome/tasks/main.yml</i> file.
+          To import your bookmarks, include a <i>bookmarks.html</i> file at the following location: <a href="./roles/"></a><i>google-chrome/files</i>. You can also customize which extensions get installed by modifying <a href="./roles/google-chrome/tasks/main.yml"><i>google-chrome/tasks/main.yml</i></a> file.
         </td>
     </tr>
     <tr>
@@ -161,10 +161,10 @@ $ ansible-playbook desktop.yml --ask-become-pass
     <tr>
         <td width="25%"><i>jetbrains-idea-plugins</i></td>
         <td width="40%">
-          Intellij IDEA IDE Plugins. The plugin repository is provided at <a href="http://plugins.jetbrains.com/idea">plugins.jetbrains.com/idea</a>
+          Intellij IDEA IDE Plugins. The plugin repository is provided at <a href="http://plugins.jetbrains.com/idea"><i>plugins.jetbrains.com/idea</i></a>
         </td>
         <td width="35%">
-          You can add or remove plugins from the following location: <i>idea&#x2011;plugins/defaults/main.yml</i>. You need the <i>id</i> of a plugin if you want to add it to the list. To do this search for the plugin's github repo and look for the &lt;id&gt; tag inside the <i>META&#x2011;INF/plugin.xml</i> file.
+          You can add or remove plugins from the following location: <a href="./roles/jetbrains-idea-plugins/defaults/main.yml"><i>jetbrains-idea-plugins/defaults/main.yml</i></a>. You need the <i>id</i> of a plugin if you want to add it to the list. To do this search for the plugin's github repo and look for the &lt;id&gt; tag inside the <i>META&#x2011;INF/plugin.xml</i> file.
         </td>
     </tr>
     <tr>
