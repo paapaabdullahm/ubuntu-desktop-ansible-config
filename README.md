@@ -72,7 +72,7 @@ When you run into connection timeout issues, at some point in the configuration 
           An open source, community-driven framework for managing your zsh configuration.
         </td>
         <td width="35%">
-          n/a
+          The default configs are sensible enough. Little or no customization is required.
         </td>
     </tr>
     <tr>
