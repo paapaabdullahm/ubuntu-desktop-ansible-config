@@ -22,6 +22,8 @@ Before you proceed, it is highly recommended that you go through the "Available 
 $ ansible-playbook desktop.yml --ask-become-pass
 ```
 
+Finally, restart your computer for all the changes to take effect.
+
 ### Available roles
 
 >You can disable a role by commenting it out in desktop.yml playbook. All paths are relative to the `roles` directory, unless otherwise stated.
@@ -38,7 +40,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
     <tr>
         <td width="25%"><i>locales</i></td>
         <td width="40%">
-         A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at <a href="./roles/locales/files"><i>locales/files</i></a> customized or not (e.g. <i>ak_GH</i>, <i>en_GH</i>, <i>en_US</i>, <i>de_NL</i>) and sets it as the default locale for your system.
+         A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at: <a href="./roles/locales/files"><i>locales/files</i></a> customized or not (e.g. <i>ak_GH</i>, <i>en_GH</i>, <i>en_US</i>, <i>de_NL</i>) and sets it as the default locale for your system.
         </td>
         <td width="35%">
          en_GH and Africa/Accra are the default locales provided. Replace them with your own if your language and timezone are different. The default configuration is located at: <a href="./roles/locales/defaults/main.yml"><i>locales/defaults/main.yml</i></a>
@@ -59,7 +61,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
          Git is a version control system for tracking changes in computer files and coordinating work on those files among multiple people.
         </td>
         <td width="35%">
-         You should modify the default git global config values found in <a href="./roles/git/defaults/main.yml"><i>git/defaults/main.yml</i></a>
+         You should modify the default git global config values found at: <a href="./roles/git/defaults/main.yml"><i>git/defaults/main.yml</i></a>
         </td>
     </tr>
     <tr>
@@ -161,7 +163,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
     <tr>
         <td width="25%"><i>jetbrains-idea-plugins</i></td>
         <td width="40%">
-          Intellij IDEA IDE Plugins. The plugin repository is provided at <a href="http://plugins.jetbrains.com/idea"><i>plugins.jetbrains.com/idea</i></a>
+          Intellij IDEA IDE Plugins. The plugin repository is provided at: <a href="http://plugins.jetbrains.com/idea"><i>plugins.jetbrains.com/idea</i></a>
         </td>
         <td width="35%">
           You can add or remove plugins from the following location: <a href="./roles/jetbrains-idea-plugins/defaults/main.yml"><i>jetbrains-idea-plugins/defaults/main.yml</i></a>. You need the <i>id</i> of a plugin if you want to add it to the list. To do this search for the plugin's github repo and look for the &lt;id&gt; tag inside the <i>META&#x2011;INF/plugin.xml</i> file.
@@ -371,11 +373,11 @@ $ ansible-playbook desktop.yml --ask-become-pass
     <tr>
         <td width="25%"><i>customize-ui</i></td>
         <td width="40%">
-          Customizes datetime, appearance, and specifies the <i>shutdown</i> action when power is critically low.
+          Currently customizes datetime, appearance, and specifies the <i>shutdown</i> action when power is critically low.
         </td>
         <td width="35%">
           * Date and Time: <br />
-          You can customize the timezone locations from here: <a href="./roles/customize-ui/defaults/main.yml"><i>customize-ui/defaults/main.yml</i></a><br /><br />
+          You can customize the extra timezone information added for different locations from here: <a href="./roles/customize-ui/defaults/main.yml"><i>customize-ui/defaults/main.yml</i></a><br /><br />
           * Appearance: <br />
           Add your preferred wallpapers here: <a href="./roles/customize-ui/files"><i>customize-ui/files</i></a>. Make sure to change the following variables if necessary: <i>wallpaper_mode, wallpaper_name, and wallpaper_file</i>
         </td>
