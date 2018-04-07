@@ -368,4 +368,16 @@ $ ansible-playbook desktop.yml --ask-become-pass
           n/a
         </td>
     </tr>
+    <tr>
+        <td width="25%"><i>customize-ui</i></td>
+        <td width="40%">
+          Customizes datetime, appearance, and specifies the <i>shutdown</i> action when power is critically low.
+        </td>
+        <td width="35%">
+          * Date and Time: <br />
+          You can customize the timezone locations from here: <i>customize-ui/defaults/main.yml</i><br /><br />
+          * Appearance: <br />
+          Add your preferred wallpapers here: <i>customize-ui/files</i>. Make sure to change the following variables if necessary: <i>wallpaper_mode, wallpaper_name, and wallpaper_file</i>
+        </td>
+    </tr>
 </table>
