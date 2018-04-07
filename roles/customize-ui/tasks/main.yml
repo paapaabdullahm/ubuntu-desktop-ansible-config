@@ -25,10 +25,19 @@
     msg: "{{ wallpaper_name }} is defined (file exist)"
   when: wallpaper_src_file.stat.exists is defined and wallpaper_src_file.stat.exists
 
+- name: Create wallpaper destination directory if not exist
+  file:
+    state: directory
+    path: "{{ wallpaper_directory }}"
+    owner: "{{ ansible_env.USER }}"
+    group: "{{ ansible_env.USER }}"
+    mode: 'ug=rwx,o=rx'
+  when: wallpaper_src_file.stat.exists is defined and wallpaper_src_file.stat.exists
+
 - name: Copy wallpaper to destination
   copy:
     src: "{{ wallpaper_name }}"
-    dest: "{{ wallpaper_file }}"
+    dest: "{{ wallpaper_file_path }}"
     owner: "{{ ansible_env.USER }}"
     group: "{{ ansible_env.USER }}"
     mode: 'ug=rw,o=r'
@@ -40,7 +49,7 @@
   command: gsettings set {{ item.module }} {{ item.key }} {{ item.value }}
   with_items:
     - { module: "org.gnome.desktop.background", key: "color-shading-type", value: "'solid'" }
-    - { module: "org.gnome.desktop.background", key: "picture-uri", value: "{{ wallpaper_file }}" }
+    - { module: "org.gnome.desktop.background", key: "picture-uri", value: "{{ wallpaper_file_path }}" }
     - { module: "org.gnome.desktop.background", key: "picture-options", value: "{{ wallpaper_mode }}" }
   when: wallpaper_file_copy is succeeded
 
