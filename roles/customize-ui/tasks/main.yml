@@ -57,9 +57,9 @@
   become: false
   command: gsettings set {{ item.module }} {{ item.key }} {{ item.value }}
   with_items:
-    - { module: "org.compiz.profiles.unity-lowgfx.plugins.unityshell", key: "icon-size", value: 34 }
-    - { module: "org.compiz.profiles.unity.plugins.unityshell", key: "icon-size", value: 34 }
-    - { module: "org.compiz.profiles.unity.plugins.expo", key: "x-offset", value: 50 }
+    - { module: "org.compiz.profiles.unity-lowgfx.plugins.unityshell", key: "icon-size", value: "34" }
+    - { module: "org.compiz.profiles.unity.plugins.unityshell", key: "icon-size", value: "34" }
+    - { module: "org.compiz.profiles.unity.plugins.expo", key: "x-offset", value: "50" }
     - { module: "org.gnome.desktop.wm.preferences", key: "theme", value: "'Radiance'" }
     - { module: "org.gnome.desktop.interface", key: "cursor-theme", value: "'DMZ-White'" }
     - { module: "org.gnome.desktop.interface", key: "gtk-theme", value: "'Radiance'" }
@@ -69,8 +69,8 @@
   become: false
   command: gsettings set {{ item.module }} {{ item.key }} {{ item.value }}
   with_items:
-    - { module: "org.compiz.profiles.unity-lowgfx.plugins.unityshell", key: "launcher-hide-mode", value: 1 }
-    - { module: "org.compiz.profiles.unity.plugins.unityshell", key: "launcher-hide-mode", value: 1 }
+    - { module: "org.compiz.profiles.unity-lowgfx.plugins.unityshell", key: "launcher-hide-mode", value: "1" }
+    - { module: "org.compiz.profiles.unity.plugins.unityshell", key: "launcher-hide-mode", value: "1" }
 
 - name: Check if battery backup exists
   stat:
