@@ -377,7 +377,7 @@ $ ansible-playbook desktop.yml --ask-become-pass
           * Date and Time: <br />
           You can customize the timezone locations from here: <a href="./roles/customize-ui/defaults/main.yml"><i>customize-ui/defaults/main.yml</i></a><br /><br />
           * Appearance: <br />
-          Add your preferred wallpapers here: <i>customize-ui/files</i>. Make sure to change the following variables if necessary: <i>wallpaper_mode, wallpaper_name, and wallpaper_file</i>
+          Add your preferred wallpapers here: <a href="./roles/customize-ui/files"><i>customize-ui/files</i></a>. Make sure to change the following variables if necessary: <i>wallpaper_mode, wallpaper_name, and wallpaper_file</i>
         </td>
     </tr>
 </table>
