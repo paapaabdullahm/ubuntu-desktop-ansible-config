@@ -297,7 +297,7 @@ When you run into connection timeout issues, at some point in the configuration 
           A powerful tool to increase download speed up-to 500%.
         </td>
         <td width="35%">
-          n/a
+          For some reason, I had to run xdman at least once before google chrome could detect it.
         </td>
     </tr>
     <tr>
