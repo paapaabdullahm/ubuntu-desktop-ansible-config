@@ -1,7 +1,7 @@
 ---
 
 wallpaper_mode: "'spanned'" # available options ['zoom', 'spanned']
-wallpaper_name: "3520x1080_span_wallpaper_01.png" # change if not dual monitor
+wallpaper_name: "3520x1080_span_wallpaper_01.png" # change if not using dual monitor
 wallpaper_directory: "{{ ansible_env.HOME }}/Pictures/Wallpapers"
 wallpaper_file_path: "'file://{{ wallpaper_directory }}/{{ wallpaper_name }}'"
 
