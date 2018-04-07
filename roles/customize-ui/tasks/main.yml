@@ -72,10 +72,10 @@
 
 - name: Customize Appearance - Visibility Behavior
   become: false
-  command: gsettings set {{ item.module }} {{ item.key }} {{ item.value }}
+  command: dconf write {{ item.module }}/{{ item.key }} {{ item.value }}
   with_items:
-    - { module: "org.compiz.profiles.unity-lowgfx.plugins.unityshell", key: "launcher-hide-mode", value: "1" }
-    - { module: "org.compiz.profiles.unity.plugins.unityshell", key: "launcher-hide-mode", value: "1" }
+    - { module: "/org/compiz/profiles/unity-lowgfx/plugins/unityshell", key: "launcher-hide-mode", value: "1" }
+    - { module: "/org/compiz/profiles/unity/plugins/unityshell", key: "launcher-hide-mode", value: "1" }
 
 - name: Check if battery backup exists for your computer system
   stat:
