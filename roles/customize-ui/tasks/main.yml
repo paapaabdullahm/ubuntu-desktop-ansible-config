@@ -25,14 +25,14 @@
     msg: "{{ wallpaper_name }} is defined (file exist)"
   when: wallpaper_src_file.stat.exists is defined and wallpaper_src_file.stat.exists
 
-#- name: Create wallpaper destination directory if not exist
-#  file:
-#    state: directory
-#    path: "{{ wallpaper_directory }}"
-#    owner: "{{ ansible_env.USER }}"
-#    group: "{{ ansible_env.USER }}"
-#    mode: 'ug=rwx,o=rx'
-#  when: wallpaper_src_file.stat.exists is defined and wallpaper_src_file.stat.exists
+- name: Create wallpaper destination directory if not exist
+  file:
+    state: directory
+    path: "{{ wallpaper_directory }}"
+    owner: "{{ ansible_env.USER }}"
+    group: "{{ ansible_env.USER }}"
+    mode: 'ug=rwx,o=rx'
+  when: wallpaper_src_file.stat.exists is defined and wallpaper_src_file.stat.exists
 
 - name: Copy wallpaper to destination
   copy:
