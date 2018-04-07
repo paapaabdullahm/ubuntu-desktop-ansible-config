@@ -53,26 +53,31 @@
     - { module: "org.gnome.desktop.background", key: "picture-options", value: "{{ wallpaper_mode }}" }
   when: wallpaper_file_copy is succeeded
 
-- name: Customize Appearance - Look
+- name: Customize Appearance - Change icon size
+  become: false
+  command: dconf write {{ item.module }}/{{ item.key }} {{ item.value }}
+  with_items:
+    - { module: "/org/compiz/profiles/unity-lowgfx/plugins/unityshell", key: "icon-size", value: "34" }
+    - { module: "/org/compiz/profiles/unity/plugins/unityshell", key: "icon-size", value: "34" }
+    - { module: "/org/compiz/profiles/unity/plugins/expo", key: "x-offset", value: "50" }
+
+- name: Customize Appearance - Look and Feel
   become: false
   command: gsettings set {{ item.module }} {{ item.key }} {{ item.value }}
   with_items:
-    #- { module: "org.compiz.profiles.unity-lowgfx.plugins.unityshell", key: "icon-size", value: "34" }
-    #- { module: "org.compiz.profiles.unity.plugins.unityshell", key: "icon-size", value: "34" }
-    - { module: "org.compiz.profiles.unity.plugins.expo", key: "x-offset", value: "50" }
     - { module: "org.gnome.desktop.wm.preferences", key: "theme", value: "'Radiance'" }
     - { module: "org.gnome.desktop.interface", key: "cursor-theme", value: "'DMZ-White'" }
     - { module: "org.gnome.desktop.interface", key: "gtk-theme", value: "'Radiance'" }
     - { module: "org.gnome.desktop.interface", key: "icon-theme", value: "'ubuntu-mono-light'" }
 
-- name: Customize Appearance - Behavior
+- name: Customize Appearance - Visibility Behavior
   become: false
   command: gsettings set {{ item.module }} {{ item.key }} {{ item.value }}
   with_items:
     - { module: "org.compiz.profiles.unity-lowgfx.plugins.unityshell", key: "launcher-hide-mode", value: "1" }
     - { module: "org.compiz.profiles.unity.plugins.unityshell", key: "launcher-hide-mode", value: "1" }
 
-- name: Check if battery backup exists
+- name: Check if battery backup exists for your computer system
   stat:
     path: "/sys/class/power_supply/BAT0/power"
   register: battery_backup
