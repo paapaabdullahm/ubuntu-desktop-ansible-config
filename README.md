@@ -373,6 +373,15 @@ When you run into connection timeout issues, at some point in the configuration 
         </td>
     </tr>
     <tr>
+        <td width="25%"><i>woe-usb</i></td>
+        <td width="40%">
+          A tool with both GUI and CLI interfaces for creating bootable Windows installer USB stick from an ISO or DVD.
+        </td>
+        <td width="35%">
+          n/a
+        </td>
+    </tr>
+    <tr>
         <td width="25%"><i>customize-ui</i></td>
         <td width="40%">
           Currently customizes datetime, appearance, and specifies the <i>shutdown</i> action when power is critically low.
