@@ -68,6 +68,7 @@
     - python-dbus
     - python-dev
     - python-pip
+    - python3-apt
     - ranger
     - rar
     - rsync
