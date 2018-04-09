@@ -1,0 +1,14 @@
+---
+
+- name: Add WoeUSB Repository
+  apt_repository:
+    repo: 'ppa:nilarimogard/webupd8'
+    state: present
+
+- name: Install WoeUSB
+  apt:
+    pkg: woeusb
+    state: latest
+    update_cache: yes
+    cache_valid_time: "{{ aptcachetime }}"
+  register: woeusb_install
