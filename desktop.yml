@@ -44,5 +44,6 @@
     - { role: unity-tweak-tool, become: true }
     - { role: woe-usb, become: true }
 
-    # Customize UI
+    # Others
     - { role: customize-ui, become: true }
+    - { role: clean-apt-list, become: true }
