@@ -9,8 +9,10 @@ bus = dbus.SystemBus()
 
 def get_user_account_path(user):
     account_path = ""
-    accounts = bus.get_object('org.freedesktop.Accounts', '/org/freedesktop/Accounts')
-    accounts_iface = dbus.Interface(accounts, dbus_interface='org.freedesktop.Accounts')
+    accounts = bus.get_object('org.freedesktop.Accounts',
+                              '/org/freedesktop/Accounts')
+    accounts_iface = dbus.Interface(accounts,
+                                    dbus_interface='org.freedesktop.Accounts')
 
     if type(user) == str:
         account_path = accounts_iface.FindUserByName(user)
@@ -22,7 +24,8 @@ def get_user_account_path(user):
 
 def get_user_xsession(account_path):
     user = bus.get_object('org.freedesktop.Accounts', account_path)
-    return user.Get('org.freedesktop.Accounts.User', 'XSession', dbus_interface='org.freedesktop.DBus.Properties')
+    return user.Get('org.freedesktop.Accounts.User', 'XSession',
+                    dbus_interface='org.freedesktop.DBus.Properties')
 
 
 def set_user_xsession(account_path, session):
@@ -52,7 +55,8 @@ def handle_set(args_b):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Change the .')
-    parser.add_argument('--user-id', type=int, default=os.getuid(), help='the user id')
+    parser.add_argument('--user-id', type=int, default=os.getuid(),
+                        help='the user id')
     parser.add_argument('--user-name', type=str, help='the user name')
     subparsers = parser.add_subparsers(help='sub-command help')
 
