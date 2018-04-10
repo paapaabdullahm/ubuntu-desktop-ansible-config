@@ -7,9 +7,13 @@ Detects and interactively deactivates duplicate Apt source entries in
 
 from __future__ import print_function
 from collections import defaultdict
-import builtins as __builtins__
 import itertools
 import sys
+
+if sys.version_info[0] > 2:
+    import builtins as __builtins__
+else:
+    print('Running script in Python 2')
 
 
 def _get_python_packagename(basename):
