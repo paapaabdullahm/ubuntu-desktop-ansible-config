@@ -1,5 +1,7 @@
-import gi
+#!/usr/bin/env python
+
 import sys
+import gi
 from gi.repository import Gio
 gi.require_version('Gtk', '3.0')
 
