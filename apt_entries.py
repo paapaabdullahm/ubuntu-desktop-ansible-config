@@ -1,4 +1,5 @@
-#!/usr/bin/python3 -Es
+#!/usr/bin/env python
+
 """
 Detects and interactively deactivates duplicate Apt source entries in
 `/etc/sources.list' and `/etc/sources.list.d/*.list'.
@@ -6,8 +7,9 @@ Detects and interactively deactivates duplicate Apt source entries in
 
 from __future__ import print_function
 from collections import defaultdict
-import sys
+import builtins as __builtins__
 import itertools
+import sys
 
 
 def _get_python_packagename(basename):
