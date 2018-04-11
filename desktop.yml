@@ -46,4 +46,4 @@
 
     # Others
     - { role: customize-ui, become: true }
-    - { role: clean-apt-list, become: true }
+    - { role: clean-apt-entries, become: true }
