@@ -65,7 +65,7 @@ def _main():
                     'Overlapping source entries:\n'
                     '  1. {0}: {1}\n'
                     '  2. {2}: {3}\n'
-                    'I disabled the latter entry.'.format(
+                    'The latter entry was disabled.'.format(
                         orig.file, orig, dupe.file, dupe),
                     end='\n\n')
                 dupe.disabled = True
