@@ -62,10 +62,10 @@ def _argparse(args):
     return parser.parse_args(args)
 
 
-def _main(args):
+def _main():
     # input_ = getattr(__builtins__, 'raw_input', __builtins__.input)
 
-    args = _argparse(args)
+    # args = _argparse(args)
     sourceslist = aptsources.sourceslist.SourcesList(False)
     duplicates = tuple(get_duplicates(sourceslist))
 
@@ -85,13 +85,13 @@ def _main(args):
         print('\n{0} source entries were disabled:'.format(len(duplicates)),
               *itertools.chain(*duplicates), sep='\n  ', end='\n\n')
 
-        if args.apply_changes is None:
-            # if input_(
-            #     'Do you want to save these changes? (y/N) '
-            # ).upper() != 'Y':
-                return 2
-        if args.apply_changes is not False:
-            sourceslist.save()
+        # if args.apply_changes is None:
+        # if input_(
+        #     'Do you want to save these changes? (y/N) '
+        # ).upper() != 'Y':
+        # return 2
+        # if args.apply_changes is not False:
+        sourceslist.save()
 
     else:
         print('No duplicate entries were found.')
@@ -100,4 +100,4 @@ def _main(args):
 
 
 if __name__ == '__main__':
-    sys.exit(_main(sys.argv[1:]))
+    sys.exit(_main())
