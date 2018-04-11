@@ -10,10 +10,10 @@ from collections import defaultdict
 import itertools
 import sys
 
-if sys.version_info[0] > 2:
-    import builtins as __builtins__
-else:
-    print('Running script in Python 2')
+# if sys.version_info[0] > 2:
+#     import builtins as __builtins__
+# else:
+#     print('Running script in Python 2')
 
 
 def _get_python_packagename(basename):
@@ -63,7 +63,7 @@ def _argparse(args):
 
 
 def _main(args):
-    input_ = getattr(__builtins__, 'raw_input', __builtins__.input)
+    # input_ = getattr(__builtins__, 'raw_input', __builtins__.input)
 
     args = _argparse(args)
     sourceslist = aptsources.sourceslist.SourcesList(False)
@@ -86,9 +86,9 @@ def _main(args):
               *itertools.chain(*duplicates), sep='\n  ', end='\n\n')
 
         if args.apply_changes is None:
-            if input_(
-                'Do you want to save these changes? (y/N) '
-            ).upper() != 'Y':
+            # if input_(
+            #     'Do you want to save these changes? (y/N) '
+            # ).upper() != 'Y':
                 return 2
         if args.apply_changes is not False:
             sourceslist.save()
