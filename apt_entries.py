@@ -1,19 +1,14 @@
 #!/usr/bin/env python
 
 """
-Detects and interactively deactivates duplicate Apt source entries in
-`/etc/sources.list' and `/etc/sources.list.d/*.list'.
+Detects and deactivates duplicate Apt source entries in `/etc/sources.list'
+and `/etc/sources.list.d/*.list'.
 """
 
 from __future__ import print_function
 from collections import defaultdict
 import itertools
 import sys
-
-# if sys.version_info[0] > 2:
-#     import builtins as __builtins__
-# else:
-#     print('Running script in Python 2')
 
 
 def _get_python_packagename(basename):
@@ -35,10 +30,6 @@ except ImportError as ex:
 
 
 def get_duplicates(sourceslist):
-    """
-    Detects and returns duplicate Apt source entries.
-    """
-
     sentry_map = defaultdict(list)
     for se in sourceslist.list:
         if not se.invalid and not se.disabled:
@@ -48,24 +39,21 @@ def get_duplicates(sourceslist):
     return filter(lambda dupe_set: len(dupe_set) > 1, sentry_map.values())
 
 
-def _argparse(args):
-    import argparse
-    parser = argparse.ArgumentParser(**dict(zip(
-        ('description', 'epilog'), map(str.strip, __doc__.rsplit('\n\n', 1)))))
-    parser.add_argument('-y', '--yes',
-                        dest='apply_changes', action='store_const', const=True,
-                        help='Apply all changes without question.')
-    parser.add_argument('-n', '--no-act', '--dry-run',
-                        dest='apply_changes', action='store_const', const=False,
-                        help='Never apply changes; '
-                             'only print what would be done.')
-    return parser.parse_args(args)
+# def _argparse(args):
+#     import argparse
+#     parser = argparse.ArgumentParser(**dict(zip(
+#        ('description', 'epilog'), map(str.strip, __doc__.rsplit('\n\n', 1)))))
+#     parser.add_argument('-y', '--yes',
+#                        dest='apply_changes', action='store_const', const=True,
+#                        help='Apply all changes without question.')
+#    parser.add_argument('-n', '--no-act', '--dry-run',
+#                       dest='apply_changes', action='store_const', const=False,
+#                       help='Never apply changes; '
+#                             'only print what would be done.')
+#    return parser.parse_args(args)
 
 
 def _main():
-    # input_ = getattr(__builtins__, 'raw_input', __builtins__.input)
-
-    # args = _argparse(args)
     sourceslist = aptsources.sourceslist.SourcesList(False)
     duplicates = tuple(get_duplicates(sourceslist))
 
@@ -85,12 +73,6 @@ def _main():
         print('\n{0} source entries were disabled:'.format(len(duplicates)),
               *itertools.chain(*duplicates), sep='\n  ', end='\n\n')
 
-        # if args.apply_changes is None:
-        # if input_(
-        #     'Do you want to save these changes? (y/N) '
-        # ).upper() != 'Y':
-        # return 2
-        # if args.apply_changes is not False:
         sourceslist.save()
 
     else:
