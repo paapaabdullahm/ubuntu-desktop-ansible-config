@@ -1,0 +1,9 @@
+---
+
+- name: Remove Duplicate Source Entries
+  command: python clean_apt_entries.py
+  register: apt_entries
+
+- debug:
+    var: apt_entries
+    verbosity: 2
