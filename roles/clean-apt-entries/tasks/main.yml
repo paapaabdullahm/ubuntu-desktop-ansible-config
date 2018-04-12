@@ -5,5 +5,4 @@
   register: apt_entries
 
 - debug:
-    var: apt_entries
-    verbosity: 2
+    var: apt_entries.stdout_lines
