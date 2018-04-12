@@ -8,8 +8,8 @@ A set of Ansible roles for configuring Ubuntu 16.04+ desktop environment. It aut
 
 ```shell
 $ sudo apt install git
-$ git clone https://github.com/pam79/ubuntu-desktop-ansible-config.git
-$ cd ubuntu-desktop-ansible-config && source ./ansible-setup.sh
+$ git clone https://github.com/pam79/ubuntu-desktop-ansible-config.git configurator
+$ cd configurator && bash ansible-setup.sh
 ```
 
 ### Run the playbook in cwd
