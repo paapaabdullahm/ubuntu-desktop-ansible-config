@@ -399,7 +399,7 @@ When you run into connection timeout issues, at some point in the configuration 
     <tr>
         <td width="25%"><i>clean-apt-entries</i></td>
         <td width="40%">
-          Detects and deactivates duplicate Apt source entries in `/etc/sources.list` and `/etc/sources.list.d/*.list`.
+          Detects and deactivates duplicate Apt source entries in <i>/etc/sources.list</i> and <i>/etc/sources.list.d/*.list</i>.
         </td>
         <td width="35%">
           n/a
