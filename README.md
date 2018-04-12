@@ -381,6 +381,9 @@ When you run into connection timeout issues, at some point in the configuration 
           n/a
         </td>
     </tr>
+    <!------------------------------------------------------------>
+    <tr><td width="100%" colspan=3><b>Other Tools</b></td></tr>
+    <!------------------------------------------------------------>
     <tr>
         <td width="25%"><i>customize-ui</i></td>
         <td width="40%">
@@ -391,6 +394,15 @@ When you run into connection timeout issues, at some point in the configuration 
           You can customize the extra timezone information added for different locations from here: <a href="./roles/customize-ui/defaults/main.yml"><i>customize-ui/defaults/main.yml</i></a><br /><br />
           * Appearance: <br />
           Add your preferred wallpapers here: <a href="./roles/customize-ui/files"><i>customize-ui/files</i></a>. Make sure to change the following variables if necessary: <i>wallpaper_mode, wallpaper_name, wallpaper_directory and wallpaper_file_path</i>
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>clean-apt-entries</i></td>
+        <td width="40%">
+          Detects and deactivates duplicate Apt source entries in `/etc/sources.list` and `/etc/sources.list.d/*.list`.
+        </td>
+        <td width="35%">
+          n/a
         </td>
     </tr>
 </table>
