@@ -46,5 +46,5 @@
 
     # Other Tools
     - { role: customize-ui, become: true }
-    - { role: clean-apt-entries, become: true }
     - { role: disable-apport, become: true }
+    - { role: clean-apt-entries, become: true }
