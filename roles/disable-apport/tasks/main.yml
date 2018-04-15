@@ -1,0 +1,21 @@
+---
+
+- name: Remove current crash report files
+  command: rm -rf {{ prog_crash_dir }}/.*; rm -rf {{ prog_crash_dir }}/*
+
+- name: Turn off Apport - the crash report service
+  lineinfile:
+    path: "{{ apport_path }}"
+    regexp: "^enabled=1"
+    line: "enabled=0"
+    owner: root
+    group: root
+    mode: "u=rw,go=r"
+  register: disable_apport
+
+- name: Restart Apport service
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: "{{ apport_service }}"
+  when: disable_apport is changed

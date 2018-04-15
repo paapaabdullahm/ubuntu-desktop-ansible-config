@@ -1,0 +1,7 @@
+---
+
+prog_crash_dir: "/var/crash"
+
+apport_path: "/etc/default/apport"
+apport_service: "apport"
+
