@@ -397,15 +397,6 @@ When you run into connection timeout issues, at some point in the configuration 
         </td>
     </tr>
     <tr>
-        <td width="25%"><i>clean-apt-entries</i></td>
-        <td width="40%">
-          Detects and deactivates duplicate Apt source entries in <i>/etc/sources.list</i> and <i>/etc/sources.list.d/*.list</i>.
-        </td>
-        <td width="35%">
-          n/a
-        </td>
-    </tr>
-    <tr>
         <td width="25%"><i>disable-apport</i></td>
         <td width="40%">
           Turn off Apport - the crash report service. It also prevents the ff popup:
@@ -413,6 +404,15 @@ When you run into connection timeout issues, at some point in the configuration 
         </td>
         <td width="35%">
           You can temporarily override this with: <i>`sudo service apport start force_start=1`</i>
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>clean-apt-entries</i></td>
+        <td width="40%">
+          Detects and deactivates duplicate Apt source entries in <i>/etc/sources.list</i> and <i>/etc/sources.list.d/*.list</i>.
+        </td>
+        <td width="35%">
+          n/a
         </td>
     </tr>
 </table>
