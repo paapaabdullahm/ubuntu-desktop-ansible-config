@@ -412,7 +412,7 @@ When you run into connection timeout issues, at some point in the configuration 
             <img src="roles/disable-apport/files/sppd.png" />
         </td>
         <td width="35%">
-          You can temporarily override this with <i>`sudo service apport start force_start=1`</i>
+          You can temporarily override this with: <i>`sudo service apport start force_start=1`</i>
         </td>
     </tr>
 </table>
