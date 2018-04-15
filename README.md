@@ -406,12 +406,13 @@ When you run into connection timeout issues, at some point in the configuration 
         </td>
     </tr>
     <tr>
-        <td width="25%"><i>&nbsp;</i></td>
+        <td width="25%"><i>disable-apport</i></td>
         <td width="40%">
-          &nbsp;
+          Turn off Apport - the crash report service. It also prevents the ff popup:
+            <img src="roles/disable-apport/files/sppd.png" />
         </td>
         <td width="35%">
-          &nbsp;
+          You can temporarily override this with <i>`sudo service apport start force_start=1`</i>
         </td>
     </tr>
 </table>
