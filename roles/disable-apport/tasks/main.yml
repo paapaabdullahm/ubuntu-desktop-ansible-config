@@ -8,7 +8,7 @@
 - name: Turn off Apport - the crash report service
   lineinfile:
     path: "{{ apport_path }}"
-    regexp: "^enabled=1"
+    regexp: "^enabled="
     line: "enabled=0"
     owner: root
     group: root
