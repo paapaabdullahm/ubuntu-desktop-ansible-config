@@ -12,7 +12,7 @@ users:
   - username: '{{ ansible_env.USER }}'
     intellij_plugins:
       - CheckStyle-IDEA
-      - com.bashorov.mainMenuToggler
+      # - com.bashorov.mainMenuToggler
       - com.chrisrm.idea.MaterialThemeUI
       - com.pyango.gmbh
       - net.vektah.codeglance
