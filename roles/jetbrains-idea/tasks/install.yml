@@ -86,7 +86,7 @@
 
 - name: add IntelliJ IDEA VM options
   template:
-    src: idea64.vmoptions.{{ intellij_version }}.j2
+    src: idea64.vmoptions.{{ intellij_edition }}.j2
     dest: '{{ intellij_install_dir }}/bin/idea64.vmoptions'
     owner: '{{ ansible_env.USER }}'
     group: '{{ ansible_env.USER }}'
