@@ -2,6 +2,7 @@
 
 - name: Remove current crash report files
   command: rm -rf {{ prog_crash_dir }}/.*; rm -rf {{ prog_crash_dir }}/*
+  warn: False
 
 - name: Turn off Apport - the crash report service
   lineinfile:
