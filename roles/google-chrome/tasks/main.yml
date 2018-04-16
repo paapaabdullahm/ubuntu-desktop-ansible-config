@@ -33,22 +33,22 @@
   register: google_chrome_pref_set
   when: google_chrome_install is changed
 
-- name: Ensure bookmarks.html exists
+- name: Ensure bookmarks.html.vault exists
   stat:
-    path: "{{ playbook_dir }}/roles/google-chrome/files/bookmarks.html"
+    path: "{{ playbook_dir }}/roles/google-chrome/files/bookmarks.html.vault"
   register: bookmarks
 
 - debug:
-    msg: "bookmarks.html is not defined (file doesn't exist)"
+    msg: "bookmarks.html.vault is not defined (file doesn't exist)"
   when: not bookmarks.stat.exists
 
 - debug:
-    msg: "bookmarks.html is defined (file exist)"
+    msg: "bookmarks.html.vault is defined (file exist)"
   when: bookmarks.stat.exists is defined and bookmarks.stat.exists
 
 - name: Copy Google Chrome bookmarks file if exists
   copy:
-    src: bookmarks.html
+    src: bookmarks.html.vault
     dest: /opt/google/chrome/bookmarks.html
     mode: 0644
   when: bookmarks.stat.exists is defined and bookmarks.stat.exists
