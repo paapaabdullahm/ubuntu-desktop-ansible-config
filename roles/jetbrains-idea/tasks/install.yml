@@ -54,13 +54,13 @@
     path: '{{ intellij_install_dir }}/bin'
   register: install_dir
 
-- name: Delete IntelliJ IDEA installation directory
-  file:
-    path: '{{ intellij_install_dir }}'
-    state: absent
-  when:
-    - install_dir.stat.exists
-    - new_download_file is changed
+# - name: Delete IntelliJ IDEA installation directory
+#  file:
+#    path: '{{ intellij_install_dir }}'
+#    state: absent
+#  when:
+#    - install_dir.stat.exists
+#    - new_download_file is changed
 
 - name: Create IntelliJ IDEA installation directory
   file:
