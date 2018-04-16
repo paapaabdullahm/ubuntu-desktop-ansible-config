@@ -22,7 +22,7 @@ Before you proceed, it is highly recommended that you go through the "Available 
 $ ansible-playbook desktop.yml --ask-become-pass
 ```
 
->Or run below when using ansible-vault for bookmarks | javaagent files
+>Or run below when using ansible-vault for your bookmarks | javaagent files
 
 ```shell
 $ ansible-playbook desktop.yml --ask-become-pass --ask-vault-pass
