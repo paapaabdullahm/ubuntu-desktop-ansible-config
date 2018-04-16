@@ -14,12 +14,18 @@ $ cd Configurator && bash ansible-setup.sh
 
 ### Run the playbook in cwd
 
-Before you proceed, it is highly recommended that you go through the "Available roles" section below, and see which roles require some customization.
+Before you proceed, it is highly recommended that you go through the "Available roles" section below to find out which roles require some customization.
 
 >Enter your sudo password when prompted
 
 ```shell
 $ ansible-playbook desktop.yml --ask-become-pass
+```
+
+>Or run below when using ansible-vault for bookmarks | javaagent files
+
+```shell
+$ ansible-playbook desktop.yml --ask-become-pass --ask-vault-pass
 ```
 
 When configuration is complete, restart your computer for all the changes to take effect.
@@ -150,16 +156,19 @@ When you run into connection timeout issues, at some point in the configuration 
           A freeware web browser developed by Google.
         </td>
         <td width="35%">
-          To import your bookmarks, include a <i>bookmarks.html</i> file at the following location: <a href="./roles/google-chrome/files"><i>google-chrome/files</i></a>. You can also customize which extensions get installed by modifying <a href="./roles/google-chrome/tasks/main.yml"><i>google-chrome/tasks/main.yml</i></a> file.
+          The bookmarks file provided is encrypted using <b>ansible-vault</b>. To import your bookmarks, include a <i>bookmarks.html.vault</i> file at the following location: <a href="./roles/google-chrome/files"><i>google-chrome/files</i></a>. or simply delete the file if you are not importing bookmarks.
+          <br /><br />Also, you can customize which extensions get installed by modifying <a href="./roles/google-chrome/tasks/main.yml"><i>google-chrome/tasks/main.yml</i></a> file.
         </td>
     </tr>
     <tr>
         <td width="25%"><i>jetbrains-idea</i></td>
         <td width="40%">
-          Intellij IDEA is an IDE for developing computer software. It is developed by JetBrains, and is available as a community edition, and a proprietary commercial edition.
+          Jetbrains Intellij IDEA is an IDE for developing computer software. It is developed by JetBrains, and is available as a community edition, and a proprietary commercial edition.
         </td>
         <td width="35%">
-          The default edition is <i>ultimate</i>. you can change to <i>community</i> if you don't have a commercial license.
+          The default edition is <i>ultimate</i>. you can change to <i>community</i> if you don't have a commercial license or javaagent.
+          <br /><br />The JavaAgent file provided is encrypted using <b>ansible-vault</b>. Please provide your own if you intend using this option.
+          <br /><br />Also, if you are upgrading from an older version to this version, make sure you have exported all of your settings first before running the playbook.
         </td>
     </tr>
     <tr>
