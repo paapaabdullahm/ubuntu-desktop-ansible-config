@@ -163,7 +163,7 @@ When you run into connection timeout issues at some point in the configuration p
     <tr>
         <td width="25%"><i>jetbrains-idea</i></td>
         <td width="40%">
-          Jetbrains Intellij IDEA is an IDE for developing computer software. It is developed by JetBrains, and is available as a community edition, and a proprietary commercial edition.
+          Jetbrains Intellij IDEA is an IDE for polyglot software development. It is developed by JetBrains, and is available as a community edition, as well as a proprietary commercial edition.
         </td>
         <td width="35%">
           The default edition is <i>ultimate</i>. you can change to <i>community</i> if you don't have a commercial license or javaagent.
