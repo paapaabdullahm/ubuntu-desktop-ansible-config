@@ -12,64 +12,70 @@
     - { module: "com.canonical.indicator.datetime", key: "show-locations", value: "true" }
     - { module: "com.canonical.indicator.datetime", key: "locations", value: "{{ locations }}" }
 
-- name: Ensure {{ wallpaper_name }} file exists at source
-  stat:
-    path: "{{ playbook_dir }}/roles/customize-ui/files/{{ wallpaper_name }}"
-  register: wallpaper_src_file
+########################### CHANGE WALLPAPER ###################################
+#
+# - name: Ensure {{ wallpaper_name }} file exists at source
+#   stat:
+#     path: "{{ playbook_dir }}/roles/customize-ui/files/{{ wallpaper_name }}"
+#   register: wallpaper_src_file
 
-- debug:
-    msg: "{{ wallpaper_name }} is not defined (file doesn't exist)"
-  when: not wallpaper_src_file.stat.exists
+# - debug:
+#     msg: "{{ wallpaper_name }} is not defined (file doesn't exist)"
+#   when: not wallpaper_src_file.stat.exists
 
-- debug:
-    msg: "{{ wallpaper_name }} is defined (file exist)"
-  when: wallpaper_src_file.stat.exists is defined and wallpaper_src_file.stat.exists
+# - debug:
+#     msg: "{{ wallpaper_name }} is defined (file exist)"
+#   when: wallpaper_src_file.stat.exists is defined and wallpaper_src_file.stat.exists
 
-- name: Create wallpaper destination directory if not exist
-  file:
-    state: directory
-    path: "{{ wallpaper_directory }}"
-    owner: "{{ ansible_env.USER }}"
-    group: "{{ ansible_env.USER }}"
-    mode: 'ug=rwx,o=rx'
-  when: wallpaper_src_file.stat.exists is defined and wallpaper_src_file.stat.exists
+# - name: Create wallpaper destination directory if not exist
+#   file:
+#     state: directory
+#     path: "{{ wallpaper_directory }}"
+#     owner: "{{ ansible_env.USER }}"
+#     group: "{{ ansible_env.USER }}"
+#     mode: 'ug=rwx,o=rx'
+#   when: wallpaper_src_file.stat.exists is defined and wallpaper_src_file.stat.exists
 
-- name: Copy wallpaper to destination
-  copy:
-    src: "{{ wallpaper_name }}"
-    dest: "{{ wallpaper_directory }}/{{ wallpaper_name }}"
-    owner: "{{ ansible_env.USER }}"
-    group: "{{ ansible_env.USER }}"
-    mode: 'ug=rw,o=r'
-  register: wallpaper_file_copy
-  when: wallpaper_src_file.stat.exists is defined and wallpaper_src_file.stat.exists
+# - name: Copy wallpaper to destination
+#   copy:
+#     src: "{{ wallpaper_name }}"
+#     dest: "{{ wallpaper_directory }}/{{ wallpaper_name }}"
+#     owner: "{{ ansible_env.USER }}"
+#     group: "{{ ansible_env.USER }}"
+#     mode: 'ug=rw,o=r'
+#   register: wallpaper_file_copy
+#   when: wallpaper_src_file.stat.exists is defined and wallpaper_src_file.stat.exists
 
-- name: Customize Desktop Background - Wallpaper
-  become: false
-  command: gsettings set {{ item.module }} {{ item.key }} {{ item.value }}
-  with_items:
-    - { module: "org.gnome.desktop.background", key: "color-shading-type", value: "'solid'" }
-    - { module: "org.gnome.desktop.background", key: "picture-uri", value: "{{ wallpaper_file_path }}" }
-    - { module: "org.gnome.desktop.background", key: "picture-options", value: "{{ wallpaper_mode }}" }
-  when: wallpaper_file_copy is succeeded
+# - name: Customize Desktop Background - Wallpaper
+#   become: false
+#   command: gsettings set {{ item.module }} {{ item.key }} {{ item.value }}
+#   with_items:
+#     - { module: "org.gnome.desktop.background", key: "color-shading-type", value: "'solid'" }
+#     - { module: "org.gnome.desktop.background", key: "picture-uri", value: "{{ wallpaper_file_path }}" }
+#     - { module: "org.gnome.desktop.background", key: "picture-options", value: "{{ wallpaper_mode }}" }
+#   when: wallpaper_file_copy is succeeded
 
-- name: Customize Appearance - Change icon size
-  become: false
-  command: dconf write {{ item.module }}/{{ item.key }} {{ item.value }}
-  with_items:
-    - { module: "/org/compiz/profiles/unity-lowgfx/plugins/unityshell", key: "icon-size", value: "34" }
-    - { module: "/org/compiz/profiles/unity/plugins/unityshell", key: "icon-size", value: "34" }
-    - { module: "/org/compiz/profiles/unity/plugins/expo", key: "x-offset", value: "50" }
+############################## CHANGE SYSTEM THEME #############################
+#
+# - name: Customize Appearance - Change icon size
+#   become: false
+#   command: dconf write {{ item.module }}/{{ item.key }} {{ item.value }}
+#   with_items:
+#     - { module: "/org/compiz/profiles/unity-lowgfx/plugins/unityshell", key: "icon-size", value: "34" }
+#     - { module: "/org/compiz/profiles/unity/plugins/unityshell", key: "icon-size", value: "34" }
+#     - { module: "/org/compiz/profiles/unity/plugins/expo", key: "x-offset", value: "50" }
 
-- name: Customize Appearance - Look and Feel
-  become: false
-  command: gsettings set {{ item.module }} {{ item.key }} {{ item.value }}
-  with_items:
-    - { module: "org.gnome.desktop.wm.preferences", key: "theme", value: "'Radiance'" }
-    - { module: "org.gnome.desktop.interface", key: "cursor-theme", value: "'DMZ-White'" }
-    - { module: "org.gnome.desktop.interface", key: "gtk-theme", value: "'Radiance'" }
-    - { module: "org.gnome.desktop.interface", key: "icon-theme", value: "'ubuntu-mono-light'" }
+# - name: Customize Appearance - Look and Feel
+#   become: false
+#   command: gsettings set {{ item.module }} {{ item.key }} {{ item.value }}
+#   with_items:
+#     - { module: "org.gnome.desktop.wm.preferences", key: "theme", value: "'Radiance'" }
+#     - { module: "org.gnome.desktop.interface", key: "cursor-theme", value: "'DMZ-White'" }
+#     - { module: "org.gnome.desktop.interface", key: "gtk-theme", value: "'Radiance'" }
+#     - { module: "org.gnome.desktop.interface", key: "icon-theme", value: "'ubuntu-mono-light'" }
 
+############################### HIDE LAUNCHER ##################################
+#
 # - name: Customize Appearance - Visibility Behavior
 #   become: false
 #   command: dconf write {{ item.module }}/{{ item.key }} {{ item.value }}
