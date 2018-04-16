@@ -31,10 +31,10 @@
     mode: 'u=rwx,go=rx'
     dest: '{{ intellij_download_dir }}'
 
-- name: stat install dir
+- name: Ensure file exist in download dir
   stat:
-    path: '{{ intellij_install_dir }}/bin'
-  register: stat_install_dir
+    path: "{{ intellij_download_dir }}/{{ intellij_redis_filename }}"
+  register: old_download_file
 
 - name: download IntelliJ IDEA
   get_url:
@@ -46,9 +46,23 @@
     validate_certs: yes
     timeout: '{{ intellij_idea_download_timeout_seconds }}'
     mode: 'u=rw,go=r'
-  when: not stat_install_dir.stat.exists
+  register: new_download_file
+  when: not old_download_file.stat.exists
 
-- name: create IntelliJ IDEA installation directory
+- name: Ensure install directory exists
+  stat:
+    path: '{{ intellij_install_dir }}/bin'
+  register: install_dir
+
+- name: Delete IntelliJ IDEA installation directory
+  file:
+    path: '{{ intellij_install_dir }}'
+    state: absent
+  when:
+    - install_dir.stat.exists
+    - new_download_file is changed
+
+- name: Create IntelliJ IDEA installation directory
   file:
     state: directory
     owner: root
