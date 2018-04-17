@@ -70,7 +70,7 @@
     mode: 'u=rwx,go=rx'
     dest: '{{ intellij_install_dir }}'
 
-- name: install IntelliJ IDEA
+- name: Install IntelliJ IDEA
   tags:
     - skip_ansible_lint
   command: >
@@ -81,7 +81,7 @@
     creates: '{{ intellij_install_dir }}/bin'
     warn: no
 
-- name: create bin link
+- name: Create bin link
   file:
     src: '{{ intellij_install_dir }}/bin/idea.sh'
     dest: /usr/local/bin/idea
@@ -90,13 +90,14 @@
     group: root
     mode: 'u=rwx,go=rx'
 
-- name: add IntelliJ IDEA Java agent
+- name: Add IntelliJ IDEA Java agent
   copy:
     src: '../files/JavaAgent.jar'
     dest: '{{ intellij_java_agent_path }}'
     owner: '{{ ansible_env.USER }}'
     group: '{{ ansible_env.USER }}'
     mode: 'u=rw,go=r'
+  tags: vaulted
 
 - name: add IntelliJ IDEA VM options
   template:
