@@ -42,6 +42,7 @@
 - debug:
     msg: "bookmarks.html.vault is not defined (file doesn't exist)"
   when: not bookmarks.stat.exists
+  tags: vaulted
 
 - debug:
     msg: "bookmarks.html.vault is defined (file exist)"
