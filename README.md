@@ -99,18 +99,6 @@ When you run into connection timeout issues at some point in the configuration p
           You can add more SDKs if required by your project.
         </td>
     </tr>
-    <!---------------------------------------------------------->
-    <!--tr><td width="100%" colspan=3><b>Gnome 3 Theme</b></td></tr-->
-    <!---------------------------------------------------------->
-    <!--tr>
-        <td width="25%"><i>gnome3-desktop</i></td>
-        <td width="40%">
-          A desktop environment which uses GNOME Shell engine and is composed of free and open-source software that runs on Linux and most BSD derivatives.
-        </td>
-        <td width="35%">
-          n/a
-        </td>
-    </tr-->
     <!------------------------------------------------------------>
     <tr><td width="100%" colspan=3><b>Developer Tools</b></td></tr>
     <!------------------------------------------------------------>
@@ -410,8 +398,9 @@ When you run into connection timeout issues at some point in the configuration p
         <td width="35%">
           * Date and Time: <br />
           You can customize the extra timezone information added for different locations from here: <a href="./roles/customize-ui/defaults/main.yml"><i>customize-ui/defaults/main.yml</i></a><br /><br />
-          * Appearance: <br />
-          Add your preferred wallpapers here: <a href="./roles/customize-ui/files"><i>customize-ui/files</i></a>. Make sure to change the following variables if necessary: <i>wallpaper_mode, wallpaper_name, wallpaper_directory and wallpaper_file_path</i>
+          * Appearance: default (disabled) <br />
+          Add your preferred wallpapers here: <a href="./roles/customize-ui/files"><i>customize-ui/files</i></a>. Make sure to change the following variables if necessary: <i>wallpaper_mode, wallpaper_name, wallpaper_directory and wallpaper_file_path</i><br /><br />
+          There are other tasks that are also disabled by default. You can enable them by uncommenting them out in: <a href="./roles/customize-ui/tasks/main.yml"><i>customize-ui/tasks/main.yml</i></a>
         </td>
     </tr>
     <tr>
@@ -431,6 +420,16 @@ When you run into connection timeout issues at some point in the configuration p
         </td>
         <td width="35%">
           n/a
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>gnome3-desktop</i></td>
+        <td width="40%">
+          A desktop environment which uses GNOME Shell engine and is composed of free and open-source software that runs on Linux and most BSD derivatives.
+        </td>
+        <td width="35%">
+          This role is disabled by default. To enable it simply add the role to the <i>desktop.yml</i> playbook, preferably under the <b>Other Tools</b> section as follows: <br />
+            <b>- { role: gnome3-desktop, become: true }</b>
         </td>
     </tr>
 </table>
