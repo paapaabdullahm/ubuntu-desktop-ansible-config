@@ -37,7 +37,7 @@ $ ansible-playbook desktop.yml --ask-become-pass --ask-vault-pass
 $ ansible-playbook desktop.yml --ask-become-pass
 ```
 
-When configuration is complete, restart your computer for all the changes to take effect.
+When configuration of your system is complete, restart your computer for all the changes to take effect.
 
 When you run into connection timeout issues at some point in the configuration process, latent internet connection may be the problem. To solve this, simply rerun the above playbook and hopefully, things should be ok.
 
