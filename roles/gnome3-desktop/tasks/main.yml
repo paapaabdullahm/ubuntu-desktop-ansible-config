@@ -59,7 +59,3 @@
     - { name: "Pomodoro", id: 53 }
     - { name: "Gravatar", id: 1015 }
   when: gnome3_desktop_install is succeeded
-
-# To Do
-# - name: Configure GNOME 3 extensions
-# - name: Change Desktop Background
