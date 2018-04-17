@@ -13,7 +13,7 @@
 
 - name: Download Rambox
   get_url:
-    url: '{{ rambox_base_url }}/{{ rambox_filename_new }}'
+    url: '{{ rambox_base_url }}/{{ rambox_version_new }}/{{ rambox_filename_new }}'
     dest: '{{ rambox_download_dir }}/{{ rambox_filename_new }}'
     checksum: "sha256:{{ rambox_sha256sum }}"
     timeout: '{{ intellij_idea_download_timeout_seconds }}'
