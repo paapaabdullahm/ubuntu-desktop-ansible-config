@@ -31,7 +31,7 @@ $ ansible-playbook desktop.yml --ask-become-pass --ask-vault-pass
 ```
 
 ##### Option 3: Run the playbook but with unencrypted files of your own
->Files to change: bookmarks.html.vault, JavaAgent.jar
+>Files to replace: bookmarks.html.vault, JavaAgent.jar
 
 ```shell
 $ ansible-playbook desktop.yml --ask-become-pass
