@@ -24,6 +24,8 @@
 - name: Delete Rambox old installation file
   command: rm -rf {{ rambox_download_dir }}/{{ rambox_filename_old }}
   when: download_file_new is changed
+  args:
+    warn: False
 
 - name: Install Rambox
   apt:
