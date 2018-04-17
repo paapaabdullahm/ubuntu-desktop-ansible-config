@@ -1,8 +1,33 @@
 ---
 
+- name: Create Rambox download directory
+  file:
+    state: directory
+    mode: 'u=rwx,go=rx'
+    dest: '{{ rambox_download_dir }}'
+
+- name: Ensure file exist in download dir
+  stat:
+    path: "{{ rambox_download_dir }}/{{ rambox_filename_new }}"
+  register: download_file
+
+- name: Download Rambox
+  get_url:
+    url: '{{ rambox_base_url }}/{{ rambox_filename_new }}'
+    dest: '{{ rambox_download_dir }}/{{ rambox_filename_new }}'
+    checksum: "sha256:{{ rambox_sha256sum }}"
+    timeout: '{{ intellij_idea_download_timeout_seconds }}'
+    mode: 'u=rw,go=r'
+  register: download_file_new
+  when: not download_file.stat.exists
+
+- name: Delete Rambox old installation file
+  command: rm -rf {{ rambox_download_dir }}/{{ rambox_filename_old }}
+  when: download_file_new is changed
+
 - name: Install Rambox
   apt:
-    deb: https://github.com/saenzramiro/rambox/releases/download/0.5.16/Rambox_0.5.16-x64.deb
+    deb: "{{ rambox_download_dir }}/{{ rambox_filename_new }}"
   register: rambox_install
 
 - name: Set Rambox launcher icon
