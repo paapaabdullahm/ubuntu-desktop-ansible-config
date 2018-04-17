@@ -37,6 +37,7 @@
   stat:
     path: "{{ playbook_dir }}/roles/google-chrome/files/bookmarks.html.vault"
   register: bookmarks
+  tags: vaulted
 
 - debug:
     msg: "bookmarks.html.vault is not defined (file doesn't exist)"
@@ -45,6 +46,7 @@
 - debug:
     msg: "bookmarks.html.vault is defined (file exist)"
   when: bookmarks.stat.exists is defined and bookmarks.stat.exists
+  tags: vaulted
 
 - name: Copy Google Chrome bookmarks file if exists
   copy:
@@ -52,6 +54,7 @@
     dest: /opt/google/chrome/bookmarks.html
     mode: 0644
   when: bookmarks.stat.exists is defined and bookmarks.stat.exists
+  tags: vaulted
 
 - name: Create Google Chrome extensions directory
   file:
