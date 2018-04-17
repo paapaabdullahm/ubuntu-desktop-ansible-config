@@ -6,7 +6,7 @@
     mode: 'u=rwx,go=rx'
     dest: '{{ rambox_download_dir }}'
 
-- name: Ensure file exist in download dir
+- name: Ensure file exists in download dir
   stat:
     path: "{{ rambox_download_dir }}/{{ rambox_filename_new }}"
   register: download_file
