@@ -423,14 +423,12 @@ When you run into connection timeout issues at some point in the configuration p
         </td>
     </tr>
     <tr>
-        <td width="25%"><i>gnome3-desktop</i></td>
+        <td width="25%"><i>setup-gnome3-desktop</i></td>
         <td width="40%">
           A desktop environment which uses GNOME Shell engine and is composed of free and open-source software that runs on Linux and most BSD derivatives.
         </td>
         <td width="35%">
-          This role is disabled by default. To enable it simply add the role to the <a href="./desktop.yml"><i>desktop.yml</i></a> playbook, preferably under the <b>Other Tools</b> section as follows: <br />
-            <b>- { role: gnome3-desktop, become: true }</b> <br />
-            And that's it.
+          This role is disabled by default. To enable it simply uncomment the role in <a href="./desktop.yml"><i>desktop.yml</i></a> playbook, under the <b>Other Tools</b> section.
         </td>
     </tr>
 </table>
