@@ -16,16 +16,25 @@ $ cd Configurator && bash ansible-setup.sh
 
 Before you proceed, it is highly recommended that you go through the "Available roles" section below to find out which roles require some customization.
 
+##### Option 1: Run the playbook without any encrypted files
 >Enter your sudo password when prompted
 
 ```shell
-$ ansible-playbook desktop.yml --ask-become-pass
+$ ansible-playbook desktop.yml --skip-tags "vaulted" --ask-become-pass
 ```
 
->Or run below when using ansible-vault for your bookmarks | javaagent files
+##### Option 2: Run the playbook but with your own encrypted files
+>Files to change: bookmarks.html.vault, JavaAgent.jar
 
 ```shell
 $ ansible-playbook desktop.yml --ask-become-pass --ask-vault-pass
+```
+
+##### Option 3: Run the playbook but with unencrypted files of your own
+>Files to change: bookmarks.html.vault, JavaAgent.jar
+
+```shell
+$ ansible-playbook desktop.yml --ask-become-pass
 ```
 
 When configuration is complete, restart your computer for all the changes to take effect.
