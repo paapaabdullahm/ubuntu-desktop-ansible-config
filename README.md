@@ -428,7 +428,7 @@ When you run into connection timeout issues at some point in the configuration p
           A desktop environment which uses GNOME Shell engine and is composed of free and open-source software that runs on Linux and most BSD derivatives.
         </td>
         <td width="35%">
-          This role is disabled by default. To enable it simply add the role to the <i>desktop.yml</i> playbook, preferably under the <b>Other Tools</b> section as follows: <br />
+          This role is disabled by default. To enable it simply add the role to the <a href="./desktop.yml"><i>desktop.yml</i></a> playbook, preferably under the <b>Other Tools</b> section as follows: <br />
             <b>- { role: gnome3-desktop, become: true }</b> <br />
             And that's it.
         </td>
