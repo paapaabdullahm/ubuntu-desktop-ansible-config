@@ -57,7 +57,7 @@ When you run into connection timeout issues at some point in the configuration p
     <tr>
         <td width="25%"><i>locales</i></td>
         <td width="40%">
-         A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at: <a href="./roles/locales/files"><i>locales/files</i></a> - customized or not (e.g. <i>ak_GH</i>, <i>en_GH</i>, <i>en_US</i>, <i>de_NL</i>) and sets it as the default locale for your system.
+         A set of parameters that defines the user's language, region and any special variant preferences. The role takes an existing locale file located at: <a href="./roles/locales/files"><i>locales/files</i></a> - customized or not (e.g. <i>ak_GH</i>, <i>en_GH</i>, <i>en_US</i>, <i>de_NL</i>) along side a timezone info (e.g. America/Antigua, Africa/Cairo), and sets them as the default locale and timezone for your system.
         </td>
         <td width="35%">
          en_GH and Africa/Accra are the default locale and timezone info provided. Replace them with your own if your language and timezone are different. The default configuration is located at: <a href="./roles/locales/defaults/main.yml"><i>locales/defaults/main.yml</i></a><br /><br />
