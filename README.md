@@ -61,7 +61,7 @@ When you run into connection timeout issues at some point in the configuration p
         </td>
         <td width="35%">
          en_GH and Africa/Accra are the default locale and timezone info provided. Replace them with your own if your language and timezone are different. The default configuration is located at: <a href="./roles/locales/defaults/main.yml"><i>locales/defaults/main.yml</i></a><br /><br />
-         If you don't have your own customised locale file, the role will still work with the locale information that you provide.
+         If you don't have your own customised locale file, the role will still work with the information that you provide.
         </td>
     </tr>
     <tr>
