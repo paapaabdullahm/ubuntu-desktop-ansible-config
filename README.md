@@ -67,7 +67,7 @@ When you run into connection timeout issues at some point in the configuration p
     <tr>
         <td width="25%"><i>essentials</i></td>
         <td width="40%">
-         Provides the most basic libraries that are globally required by most packages.
+         Provides the most basic dependencies / libraries that are globally required by most packages.
         </td>
         <td width="35%">
          Packages can be added or removed from the list. Also with GNOME 3 PPA added nautilus is automatically upgraded.
