@@ -23,7 +23,7 @@ Before you proceed, it is highly recommended that you go through the "Available 
 $ ansible-playbook desktop.yml --skip-tags "vaulted" --ask-become-pass
 ```
 
-##### Option 2: Run the playbook but with your own encrypted files
+##### Option 2: Run the playbook but with your own vault encrypted files
 >Files to change: bookmarks.html.vault, JavaAgent.jar
 
 ```shell
