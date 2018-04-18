@@ -16,7 +16,7 @@ $ cd Configurator && bash ansible-setup.sh
 
 Before you proceed, it is highly recommended that you go through the "Available roles" section below to find out which roles require some customization.
 
-##### Option 1: Run the playbook without any encrypted files
+##### Option 1: Run the playbook without any vault encrypted files
 >Enter your sudo password when prompted
 
 ```shell
