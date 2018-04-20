@@ -2,7 +2,7 @@
 
 - name: Install SmartGit
   apt:
-    deb: https://www.syntevo.com/downloads/smartgit/smartgit-17_1_5.deb
+    deb: https://www.syntevo.com/downloads/smartgit/smartgit-{{ smartgit_version }}.deb
   register: smartgit_install
 
 - name: Set SmartGit launcher icon
