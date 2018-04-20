@@ -12,12 +12,12 @@
 
 - name: Add Docker’s official GPG key
   apt_key:
-    keyserver: hkp://p80.pool.sks-keyservers.net:80
-    id: 58118E89F3A912897C070ADBF76221572C52609D
+    keyserver: "{{ docker_keyserver }}"
+    id: "{{ docker_key }}"
 
 - name: Add Docker stable repository
   apt_repository:
-    repo: deb https://apt.dockerproject.org/repo ubuntu-xenial main
+    repo: deb {{ docker_apt_url }} {{ docker_linux_distro }} main
     state: present
 
 - name: Remove old repo lxc-docker
@@ -50,7 +50,7 @@
 
 - name: Ensure Docker Compose is present
   get_url:
-    url: https://github.com/docker/compose/releases/download/1.20.1/docker-compose-Linux-x86_64
+    url: "{{ compose_base_url }}/{{ compose_version }}/docker-compose-Linux-x86_64"
     dest: /usr/local/bin/docker-compose
 
 - name: Ensure Docker Compose permissions are set
