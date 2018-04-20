@@ -52,6 +52,7 @@
   get_url:
     url: "{{ compose_base_url }}/{{ compose_version }}/docker-compose-Linux-x86_64"
     dest: /usr/local/bin/docker-compose
+    sha256sum: "{{ compose_sha256 }}"
 
 - name: Ensure Docker Compose permissions are set
   file:
