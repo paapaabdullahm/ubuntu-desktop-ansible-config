@@ -43,7 +43,6 @@
     - gsmartcontrol
     - gufw
     - gzip
-    - hardinfo
     - htop
     - httping
     - iftop
