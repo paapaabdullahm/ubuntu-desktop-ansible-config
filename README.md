@@ -385,7 +385,7 @@ When you run into connection timeout issues at some point in the configuration p
           A tool with both GUI and CLI interfaces for creating bootable Windows installer USB stick from an ISO or DVD.
         </td>
         <td width="35%">
-          n/a
+          No need to add one for linux since Ubuntu comes with <b>Startup Disk Creator</b> by default.
         </td>
     </tr>
     <!------------------------------------------------------------>
