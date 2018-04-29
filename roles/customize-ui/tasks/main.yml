@@ -12,6 +12,24 @@
     - { module: "com.canonical.indicator.datetime", key: "show-locations", value: "true" }
     - { module: "com.canonical.indicator.datetime", key: "locations", value: "{{ locations }}" }
 
+- name: Check if battery backup exists for your computer system
+  stat:
+    path: "/sys/class/power_supply/BAT0/power"
+  register: battery_backup
+
+- debug:
+    msg: "Battery backup doesn't exist"
+  when: not battery_backup.stat.exists
+
+- debug:
+    msg: "Battery backup exist"
+  when: battery_backup.stat.exists is defined and battery_backup.stat.exists
+
+- name: Specify the action to take when power is critically low
+  become: false
+  command: gsettings set org.gnome.settings-daemon.plugins.power critical-battery-action 'shutdown'
+  when: battery_backup.stat.exists is defined and battery_backup.stat.exists
+
 ########################### CHANGE WALLPAPER ###################################
 #
 # - name: Ensure {{ wallpaper_name }} file exists at source
@@ -82,21 +100,3 @@
 #   with_items:
 #     - { module: "/org/compiz/profiles/unity-lowgfx/plugins/unityshell", key: "launcher-hide-mode", value: "1" }
 #     - { module: "/org/compiz/profiles/unity/plugins/unityshell", key: "launcher-hide-mode", value: "1" }
-
-- name: Check if battery backup exists for your computer system
-  stat:
-    path: "/sys/class/power_supply/BAT0/power"
-  register: battery_backup
-
-- debug:
-    msg: "Battery backup doesn't exist"
-  when: not battery_backup.stat.exists
-
-- debug:
-    msg: "Battery backup exist"
-  when: battery_backup.stat.exists is defined and battery_backup.stat.exists
-
-- name: Specify the action to take when power is critically low
-  become: false
-  command: gsettings set org.gnome.settings-daemon.plugins.power critical-battery-action 'shutdown'
-  when: battery_backup.stat.exists is defined and battery_backup.stat.exists
