@@ -23,22 +23,22 @@ script_options:
   - name: helm
     image: "{{ helm }}"
     opts: ""
-    args: ""
+    args: "helm"
 
   - name: kubectl
     image: "{{ kubectl }}"
     opts: ""
-    args: ""
+    args: "kubectl"
 
   - name: redis-cli
     image: "{{ redis_cli }}"
     opts: ""
-    args: ""
+    args: "redis-cli"
 
   - name: redis-server
     image: "{{ redis_server }}"
     opts: ""
-    args: ""
+    args: "redis-server"
 
   - name: slack-cleaner
     image: "{{ slack_cleaner }}"
