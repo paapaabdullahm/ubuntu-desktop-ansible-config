@@ -14,4 +14,4 @@
     group: root
     mode: "u=rwx,go=rx"
   with_items: "{{ script_options }}"
-  when: image_pull is changed
+  # when: image_pull is changed
