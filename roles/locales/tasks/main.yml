@@ -46,14 +46,14 @@
   become: false
   command: localectl set-locale LANG={{ locale_compiled }}
 
-- name: Customize Date and Time
-  become: false
-  command: gsettings set {{ item.module }} {{ item.key }} {{ item.value }}
-  with_items:
-    - { module: "com.canonical.indicator.datetime", key: "show-day", value: "true" }
-    - { module: "com.canonical.indicator.datetime", key: "show-date", value: "true" }
-    - { module: "com.canonical.indicator.datetime", key: "time-format", value: "'12-hour'" }
-    - { module: "com.canonical.indicator.datetime", key: "show-seconds", value: "true" }
-    - { module: "com.canonical.indicator.datetime", key: "show-calendar", value: "true" }
-    - { module: "com.canonical.indicator.datetime", key: "show-locations", value: "true" }
-    - { module: "com.canonical.indicator.datetime", key: "locations", value: "{{ locations }}" }
+# - name: Customize Date and Time
+#   become: false
+#   command: gsettings set {{ item.module }} {{ item.key }} {{ item.value }}
+#   with_items:
+#     - { module: "com.canonical.indicator.datetime", key: "show-day", value: "true" }
+#     - { module: "com.canonical.indicator.datetime", key: "show-date", value: "true" }
+#     - { module: "com.canonical.indicator.datetime", key: "time-format", value: "'12-hour'" }
+#     - { module: "com.canonical.indicator.datetime", key: "show-seconds", value: "true" }
+#     - { module: "com.canonical.indicator.datetime", key: "show-calendar", value: "true" }
+#     - { module: "com.canonical.indicator.datetime", key: "show-locations", value: "true" }
+#     - { module: "com.canonical.indicator.datetime", key: "locations", value: "{{ locations }}" }
