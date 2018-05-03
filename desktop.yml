@@ -45,7 +45,7 @@
     - { role: woe-usb, become: true }
 
     # Other Tools
-    - { role: customize-ui, become: true }
     - { role: disable-apport, become: true }
     - { role: clean-apt-entries, become: true }
+    # - { role: customize-ui, become: true }
     # - { role: setup-gnome3-desktop, become: true }
