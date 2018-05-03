@@ -14,7 +14,5 @@ assert_command(){
 
 assert_command docker
 assert_command docker-machine
-docker-machine active > /dev/null 2>&1 || error 2 "No active docker-machine VM found."
-
 
 exec docker run {{ item.opts }} {{ item.image }} "$@"
