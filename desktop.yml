@@ -6,7 +6,7 @@
     - { role: locales, become: true }
     - { role: essentials, become: true }
     - { role: git, become: true }
-    - { role: oh-my-zsh, become: true }
+    # - { role: oh-my-zsh, become: true }
     - { role: java-openjdk, become: true }
 
     # Developer Tools
