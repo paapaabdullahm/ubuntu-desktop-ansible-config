@@ -1,25 +1,25 @@
 ---
 
-- name: Append Helm Alias to config file
-  lineinfile:
-    path: "{{ ansible_env.HOME }}/{{ shell_config }}"
-    line: "alias helm='docker run --rm {{ helm_image }}'"
-    owner: "{{ ansible_env.USER }}"
+# - name: Append Helm Alias to config file
+#   lineinfile:
+#     path: "{{ ansible_env.HOME }}/{{ shell_config }}"
+#     line: "alias helm='docker run --rm {{ helm }}'"
+#     owner: "{{ ansible_env.USER }}"
 
-- name: Append Kubectl Alias to config file
-  lineinfile:
-    path: "{{ ansible_env.HOME }}/{{ shell_config }}"
-    line: "alias kubectl='docker run --rm {{ kubectl_image }}'"
-    owner: "{{ ansible_env.USER }}"
+# - name: Append Kubectl Alias to config file
+#   lineinfile:
+#     path: "{{ ansible_env.HOME }}/{{ shell_config }}"
+#     line: "alias kubectl='docker run --rm {{ kubectl }}'"
+#     owner: "{{ ansible_env.USER }}"
 
-- name: Append Redis CLI Alias to config file
-  lineinfile:
-    path: "{{ ansible_env.HOME }}/{{ shell_config }}"
-    line: "alias redis-cli='docker run --rm {{ redis_cli_image }}'"
-    owner: "{{ ansible_env.USER }}"
+# - name: Append Redis CLI Alias to config file
+#   lineinfile:
+#     path: "{{ ansible_env.HOME }}/{{ shell_config }}"
+#     line: "alias redis-cli='docker run --rm {{ redis_cli }}'"
+#     owner: "{{ ansible_env.USER }}"
 
-- name: Append Redis Server Alias to config file
-  lineinfile:
-    path: "{{ ansible_env.HOME }}/{{ shell_config }}"
-    line: "alias redis-server='docker run --rm {{ redis_server_image }}'"
-    owner: "{{ ansible_env.USER }}"
+# - name: Append Redis Server Alias to config file
+#   lineinfile:
+#     path: "{{ ansible_env.HOME }}/{{ shell_config }}"
+#     line: "alias redis-server='docker run --rm {{ redis_server }}'"
+#     owner: "{{ ansible_env.USER }}"
