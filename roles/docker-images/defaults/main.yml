@@ -20,27 +20,22 @@ docker_images:
 
 # with_items for append to path
 script_options:
-  - name: helm
+  - name: "helm"
     image: "{{ helm }}"
-    opts:
-    args:
+    opts: "--rm"
 
-  - name: kubectl
+  - name: "kubectl"
     image: "{{ kubectl }}"
-    opts:
-    args:
+    opts: "--rm"
 
-  - name: redis-cli
+  - name: "redis-cli"
     image: "{{ redis_cli }}"
-    opts:
-    args:
+    opts: "--rm"
 
-  - name: redis-server
+  - name: "redis-server"
     image: "{{ redis_server }}"
-    opts:
-    args:
+    opts: "--rm"
 
-  - name: slack-cleaner
+  - name: "slack-cleaner"
     image: "{{ slack_cleaner }}"
-    opts:
-    args:
+    opts: "--rm"
