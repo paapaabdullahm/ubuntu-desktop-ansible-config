@@ -13,5 +13,5 @@
     owner: root
     group: root
     mode: "u=rwx,go=rx"
-  with_items: "{{ executables }}"
-  when:
+  with_items: "{{ script_options }}"
+  when: image_pull is changed
