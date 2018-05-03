@@ -4,7 +4,7 @@
   docker_image:
     name: "{{ item }}"
   with_items: "{{ docker_images }}"
-  register: image_pull
+  # register: image_pull
 
 - name: Append Image to PATH
   template:
