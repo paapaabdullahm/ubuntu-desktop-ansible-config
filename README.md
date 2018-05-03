@@ -394,14 +394,11 @@ When you run into connection timeout issues at some point in the configuration p
     <tr>
         <td width="25%"><i>customize-ui</i></td>
         <td width="40%">
-          Currently customizes datetime, appearance, and specifies the <i>shutdown</i> action when power is critically low.
+          Applies customizations to the user interface <br />
+          This role is disabled by default. To enable it simply uncomment the role in <a href="./desktop.yml"><i>desktop.yml</i></a> playbook, under the <b>Other Tools</b> section.
         </td>
         <td width="35%">
-          * Date and Time: <br />
-          You can customize the extra timezone information added for different locations from here: <a href="./roles/customize-ui/defaults/main.yml"><i>customize-ui/defaults/main.yml</i></a><br /><br />
-          * Appearance: default (disabled) <br />
-          Add your preferred wallpapers here: <a href="./roles/customize-ui/files"><i>customize-ui/files</i></a>. Make sure to change the following variables if necessary: <i>wallpaper_mode, wallpaper_name, wallpaper_directory and wallpaper_file_path</i><br /><br />
-          There are other tasks that are also disabled by default. You can enable them by uncommenting them out in: <a href="./roles/customize-ui/tasks/main.yml"><i>customize-ui/tasks/main.yml</i></a>
+          Add your preferred wallpapers to <a href="./roles/customize-ui/files"><i>customize-ui/files</i></a>. Make sure to change the following variables if necessary: <i>wallpaper_mode, wallpaper_name, wallpaper_directory and wallpaper_file_path</i>
         </td>
     </tr>
     <tr>
