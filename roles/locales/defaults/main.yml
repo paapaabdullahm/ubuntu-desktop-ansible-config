@@ -5,3 +5,5 @@ locale: "en_GH"
 format: "UTF-8"
 locale_compiled: "{{ locale }}.{{ format }}"
 locales_dir: "/usr/share/i18n/locales"
+
+locations: "\"['UTC UTC', 'Asia/Singapore Singapore', 'America/Chicago Texas City', 'America/Toronto Toronto', 'America/New_York Hartford']\""
