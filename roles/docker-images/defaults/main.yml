@@ -1,8 +1,46 @@
 ---
 
+# config file where aliases will be created
 shell_config: ".zshrc"
 
-helm_image: "pam79/helm:2.8.2"
-kubectl_image: "pam79/kubectl:1.10.0"
-redis_cli_image: "pam79/redis-cli:4.0.9"
-redis_server_image: "pam79/redis-server:4.0.9"
+# new docker images with specific version tag
+helm: "pam79/helm:2.8.2"
+kubectl: "pam79/kubectl:1.10.0"
+redis_cli: "pam79/redis-cli:4.0.9"
+redis_server: "pam79/redis-server:4.0.9"
+slack_cleaner: "pam79/slack-cleaner:0.3.0"
+
+# with_items for image pull
+docker_images:
+  - "{{ helm }}"
+  - "{{ kubectl }}"
+  - "{{ redis_cli }}"
+  - "{{ redis_server }}"
+  - "{{ slack_cleaner }}"
+
+# with_items for append path
+executables:
+  - name: helm
+    image: "{{ helm }}"
+    opts: []
+    args: []
+
+  - name: kubectl
+    image: "{{ kubectl }}"
+    opts: []
+    args: []
+
+  - name: redis-cli
+    image: "{{ redis_cli }}"
+    opts: []
+    args: []
+
+  - name: redis-server
+    image: "{{ redis_server }}"
+    opts: []
+    args: []
+
+  - name: slack-cleaner
+    image: "{{ slack_cleaner }}"
+    opts: []
+    args: []
