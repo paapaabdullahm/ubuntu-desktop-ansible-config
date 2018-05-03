@@ -47,7 +47,6 @@
     # Other Tools
     - { role: clean-apt-entries, become: true }
     - { role: disable-apport, become: true }
-    - { role: disable-evolution, become: true }
     - { role: critical-battery-action, become: true }
     # - { role: customize-ui, become: true }
     # - { role: setup-gnome3-desktop, become: true }
