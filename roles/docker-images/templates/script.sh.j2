@@ -1,3 +1,20 @@
 #!/usr/bin/env bash
 
-docker run {{ item.opts }} {{ item.image }} "$@"
+error(){
+  error_code=$1
+  echo "ERROR: $2" >&2
+  echo "(Error Code: $error_code )" &>2
+  exit $1
+}
+
+assert_command(){
+  command=$1
+  which $command > /dev/null 2>&1 || error 1 "$command not found!"
+}
+
+assert_command docker
+assert_command docker-machine
+docker-machine active > /dev/null 2>&1 || error 2 "No active docker-machine VM found."
+
+
+exec docker run {{ item.opts }} {{ item.image }} "$@"
