@@ -19,85 +19,7 @@
 
 - name: Install essential packages
   apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time={{ aptcachetime }}
-  with_items:
-    - afuse
-    - aptitude
-    - axel
-    - build-essential
-    - bzip2
-    - ca-certificates
-    - colortest
-    - curl
-    - dbus
-    - diffutils
-    - dkms
-    - dos2unix
-    - fdupes
-    - findutils
-    - ftp-ssl
-    - gawk
-    - gcc
-    - gimp
-    - gnash
-    - grep
-    - gsmartcontrol
-    - gufw
-    - gzip
-    - htop
-    - httping
-    - iftop
-    - imagemagick
-    - iotop
-    - kdenlive
-    - less
-    - lftp
-    - libsdl-ttf2.0-0
-    - libsdl1.2debian
-    - make
-    - meld
-    - nano
-    - nfs-common
-    - nmap
-    - ntp
-    - openconnect
-    - openssl
-    - p7zip
-    - pv
-    - pwgen
-    - python
-    - python-dbus
-    - python-dev
-    - python-pip
-    - python3-apt
-    - ranger
-    - rar
-    - rsync
-    - samba
-    - sed
-    - shutter
-    - smartmontools
-    - smbclient
-    - software-properties-common
-    - sshfs
-    - sshpass
-    - swapspace
-    - tar
-    - tesseract-ocr
-    - tig
-    - tmux
-    - trash-cli
-    - ttf-mscorefonts-installer
-    - ufw
-    - unzip
-    - vim
-    - vlc
-    - vpnc
-    - wget
-    - whois
-    - xmlstarlet
-    - xournal
-    - youtube-dl
-    - zip
+  with_items: "{{ essential_pkgs }}"
 
 - name: Upgrade installed packages
   apt:
@@ -108,3 +30,21 @@
     name: vm.swappiness
     value: 10
     state: present
+
+- name: Check if battery backup exists for your computer system
+  stat:
+    path: "/sys/class/power_supply/BAT0/power"
+  register: battery_backup
+
+- debug:
+    msg: "Battery backup doesn't exist"
+  when: not battery_backup.stat.exists
+
+- debug:
+    msg: "Battery backup exist"
+  when: battery_backup.stat.exists is defined and battery_backup.stat.exists
+
+- name: Specify the action to take when power is critically low
+  become: false
+  command: gsettings set org.gnome.settings-daemon.plugins.power critical-battery-action 'shutdown'
+  when: battery_backup.stat.exists is defined and battery_backup.stat.exists
