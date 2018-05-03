@@ -46,6 +46,7 @@
 
     # Other Tools
     - { role: disable-apport, become: true }
+    - { role: disable-evolution, become: true }
     - { role: clean-apt-entries, become: true }
     # - { role: customize-ui, become: true }
     # - { role: setup-gnome3-desktop, become: true }
