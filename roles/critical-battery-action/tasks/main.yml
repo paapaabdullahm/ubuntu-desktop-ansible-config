@@ -1,0 +1,19 @@
+---
+
+- name: Check if battery backup exists for your computer system
+  stat:
+    path: "/sys/class/power_supply/BAT0/power"
+  register: battery_backup
+
+- debug:
+    msg: "Battery backup doesn't exist"
+  when: not battery_backup.stat.exists
+
+- debug:
+    msg: "Battery backup exist"
+  when: battery_backup.stat.exists is defined and battery_backup.stat.exists
+
+- name: Specify the action to take when power is critically low
+  become: false
+  command: gsettings set org.gnome.settings-daemon.plugins.power critical-battery-action 'shutdown'
+  when: battery_backup.stat.exists is defined and battery_backup.stat.exists
