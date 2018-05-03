@@ -22,25 +22,25 @@ docker_images:
 script_options:
   - name: helm
     image: "{{ helm }}"
-    opts: []
-    args: []
+    opts: ""
+    args: ""
 
   - name: kubectl
     image: "{{ kubectl }}"
-    opts: []
-    args: []
+    opts: ""
+    args: ""
 
   - name: redis-cli
     image: "{{ redis_cli }}"
-    opts: []
-    args: []
+    opts: ""
+    args: ""
 
   - name: redis-server
     image: "{{ redis_server }}"
-    opts: []
-    args: []
+    opts: ""
+    args: ""
 
   - name: slack-cleaner
     image: "{{ slack_cleaner }}"
-    opts: []
-    args: []
+    opts: ""
+    args: ""
