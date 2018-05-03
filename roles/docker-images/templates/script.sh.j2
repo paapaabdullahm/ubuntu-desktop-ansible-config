@@ -13,6 +13,5 @@ assert_command(){
 }
 
 assert_command docker
-assert_command docker-machine
 
 exec docker run {{ item.opts }} {{ item.image }} "$@"
