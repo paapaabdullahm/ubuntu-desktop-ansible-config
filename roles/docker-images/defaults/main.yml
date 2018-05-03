@@ -18,8 +18,8 @@ docker_images:
   - "{{ redis_server }}"
   - "{{ slack_cleaner }}"
 
-# with_items for append path
-executables:
+# with_items for append to path
+script_options:
   - name: helm
     image: "{{ helm }}"
     opts: []
