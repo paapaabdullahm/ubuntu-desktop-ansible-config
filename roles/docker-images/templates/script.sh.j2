@@ -11,11 +11,11 @@ error(){
   exit $1
 }
 
-assert_command(){
-  command=$1
-  which $command > /dev/null 2>&1 || error 1 "$command not found!"
+assert_cmd(){
+  cmd=$1
+  which $cmd > /dev/null 2>&1 || error 1 "$cmd not found!"
 }
 
-assert_command docker
+assert_cmd docker
 
 exec docker run {{ item.opts }} {{ item.image }} "$@"
