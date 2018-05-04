@@ -78,47 +78,43 @@
 - name: Install theme-specific fonts
   become: false
   raw: sh {{ ansible_env.HOME }}/.fonts/install.sh
-  when: clone_fonts is changed
+  # when: clone_fonts is changed
 
 - name: Make fonts system-wide
   raw: cp {{ ansible_env.HOME }}/.local/share/fonts/* /usr/local/share/fonts/
-  when: clone_fonts is changed
+  # when: clone_fonts is changed
 
 - name: Update system-wide font cache
   raw: fc-cache -fv
-  when: clone_fonts is changed
+  # when: clone_fonts is changed
 
 - name: Enable custom fonts
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ use-system-font false
-  when: clone_fonts is changed
+  # when: clone_fonts is changed
 
 - name: Set 'Meslo LG S for Powerline Regular 14'
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ font 'Meslo LG S for Powerline Regular 14'
-  when: clone_fonts is changed
+  # when: clone_fonts is changed
 
 - name: Disable the use of system theme
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ use-theme-colors false
-  when: clone_fonts is changed
+  # when: clone_fonts is changed
 
 - name: Set background colour to '#002b36'
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ background-color '#002b36'
-  # when: clone_fonts is changed
 
 - name: Set foreground colour to '#ffffff'
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ foreground-color '#ffffff'
-  # when: clone_fonts is changed
 
 - name: Enable transparent terminal background
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ use-transparent-background true
-  # when: clone_fonts is changed
 
 - name: Set terminal background transparency to 10%
   become: false
   raw: UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \'); gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ background-transparency-percent 10
-  # when: clone_fonts is changed
