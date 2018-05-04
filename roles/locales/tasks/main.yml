@@ -47,9 +47,9 @@
   command: localectl set-locale LANG={{ locale_compiled }}
 
 - name: Customize Date and Time
- become: false
- command: gsettings set {{ item.module }} {{ item.key }} {{ item.value }}
- with_items:
+  become: false
+  command: gsettings set {{ item.module }} {{ item.key }} {{ item.value }}
+  with_items:
    - { module: "com.canonical.indicator.datetime", key: "show-day", value: "true" }
    - { module: "com.canonical.indicator.datetime", key: "show-date", value: "true" }
    - { module: "com.canonical.indicator.datetime", key: "time-format", value: "'12-hour'" }
