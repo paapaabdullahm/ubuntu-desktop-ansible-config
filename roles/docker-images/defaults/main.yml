@@ -1,8 +1,5 @@
 ---
 
-# config file where aliases will be created
-shell_config: ".zshrc"
-
 # new docker images with specific version tag
 helm: "pam79/helm:2.8.2"
 kubectl: "pam79/kubectl:1.10.0"
