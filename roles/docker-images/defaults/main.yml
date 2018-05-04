@@ -19,20 +19,20 @@ docker_images:
 script_options:
   - name: "helm"
     image: "{{ helm }}"
-    opts: "--rm --interactive --tty --volume \"$PWD\":/wd --workdir /wd"
+    opts: "--rm -it --volume \"$PWD\":/wd --workdir /wd"
 
   - name: "kubectl"
     image: "{{ kubectl }}"
-    opts: "--rm --interactive --tty --volume \"$PWD\":/wd --workdir /wd"
+    opts: "--rm -it --volume \"$PWD\":/wd --workdir /wd"
 
   - name: "redis-cli"
     image: "{{ redis_cli }}"
-    opts: "--rm --interactive --tty --volume \"$PWD\":/wd --workdir /wd"
+    opts: "--rm -it --volume \"$PWD\":/wd --workdir /wd"
 
   - name: "redis-server"
     image: "{{ redis_server }}"
-    opts: "--rm --interactive --tty --volume \"$PWD\":/wd --workdir /wd"
+    opts: "--rm -it --volume \"$PWD\":/wd --workdir /wd"
 
   - name: "slack-cleaner"
     image: "{{ slack_cleaner }}"
-    opts: "--rm --interactive --tty --volume \"$PWD\":/wd --workdir /wd"
+    opts: "--rm -it --volume \"$PWD\":/wd --workdir /wd"

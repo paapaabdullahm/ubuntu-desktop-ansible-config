@@ -1,12 +1,12 @@
 ---
 
-- name: Pull Docker Image
+- name: Pull Docker Images
   docker_image:
     name: "{{ item }}"
   with_items: "{{ docker_images }}"
   # register: image_pull
 
-- name: Append Image to PATH
+- name: Append Images to PATH
   template:
     src: script.sh.j2
     dest: "/usr/local/bin/{{ item.name }}"
