@@ -9,7 +9,7 @@
 - name: Append Label to config file
   lineinfile:
     path: "{{ ansible_env.HOME }}/{{ shell_config }}"
-    regexp: "^# export SSH_KEY_PATH="
+    regexp: "^export SSH_KEY_PATH="
     insertafter: "^# export SSH_KEY_PATH="
     line: "\n# Set functions to simplify docker run commands"
     owner: "{{ ansible_env.USER }}"
@@ -17,8 +17,8 @@
 - name: Append docker run commands as function to config file
   lineinfile:
     path: "{{ ansible_env.HOME }}/{{ shell_config }}"
-    regexp: "^# Set functions to simplify docker run "
-    insertafter: "^# Set functions to simplify docker run "
+    regexp: "^Set functions to simplify docker run "
+    insertafter: "^# Set functions to simplify docker run commands"
     line: "{{ item.name }}() { docker run {{ item.opts }} {{ item.image }} \"$@\"; }"
     owner: "{{ ansible_env.USER }}"
   with_items: "{{ alias_options }}"
