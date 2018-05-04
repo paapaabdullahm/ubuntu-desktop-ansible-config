@@ -20,6 +20,7 @@ essential_pkgs:
   - gcc
   - gimp
   - gnash
+  - gnome-panel
   - grep
   - gsmartcontrol
   - gufw
