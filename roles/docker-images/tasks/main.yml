@@ -6,20 +6,37 @@
   with_items: "{{ docker_images }}"
   # register: image_pull
 
-- name: Append Images to PATH
-  template:
-    src: script.sh.j2
-    dest: "/usr/local/bin/{{ item.name }}"
-    owner: root
-    group: root
-    mode: "u=rwx,go=rx"
-  with_items: "{{ script_options }}"
+- name: Append Label to config file
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/{{ shell_config }}"
+    regexp: "^# export SSH_KEY_PATH="
+    insertafter: "^# export SSH_KEY_PATH="
+    line: "\n# Set functions to simplify docker run commands"
+    owner: "{{ ansible_env.USER }}"
+
+- name: Append docker run commands as function to config file
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/{{ shell_config }}"
+    regexp: "^# Set functions to simplify docker run "
+    insertafter: "^# Set functions to simplify docker run "
+    line: "{{ item.name }}() { docker run {{ item.opts }} {{ item.image }} \"$@\"; }"
+    owner: "{{ ansible_env.USER }}"
+  with_items: "{{ alias_options }}"
+
+# - name: Append Images to PATH
+#   template:
+#     src: script.sh.j2
+#     dest: "/usr/local/bin/{{ item.name }}"
+#     owner: root
+#     group: root
+#     mode: "u=rwx,go=rx"
+#   with_items: "{{ script_options }}"
   # when: image_pull is changed
 
-- name: Rehash Scripts
-  become: false
-  ignore_errors: yes
-  command: "{{ item }}"
-  with_items:
-    - "rehash"
-    - "hash -r"
+# - name: Rehash Scripts
+#   become: false
+#   ignore_errors: yes
+#   command: "{{ item }}"
+#   with_items:
+#     - "rehash"
+#     - "hash -r"
