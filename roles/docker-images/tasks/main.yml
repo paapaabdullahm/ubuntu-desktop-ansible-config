@@ -17,7 +17,9 @@
   # when: image_pull is changed
 
 - name: Rehash Scripts
+  become: false
+  ignore_errors: yes
   command: "{{ item }}"
   with_items:
-    - "hash -r"
     - "rehash"
+    - "hash -r"
