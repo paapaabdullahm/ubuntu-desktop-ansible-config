@@ -15,3 +15,9 @@
     mode: "u=rwx,go=rx"
   with_items: "{{ script_options }}"
   # when: image_pull is changed
+
+- name: Rehash Scripts
+  command: "{{ item }}"
+  with_items:
+    - "hash -r"
+    - "rehash"
