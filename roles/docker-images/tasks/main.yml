@@ -10,7 +10,7 @@
   lineinfile:
     path: "{{ ansible_env.HOME }}/{{ shell_config }}"
     regexp: "^export SSH_KEY_PATH="
-    insertafter: "^# export SSH_KEY_PATH="
+    insertafter: "^# export SSH_KEY_PATH=\"~/.ssh/rsa_id\""
     line: "\n# Set functions to simplify docker run commands"
     owner: "{{ ansible_env.USER }}"
 
