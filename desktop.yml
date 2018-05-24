@@ -11,7 +11,6 @@
 
     # Developer Tools
     - { role: apache-maven, become: true }
-    - { role: atom, become: true }
     - { role: dia, become: true }
     - { role: docker, become: true }
     - { role: docker-images, become: true }
