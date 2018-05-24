@@ -22,7 +22,9 @@
     - { role: sublime, become: true }
     - { role: virtualbox, become: true }
     - { role: vagrant, become: true }
-    - { role: mini-kube, become: true }
+    - { role: kubectl, become: true }
+    - { role: minikube, become: true }
+    - { role: helm, become: true }
 
     # Utility Tools
     - { role: brave, become: true }
@@ -31,8 +33,6 @@
     - { role: gnome-tweak-tool, become: true }
     - { role: gnome-user-share, become: true }
     - { role: gnucash, become: true }
-    - { role: rambox, become: true }
-    - { role: wavebox, become: true }
     - { role: xdman, become: true }
     - { role: inkscape, become: true }
     - { role: kdenlive, become: true }
