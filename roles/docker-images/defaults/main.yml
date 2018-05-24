@@ -2,39 +2,19 @@
 
 shell_config: ".zshrc"
 
-# new docker images with specific version tags
-helm: "pam79/helm:2.8.2"
-kubectl: "pam79/kubectl:1.10.0"
+# new docker images with specific version tag
 redis_cli: "pam79/redis-cli:4.0.9"
 redis_server: "pam79/redis-server:4.0.9"
 slack_cleaner: "pam79/slack-cleaner:0.3.0"
 
 # with_items for image pull
 docker_images:
-  - "{{ helm }}"
-  - "{{ kubectl }}"
   - "{{ redis_cli }}"
   - "{{ redis_server }}"
   - "{{ slack_cleaner }}"
 
 # with_items for append to path
 alias_options:
-  - name: "helm"
-    image: "{{ helm }}"
-    opts: "--rm -it --volume \"$PWD\":/wd --workdir /wd"
-
-  - name: "kubectl"
-    image: "{{ kubectl }}"
-    opts: "--rm -it --volume \"$PWD\":/wd --workdir /wd"
-
-  - name: "redis-cli"
-    image: "{{ redis_cli }}"
-    opts: "--rm -it --volume \"$PWD\":/wd --workdir /wd"
-
-  - name: "redis-server"
-    image: "{{ redis_server }}"
-    opts: "--rm -it --volume \"$PWD\":/wd --workdir /wd"
-
   - name: "slack-cleaner"
     image: "{{ slack_cleaner }}"
     opts: "--rm -it --volume \"$PWD\":/wd --workdir /wd"
