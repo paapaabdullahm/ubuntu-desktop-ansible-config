@@ -1,4 +1,6 @@
 ---
 
-linux_release: "xenial"
-apt_id: "A7317B0F"
+kubectl_version: "v1.10.0"
+kubectl_base_url: "https://storage.googleapis.com/kubernetes-release/release"
+kubectl_platform: "amd64"
+kubectl_dest: "/usr/local/bin/kubectl"

@@ -1,19 +1,11 @@
 ---
 
-- name: Import GPG signing key
-  apt_key:
-    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
-    state: present
-    # id: "{{ apt_id }}"
+- name: Download Kubectl into your PATH
+  get_url:
+    url: "{{ kubectl_base_url }}/{{ kubectl_version }}/bin/linux/{{ kubectl_platform }}/kubectl"
+    dest: "{{ kubectl_dest }}"
+  register: kubectl
 
-- name: Add repository
-  apt_repository:
-    repo: 'deb http://apt.kubernetes.io/ kubernetes-{{ linux_release }} main'
-    state: present
-
-- name: Install Kubectl
-  apt:
-    pkg: kubectl
-    state: latest
-    update_cache: yes
-    cache_valid_time: "{{ aptcachetime }}"
+- name: Make Kubectl binary executable
+  raw: chmod +x {{ kubectl_dest }}
+  when: kubectl is changed
