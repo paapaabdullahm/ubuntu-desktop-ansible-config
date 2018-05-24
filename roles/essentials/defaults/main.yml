@@ -29,6 +29,7 @@ essential_pkgs:
   - httping
   - iftop
   - imagemagick
+  - inotify-tools
   - iotop
   - kdenlive
   - less
