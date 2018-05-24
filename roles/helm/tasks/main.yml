@@ -1,0 +1,62 @@
+---
+
+- name: Retrieve Helm download directory status
+  stat:
+    path: "{{ helm_download_dir }}"
+  register: helm_arc_path
+
+- debug:
+    msg: "Helm download directory is not defined (file doesn't exist)"
+  when: not helm_arc_path.stat.exists
+
+- debug:
+    msg: "Helm download directory is defined (file exist)"
+  when: helm_arc_path.stat.exists is defined and helm_arc_path.stat.exists
+
+- name: Create Helm download directory
+  file:
+    dest: "{{ helm_download_dir }}"
+    state: directory
+    recurse: yes
+    owner: "{{ ansible_env.USER }}"
+    group: "{{ ansible_env.USER }}"
+  when: not helm_arc_path.stat.exists
+
+- name: Retrive Helm staging directory status
+  stat:
+    path: "{{ helm_staging_dir }}"
+  register: helm_stage_path
+
+- debug:
+    msg: "Helm staging directory is not defined (file doesn't exist)"
+  when: not helm_stage_path.stat.exists
+
+- debug:
+    msg: "Helm staging directory is defined (file exist)"
+  when: helm_stage_path.stat.exists is defined and helm_stage_path.stat.exists
+
+- name: Create Helm staging directory
+  file:
+    dest: "{{ helm_staging_dir }}"
+    state: directory
+    recurse: yes
+    owner: "{{ ansible_env.USER }}"
+    group: "{{ ansible_env.USER }}"
+  when: not helm_stage_path.stat.exists
+
+- name: Download Helm Tarball
+  get_url:
+    url: "{{ helm_base_url }}/helm-{{ helm_version }}-linux-amd64.tar.gz"
+    dest: "{{ helm_download_dir }}/helm-{{ helm_version }}-linux-amd64.tar.gz"
+  register: helm_archive
+
+- name: Unarchive Helm Source
+  unarchive:
+    src: "{{ helm_download_dir }}/helm-{{ helm_version }}-linux-amd64.tar.gz"
+    dest: "{{ helm_staging_dir }}"
+    remote_src: yes
+  when: helm_archive is changed
+
+- name: Install Helm
+  raw: mv {{ helm_staging_dir }}/linux-amd64/helm /usr/local/bin/helm; chmod +x /usr/local/bin/helm;
+  when: helm_archive is changed
