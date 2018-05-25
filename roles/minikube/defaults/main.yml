@@ -1,5 +1,5 @@
 ---
 
-minikube_version: "v0.25.2"
+minikube_version: "v0.27.0"
 minikube_base_url: "https://storage.googleapis.com/minikube/releases"
 minikube_checksum: "41d666ddc9ea1eee3d08a939b1075347da7e670c93836d2756ee5ef1daaa1457"
