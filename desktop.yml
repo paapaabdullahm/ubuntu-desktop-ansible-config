@@ -16,7 +16,6 @@
     - { role: google-chrome, become: true }
     - { role: jetbrains-idea, become: true }
     - { role: jetbrains-idea-plugins, become: true }
-    - { role: smartgit, become: true }
     - { role: sublime, become: true }
     - { role: virtualbox, become: true }
     - { role: vagrant, become: true }
