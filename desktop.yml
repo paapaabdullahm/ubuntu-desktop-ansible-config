@@ -13,7 +13,6 @@
     - { role: apache-maven, become: true }
     - { role: dia, become: true }
     - { role: docker, become: true }
-    - { role: docker-images, become: true }
     - { role: google-chrome, become: true }
     - { role: jetbrains-idea, become: true }
     - { role: jetbrains-idea-plugins, become: true }
@@ -26,7 +25,6 @@
     - { role: helm, become: true }
 
     # Utility Tools
-    - { role: brave, become: true }
     - { role: calibre, become: true }
     - { role: gnome-chess, become: true }
     - { role: gnome-tweak-tool, become: true }
@@ -47,5 +45,3 @@
     - { role: clean-apt-entries, become: true }
     - { role: disable-apport, become: true }
     - { role: critical-battery-action, become: true }
-    # - { role: customize-ui, become: true }
-    # - { role: setup-gnome3-desktop, become: true }
