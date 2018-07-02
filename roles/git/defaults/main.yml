@@ -6,5 +6,6 @@ git_packages:
 git_global_config_user_name: "pam79"
 git_global_config_user_email: "paapaabdullahm@gmail.com"
 git_global_config_core_editor: "vim"
+git_global_config_core_autocrlf: "input"
 git_global_config_branch_autosetuprebase: "always"
 git_global_config_push_default: "current"
