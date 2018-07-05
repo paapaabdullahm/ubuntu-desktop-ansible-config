@@ -1,8 +1,11 @@
 ---
 
-vbox_version: "5.2.8"
-vbox_build: "121009"
+vbox_version: "5.2.14"
+vbox_build: "123301"
 
+# download: https://www.virtualbox.org/download/oracle_vbox_2016.asc
+# execute: gpg --import oracle_vbox_2016.asc
+# gpg: key 2980AECF
 vbox_pkg_gpg_key: "2980AECF"
 vbox_pkg_gpg_url: "https://www.virtualbox.org/download/oracle_vbox_2016.asc"
 vbox_pkg_repo_url: "https://download.virtualbox.org/virtualbox/debian"
@@ -12,7 +15,7 @@ vbox_extpack_base: "http://download.virtualbox.org/virtualbox/{{ vbox_version }}
 vbox_extpack_name: "Oracle_VM_VirtualBox_Extension_Pack"
 vbox_extpack_param: "{{ vbox_extpack_name }}-{{ vbox_version }}-{{ vbox_build }}"
 vbox_extpack_url: "{{ vbox_extpack_base }}/{{ vbox_extpack_param }}.vbox-extpack"
-vbox_extpack_sha256: "355ea5fe047f751534720c65398b44290d53f389e0f5f66818f3f36746631d26"
+vbox_extpack_sha256: "a5d92aa11132eedf1c21d9c10f83ed672186464d47d774569f2f4a8a771fa3a3"
 vbox_extpack_dest_path: "/tmp/{{ vbox_extpack_param }}.vbox-extpack"
 vbox_extpack_download_timeout_seconds: 600
 
