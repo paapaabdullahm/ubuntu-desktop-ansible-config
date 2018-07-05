@@ -13,9 +13,11 @@
     - { role: apache-maven, become: true }
     - { role: dia, become: true }
     - { role: docker, become: true }
+    - { role: docker-images, become: true }
     - { role: google-chrome, become: true }
     - { role: jetbrains-idea, become: true }
     - { role: jetbrains-idea-plugins, become: true }
+    - { role: smartgit, become: true }
     - { role: sublime, become: true }
     - { role: virtualbox, become: true }
     - { role: vagrant, become: true }
