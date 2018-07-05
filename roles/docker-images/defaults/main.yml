@@ -2,19 +2,22 @@
 
 shell_config: ".zshrc"
 
-# new docker images with specific version tag
-redis_cli: "pam79/redis-cli:4.0.9"
-redis_server: "pam79/redis-server:4.0.9"
-slack_cleaner: "pam79/slack-cleaner:0.3.0"
-
 # with_items for image pull
 docker_images:
-  - "{{ redis_cli }}"
-  - "{{ redis_server }}"
-  - "{{ slack_cleaner }}"
+  - "pam79/php-fpm"
+  - "pam79/composer"
+  - "pam79/phpunit"
+  - "pam79/nginx"
+  - "pam79/router"
+  - "pam79/node"
+  - "pam79/apidoc"
+  - "pam79/beanstalkd"
+  - "pam79/redis-cli"
+  - "pam79/redis-server"
+  - "pam79/slack-cleaner"
 
 # with_items for append to path
-alias_options:
-  - name: "slack-cleaner"
-    image: "{{ slack_cleaner }}"
-    opts: "--rm -it --volume \"$PWD\":/wd --workdir /wd"
+# alias_options:
+#   - name: "slack-cleaner"
+#     image: "{{ slack_cleaner }}"
+#     opts: "--rm -it --volume \"$PWD\":/wd --workdir /wd"
