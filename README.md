@@ -112,7 +112,7 @@ When you run into connection timeout issues at some point in the configuration p
           n/a
         </td>
     </tr>
-    <tr>
+    <!--tr>
         <td width="25%"><i>atom</i></td>
         <td width="40%">
           A free and open-source text and source code editor.
@@ -120,7 +120,7 @@ When you run into connection timeout issues at some point in the configuration p
         <td width="35%">
           n/a
         </td>
-    </tr>
+    </tr-->
     <tr>
         <td width="25%"><i>dia</i></td>
         <td width="40%">
