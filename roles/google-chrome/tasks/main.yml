@@ -79,20 +79,25 @@
     - { name: "cookies.txt", id: njabckikapfpffapmjgojcnbfjonfjfg }
     - { name: "Cookie Inspector", id: jgbbilmfbammlbbhmmgaagdkbkepnijn }
     - { name: "EverSync", id: iohcojnlgnfbmjfjfkbhahhmppcggdog }
+    - { name: "Eye Dropper", id: hmdcmlfkchdmnmnmheododdhjedfccka }
     - { name: "github-submodule-links", id: ncoknneddcolmgfnmcbemhhaghjdlkkb }
     - { name: "Grepsr - Web Scraping Tool", id: hjdijkhlfpeafghibmiabeofkiicdnjm }
+    - { name: "iCloud Bookmarks", id: fkepacicchenbjecpbpbclokcabebhah }
     - { name: "isometric-contributions", id: mjoedlfflcchnleknnceiplgaeoegien }
     - { name: "jsonview", id: chklaanhfefbnpoihckbnefhakgolnmc }
-    - { name: "kimono", id: deoaddaobnieaecelinfdllcgdehimih }
     - { name: "LinkedIn Extension", id: meajfmicibjppdgbjfkpdikfjcflabpk }
     - { name: "Mobile/Responsive Web Design Tester", id: elmekokodcohlommfikpmojheggnbelo }
     - { name: "ModHeader", id: idgpnmonknjnojddfkpgkljpfnnfcklj }
-    - { name: "postman", id: fhbjgbiflinjbdggehcddcbncdddomop }
+    - { name: "NoteOn", id: niibkjnjbkgbolkbedmldohdpnijjooe }
+    - { name: "OneTab", id: chphlpgkkbolifaimnlloiipkdnihall }
+    - { name: "Online Calendar", id: ojeooogpinnpchmelddadhlplpolocoe }
+    - { name: "Page Ruler", id: jlpkojjdgbllmedoapgfodplfhcbnbpn }
+    - { name: "Pixlr Today", id: nkgmhpdhaaijoaeaokmhdpfegfmbmfjg }
+    - { name: "Read Aloud", id: hdhinadidafjejdhmfkjgnolgimiaplp }
     - { name: "Ripple Emulator (Beta)", id: geelfhphabnejjhdalkjhgipohgpdnoc }
     - { name: "stylish", id: fjnbnpbmkenffdnngjfgmeleoegfcffe }
     - { name: "TCP Socket debugger", id: fenhpkaocajfmpchcojgniehkamhkafp }
     - { name: "Video DownloadHelper", id: lmjnegcaeklhafolokijcfjliaokphfk }
     - { name: "WAVE Evaluation Tool", id: jbbplnpkjmmeebjpijfedlgcdilocofh }
     - { name: "XDM Browser Monitor", id: bgpkelneombgembocnickiddlbebmica }
-    - { name: "YouTube Downloader", id: pncidppbibhnmkmhmeoiheclffhpaeac }
     - { name: "Zoom Scheduler", id: kgjfgplpablkjnlkjmjdecgdpfankdle }
