@@ -226,7 +226,7 @@ When you run into connection timeout issues at some point in the configuration p
     <!---------------------------------------------------------->
     <tr><td width="100%" colspan=3><b>Utility Tools</b></td></tr>
     <!---------------------------------------------------------->
-    <tr>
+    <!--tr>
         <td width="25%"><i>brave</i></td>
         <td width="40%">
           Brave is a free and open-source web browser based on the Chromium web browser and its Blink engine, announced by the co-founder of the Mozilla project and creator of JavaScript, Brendan Eich.
@@ -234,7 +234,7 @@ When you run into connection timeout issues at some point in the configuration p
         <td width="35%">
           n/a
         </td>
-    </tr>
+    </tr-->
     <tr>
         <td width="25%"><i>calibre</i></td>
         <td width="40%">
@@ -280,7 +280,7 @@ When you run into connection timeout issues at some point in the configuration p
           n/a
         </td>
     </tr>
-    <tr>
+    <!--tr>
         <td width="25%"><i>rambox</i></td>
         <td width="40%">
           Free, Open Source and Cross Platform messaging and emailing app that combines common web applications into one.
@@ -288,8 +288,8 @@ When you run into connection timeout issues at some point in the configuration p
         <td width="35%">
           n/a
         </td>
-    </tr>
-    <tr>
+    </tr-->
+    <!--tr>
         <td width="25%"><i>wavebox</i></td>
         <td width="40%">
           Similar to Rambox, Wavebox lets you bring all your web communication tools together for faster, smarter working.
@@ -297,7 +297,7 @@ When you run into connection timeout issues at some point in the configuration p
         <td width="35%">
           n/a
         </td>
-    </tr>
+    </tr-->
     <tr>
         <td width="25%"><i>xdman</i></td>
         <td width="40%">
@@ -420,7 +420,7 @@ When you run into connection timeout issues at some point in the configuration p
           n/a
         </td>
     </tr>
-    <tr>
+    <!--tr>
         <td width="25%"><i>setup-gnome3-desktop</i></td>
         <td width="40%">
           A desktop environment which uses GNOME Shell engine and is composed of free and open-source software that runs on Linux and most BSD derivatives.
@@ -428,5 +428,5 @@ When you run into connection timeout issues at some point in the configuration p
         <td width="35%">
           This role is disabled by default. To enable it simply uncomment the role in <a href="./desktop.yml"><i>desktop.yml</i></a> playbook, under the <b>Other Tools</b> section.
         </td>
-    </tr>
+    </tr-->
 </table>
