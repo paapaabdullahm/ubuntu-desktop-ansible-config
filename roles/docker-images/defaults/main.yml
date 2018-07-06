@@ -6,14 +6,10 @@ shell_config: ".zshrc"
 docker_images:
   - "pam79/php-fpm"
   - "pam79/composer"
-  - "pam79/phpunit"
   - "pam79/nginx"
-  - "pam79/router"
-  - "pam79/node"
-  - "pam79/apidoc"
+  - "pam79/docker-gen"
   - "pam79/beanstalkd"
-  - "pam79/redis-cli"
-  - "pam79/redis-server"
+  - "pam79/redis"
   - "pam79/slack-cleaner"
 
 # with_items for append to path
