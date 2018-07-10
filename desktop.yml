@@ -42,7 +42,7 @@
     - { role: gnome-chess, become: true }
     - { role: gnome-tweak-tool, become: true }
     - { role: gnome-user-share, become: true }
-    - { role: gnucash, become: true }
+    #- { role: gnucash, become: true }
     - { role: xdman, become: true }
     - { role: inkscape, become: true }
     - { role: kdenlive, become: true }
