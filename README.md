@@ -112,15 +112,6 @@ When you run into connection timeout issues at some point in the configuration p
           n/a
         </td>
     </tr>
-    <!--tr>
-        <td width="25%"><i>atom</i></td>
-        <td width="40%">
-          A free and open-source text and source code editor.
-        </td>
-        <td width="35%">
-          n/a
-        </td>
-    </tr-->
     <tr>
         <td width="25%"><i>dia</i></td>
         <td width="40%">
@@ -156,6 +147,15 @@ When you run into connection timeout issues at some point in the configuration p
         <td width="35%">
           The bookmarks file provided is encrypted using <b>ansible-vault</b>. To import your bookmarks, include a <i>bookmarks.html.vault</i> file at the following location: <a href="./roles/google-chrome/files"><i>google-chrome/files</i></a>. or simply delete the file if you are not importing bookmarks.
           <br /><br />Also, you can customize which extensions get installed by modifying <a href="./roles/google-chrome/tasks/main.yml"><i>google-chrome/tasks/main.yml</i></a> file.
+        </td>
+    </tr>
+    <tr>
+        <td width="25%"><i>brave</i></td>
+        <td width="40%">
+          Brave is a free and open-source web browser based on the Chromium web browser and its Blink engine, announced by the co-founder of the Mozilla project and creator of JavaScript, Brendan Eich.
+        </td>
+        <td width="35%">
+          n/a
         </td>
     </tr>
     <tr>
@@ -226,15 +226,6 @@ When you run into connection timeout issues at some point in the configuration p
     <!---------------------------------------------------------->
     <tr><td width="100%" colspan=3><b>Utility Tools</b></td></tr>
     <!---------------------------------------------------------->
-    <!--tr>
-        <td width="25%"><i>brave</i></td>
-        <td width="40%">
-          Brave is a free and open-source web browser based on the Chromium web browser and its Blink engine, announced by the co-founder of the Mozilla project and creator of JavaScript, Brendan Eich.
-        </td>
-        <td width="35%">
-          n/a
-        </td>
-    </tr-->
     <tr>
         <td width="25%"><i>calibre</i></td>
         <td width="40%">
@@ -280,24 +271,6 @@ When you run into connection timeout issues at some point in the configuration p
           n/a
         </td>
     </tr>
-    <!--tr>
-        <td width="25%"><i>rambox</i></td>
-        <td width="40%">
-          Free, Open Source and Cross Platform messaging and emailing app that combines common web applications into one.
-        </td>
-        <td width="35%">
-          n/a
-        </td>
-    </tr-->
-    <!--tr>
-        <td width="25%"><i>wavebox</i></td>
-        <td width="40%">
-          Similar to Rambox, Wavebox lets you bring all your web communication tools together for faster, smarter working.
-        </td>
-        <td width="35%">
-          n/a
-        </td>
-    </tr-->
     <tr>
         <td width="25%"><i>xdman</i></td>
         <td width="40%">
