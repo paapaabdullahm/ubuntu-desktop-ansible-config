@@ -1,15 +1,13 @@
-[//]: # (
-    Roles whose version numbers need manual upgrade
-      1. apache-maven
-      2. docker
-      3. helm
-      4. jetbrains-idea
-      5. kubectl
-      6. minikube
-      7. smartgit
-      8. virtualbox
-      9. xdman
-)
+# Roles whose version numbers need manual upgrade
+  # 1. apache-maven
+  # 2. docker
+  # 3. helm
+  # 4. jetbrains-idea
+  # 5. kubectl
+  # 6. minikube
+  # 7. smartgit
+  # 8. virtualbox
+  # 9. xdman
 
 - name: Ubuntu Desktop Configuration
   hosts: localhost
