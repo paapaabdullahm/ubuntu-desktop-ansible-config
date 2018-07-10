@@ -4,11 +4,12 @@ shell_config: ".zshrc"
 
 # with_items for image pull
 docker_images:
+  - "pam79/docker-gen"
+  - "pam79/nginx"
   - "pam79/php-fpm"
   - "pam79/composer"
-  - "pam79/nginx"
-  - "pam79/docker-gen"
   - "pam79/beanstalkd"
+  - "pam79/mariadb"
   - "pam79/redis"
   - "pam79/slack-cleaner"
 
