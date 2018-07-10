@@ -15,6 +15,7 @@
     - { role: docker, become: true }
     - { role: docker-images, become: true }
     - { role: google-chrome, become: true }
+    - { role: brave, become: true }
     - { role: jetbrains-idea, become: true }
     - { role: jetbrains-idea-plugins, become: true }
     - { role: smartgit, become: true }
