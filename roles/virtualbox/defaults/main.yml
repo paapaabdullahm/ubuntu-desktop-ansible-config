@@ -15,7 +15,7 @@ vbox_extpack_base: "http://download.virtualbox.org/virtualbox/{{ vbox_version }}
 vbox_extpack_name: "Oracle_VM_VirtualBox_Extension_Pack"
 vbox_extpack_param: "{{ vbox_extpack_name }}-{{ vbox_version }}-{{ vbox_build }}"
 vbox_extpack_url: "{{ vbox_extpack_base }}/{{ vbox_extpack_param }}.vbox-extpack"
-vbox_extpack_sha256: "a5d92aa11132eedf1c21d9c10f83ed672186464d47d774569f2f4a8a771fa3a3"
+vbox_extpack_sha256: "d90c1b0c89de19010f7c7fe7a675ac744067baf29a9966b034e97b5b2053b37e"
 vbox_extpack_dest_path: "/tmp/{{ vbox_extpack_param }}.vbox-extpack"
 vbox_extpack_download_timeout_seconds: 600
 
