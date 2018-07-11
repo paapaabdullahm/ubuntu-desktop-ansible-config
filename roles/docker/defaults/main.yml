@@ -1,13 +1,13 @@
 ---
 
-compose_version: "1.21.2"
-compose_base_url: "https://github.com/docker/compose/releases/download"
-compose_sha256: 8a11713e11ed73abcb3feb88cd8b5674b3320ba33b22b2ba37915b4ecffdf042
-
 docker_key: 58118E89F3A912897C070ADBF76221572C52609D
 docker_keyserver: "hkp://p80.pool.sks-keyservers.net:80"
 docker_apt_url: "https://apt.dockerproject.org/repo"
 docker_linux_distro: "ubuntu-xenial"
+
+compose_version: "1.21.2"
+compose_base_url: "https://github.com/docker/compose/releases/download"
+compose_sha256: 8a11713e11ed73abcb3feb88cd8b5674b3320ba33b22b2ba37915b4ecffdf042
 
 docker:
   start: false
