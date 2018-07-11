@@ -10,6 +10,16 @@
     name: linux-image-extra-virtual
     state: present
 
+- name: Ensure apt-transport-https is present
+  apt:
+    name: apt-transport-https
+    state: present
+
+- name: Ensure ca-certificates is present
+  apt:
+    name: ca-certificates
+    state: present
+
 #- name: Add Docker’s official GPG key
 #  apt_key:
 #    keyserver: "{{ docker_keyserver }}"
