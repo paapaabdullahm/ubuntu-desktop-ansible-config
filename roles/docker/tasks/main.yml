@@ -10,24 +10,36 @@
     name: linux-image-extra-virtual
     state: present
 
-- name: Add Docker’s official GPG key
-  apt_key:
-    keyserver: "{{ docker_keyserver }}"
-    id: "{{ docker_key }}"
+#- name: Add Docker’s official GPG key
+#  apt_key:
+#    keyserver: "{{ docker_keyserver }}"
+#    id: "{{ docker_key }}"
+#
+#- name: Add Docker stable repository
+#  apt_repository:
+#    repo: deb {{ docker_apt_url }} {{ docker_linux_distro }} main
+#    state: present
 
-- name: Add Docker stable repository
-  apt_repository:
-    repo: deb {{ docker_apt_url }} {{ docker_linux_distro }} main
+- name: Import Docker GPG signing key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
     state: present
+    id: 0EBFCD88
+
+- name: Add Docker x86_64 repository
+  apt_repository:
+    repo: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable'
+    state: present
+  when: ansible_architecture == 'x86_64'
 
 - name: Remove old repo lxc-docker
   apt:
     name: lxc-docker
     state: absent
 
-- name: Install latest version of Docker Engine
+- name: Install latest version of Docker CE
   apt:
-    name: docker-engine
+    name: docker-ce
     state: latest
     force: yes
     update_cache: yes
