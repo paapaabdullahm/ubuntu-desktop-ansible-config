@@ -34,6 +34,7 @@ essential_pkgs:
   - kdenlive
   - less
   - lftp
+  - libnss3-tools
   - libsdl-ttf2.0-0
   - libsdl1.2debian
   - make
