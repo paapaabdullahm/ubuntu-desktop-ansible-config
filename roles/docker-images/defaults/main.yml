@@ -10,6 +10,7 @@ docker_images:
   - "pam79/phpunit"
   - "pam79/node"
   - "pam79/composer"
+  - "pam79/pma"
   - "pam79/beanstalkd"
   - "pam79/mariadb"
   - "pam79/redis"
