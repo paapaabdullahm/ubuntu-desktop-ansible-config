@@ -7,6 +7,7 @@ docker_images:
   - "pam79/docker-gen"
   - "pam79/nginx"
   - "pam79/php-fpm"
+  - "pam79/phpunit"
   - "pam79/node"
   - "pam79/composer"
   - "pam79/beanstalkd"
