@@ -7,14 +7,9 @@ docker_images:
   - "pam79/docker-gen"
   - "pam79/nginx"
   - "pam79/php-fpm"
+  - "pam79/node"
   - "pam79/composer"
   - "pam79/beanstalkd"
   - "pam79/mariadb"
   - "pam79/redis"
   - "pam79/slack-cleaner"
-
-# with_items for append to path
-# alias_options:
-#   - name: "slack-cleaner"
-#     image: "{{ slack_cleaner }}"
-#     opts: "--rm -it --volume \"$PWD\":/wd --workdir /wd"
