@@ -9,7 +9,7 @@
   # 8. virtualbox
   # 9. xdman
 
-- name: Ubuntu Desktop Configuration
+- name: Ubuntu Desktop Configuration with Ansible
   hosts: localhost
   roles:
 
